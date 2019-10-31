@@ -160,3 +160,24 @@
 }
 /*end*/
 
+body {
+  background-color: gray;
+}
+
+#route {
+  margin-top: 15px;
+  padding-top: 9px;
+  padding-bottom: 10px;
+  /*border-radius: 10px;*/
+  margin-bottom: 15px;
+}
+
+#icon-plane {
+  color: #0770cd;
+  font-size: 25px;
+}
+
+#icon-user {
+  color: #0770cd;
+  font-size: 25px;
+}
