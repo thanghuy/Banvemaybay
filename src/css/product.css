@@ -168,3 +168,6 @@
   display: block;
   background: #05779c;
 }
+#datve .form-control{
+  border: 1px solid blue ;
+}
