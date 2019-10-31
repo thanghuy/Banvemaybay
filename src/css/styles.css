@@ -181,3 +181,24 @@ body {
   color: #0770cd;
   font-size: 25px;
 }
+
+.note {
+  font-size: 10px;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.col.right {
+  text-align: right;
+}
+
+.form-row > .col, .form-row > [class*=col-] {
+}
+
+.col.button {
+  margin-bottom: 15px;
+  text-align: right;
+}
+
