@@ -32,9 +32,9 @@
 <body>
     <div class="menu-main">
         <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" id="menu" style="/*border-top: 0px;*//*border-bottom: 1px solid blue !improtant;*/background-color: #05779c;">
-            <div class="container"><a class="navbar-brand" data-bs-hover-animate="rubberBand" href="#" style="color: rgb(72,63,63);"><img src="img/logo-white.png"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                <div
-                    class="collapse navbar-collapse menu-nav" id="navcol-1" style="color: rgb(36,133,149);font-family: Alegreya, serif;">
+            <div class="container">
+                <a class="navbar-brand" data-bs-hover-animate="rubberBand" href="#" style="color: rgb(72,63,63);"><img src="img/logo-white.png"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse menu-nav" id="navcol-1" style="color: rgb(36,133,149);font-family: Alegreya, serif;">
                     <ul class="nav navbar-nav ml-auto" id="frames-menu" style="font-size: 18px;">
                         <li class="nav-item one" role="presentation"><a class="nav-link active">Trang chủ</a></li>
                         <li class="nav-item two" role="presentation"><a class="nav-link" href="#">Khuyến Mãi</a></li>
@@ -46,8 +46,8 @@
                                     role="presentation" href="#" style="color: rgb(1,129,247);">Vé Theo Hãng</a></div>
                         </li>
                     </ul><span class="ml-auto navbar-text actions" style="width: 230px;"> <button class="btn btn-primary float-left" id="login" type="button" style="background-color: rgb(245,247,249);color: rgb(0,0,0);"><i class="fa fa-user" style="font-size: 20px;color: rgb(69,168,224);"></i>&nbsp;Đăng nhập&nbsp;<i class="fa fa-angle-down"></i></button><a class="btn btn-light float-right action-button" role="button" href="#" style="background-color: rgb(23,129,227);">Đăng ký</a></span></div>
-    </div>
-    </nav>
+            </div>
+        </nav>
     </div>
     <div class="img-banner-product"><img src="img/bannesprodurt.png"></div>
     <div class="d-xl-flex" id="about-product">
@@ -218,14 +218,156 @@
                         <h3>Khác&nbsp;</h3>
                         <p><br>Bạn có thể liên hệ qua hotline 1900-6978, chat trực tuyến hoặc gửi email về&nbsp;<a href="mailto:cs@traveloka.com">cs@traveloka.com</a>&nbsp;để được hỗ trợ kịp thời.<br><br><br></p>
                     </div>
-                    <div class="col item social"><a href="#" style="background-color: #034189;"><i class="icon ion-social-facebook"></i></a><a href="#" style="background-color: #00a3ff;"><i class="icon ion-social-twitter"></i></a><a href="#" style="background-color: #ff0000;"><i class="icon ion-social-youtube"></i></a>
-                        <a
-                            href="#" style="background-color: #000000;"><i class="icon ion-social-instagram"></i></a>
+                    <div class="col item social"><a href="#" style="background-color: #034189;"><i class="icon ion-social-facebook"></i></a><a href="#" style="background-color: #00a3ff;"><i class="icon ion-social-twitter"></i></a>
+                        <a href="#" style="background-color: #ff0000;"><i class="icon ion-social-youtube"></i></a>
+                        <a href="#" style="background-color: #000000;"><i class="icon ion-social-instagram"></i></a>
                     </div>
                 </div>
                 <p class="copyright">Huy Thắng © 2019</p>
             </div>
         </footer>
+        <!--Modal đăng nhập-->
+        <form action="">
+            <div style="color: #000000;" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div id='lg' class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Đăng nhập tài khoản</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col">
+                                    <p>Usename</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input name="username" style="border: 1px solid;" type="text" class="form-control" id="username">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>Mật khẩu</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="">Quên mật khẩu</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input name="password" style="border: 1px solid;" type="text" class="form-control" id="password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- kết thúc modal-->
+
+        <!--Modal đăng kí-->
+        <form action="">
+            <div style="color: #000000;" class="modal fade" id="dangki" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div id='lg' class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Đăng kí tài khoản</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col">
+                                    <p>Username</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input style="border: 1px solid;" type="text" class="form-control" id="username">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p>Mật khẩu</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input name="password" style="border: 1px solid;" type="text" class="form-control" id="password">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p>Nhập lại mật khẩu</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input name="repassword" style="border: 1px solid;" type="text" class="form-control" id="repassword">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p>Email</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input name="email" style="border: 1px solid;" type="text" class="form-control" id="email">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p>Địa chỉ</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input name="address" style="border: 1px solid;" type="text" class="form-control" id="address">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-danger">Đăng kí</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- kết thúc modal đăng kí-->
+
     </div>
     <div></div>
     <script src="js/jquery.min.js"></script>
