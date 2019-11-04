@@ -5,6 +5,12 @@
 
 #menu {
     background-color: #05779c;
+    /*width: 100%;
+    position: fixed; 
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden; */
 }
 
 #logo {
@@ -75,7 +81,9 @@
     position: relative;
     font-weight: 700;
 }
-
+.nav-item a:hover{
+    color: red;
+}
 
 a.nav-link:after {
       content: '';
@@ -273,4 +281,12 @@ a.nav-link:hover:after {
 
 .select-fight {
     background: none !important;
+}
+/*reponsive*/
+@media screen and (max-width: 500px) {
+  .form_search{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 2%;
+  }
 }
