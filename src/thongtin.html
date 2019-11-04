@@ -34,37 +34,46 @@
 </head>
 
 <body>
-    <div>
-        <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" id="menu" style="/*border-top: 0px;*//*border-bottom: 1px solid blue !improtant;*/background-color: #05779c;">
+    <div id="header">
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" id="menu">
             <div class="container">
-                <a class="navbar-brand" data-bs-hover-animate="rubberBand" href="#" style="color: rgb(72,63,63);"><img src="img/logo-white.png"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse menu-nav" id="navcol-1" style="color: rgb(36,133,149);font-family: Alegreya, serif;">
-                    <ul class="nav navbar-nav ml-auto" id="frames-menu" style="font-size: 18px;">
-                        <li class="nav-item one" role="presentation"><a class="nav-link active">Trang chủ</a></li>
-                        <li class="nav-item two" role="presentation"><a class="nav-link" href="#">Khuyến Mãi</a></li>
-                        <li class="nav-item three" role="presentation"><a class="nav-link" href="#">Giới Thiệu</a></li>
-                        <li class="nav-item" role="presentation"></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link four" href="#">Quản lý đặt chỗ</a></li>
-                        <li class="dropdown nav-item five"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" id="scroll" href="#">Vé máy bay</a>
-                            <div class="dropdown-menu" role="menu" style="background-color: #ffffff;"><a class="dropdown-item" role="presentation" href="#" style="color: rgb(1,129,247);">Vé Nội Địa&nbsp;</a><a class="dropdown-item" role="presentation" href="#" style="color: rgb(1,129,247);">Vé Quốc Tế</a><a class="dropdown-item"
-                                    role="presentation" href="#" style="color: rgb(1,129,247);">Vé Theo Hãng</a></div>
+                <a class="navbar-brand" id="logo" data-bs-hover-animate="rubberBand" href="#">
+                    <img src="img/logo-white.png">
+                </a>
+                <div class="collapse navbar-collapse menu-nav" id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto" id="frames-menu">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link action" href="#">Trang chủ</a>
                         </li>
-                    </ul><span class="ml-auto navbar-text actions" style="width: 230px;"> <button class="btn btn-primary float-left" id="login" type="button" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: rgb(245,247,249);color: rgb(0,0,0);" ><i class="fa fa-user" style="font-size: 20px;color: rgb(69,168,224);"></i>&nbsp;Đăng nhập&nbsp;<i class="fa fa-angle-down"></i></button><a class="btn btn-light float-right action-button" role="button" href="#" style="background-color: rgb(23,129,227);" data-toggle="modal" data-target="#dangki">Đăng ký</a></span></div>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" href="#">Khuyến Mãi</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" href="#">Giới Thiệu</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" href="#">Quản lý đặt chỗ</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" href="#">Vé máy bay</a>
+                        </li>
+                    </ul>
+                    <span class="ml-auto navbar-text actions" style="width: 230px;"> <button class="btn btn-primary float-left" id="login" type="button" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: rgb(245,247,249);color: rgb(0,0,0);" ><i class="fa fa-user" style="font-size: 20px;color: rgb(69,168,224);"></i>&nbsp;Đăng nhập&nbsp;<i class="fa fa-angle-down"></i></button><a class="btn btn-light float-right action-button" role="button" href="#" style="background-color: rgb(23,129,227);" data-toggle="modal" data-target="#dangki">Đăng ký</a></span>
+                </div>
             </div>
         </nav>
     </div>
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-xl-10 offset-xl-1">
-                    <div class="jumbotron text-left" id="route">
-                        <h2>Flight from Hà Nội to TP.HCM</h2>
-                        <p style="margin: 0;"><i class="fa fa-plane" id="icon-plane"></i>&nbsp;&nbsp;Hà Nội (HAN) → TP HCM (SGN) &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 28 Th10 2019<br></p>
-                        <p><i class="fa fa-user" id="icon-user"></i>&nbsp; &nbsp;1 người lớn &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Economy<br></p>
-                    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xl-10 offset-xl-1">
+                <div class="jumbotron text-left" id="route">
+                    <h2>Flight from Hà Nội to TP.HCM</h2>
+                    <p style="margin: 0;"><i class="fa fa-plane" id="icon-plane"></i>&nbsp;&nbsp;Hà Nội (HAN) → TP HCM (SGN) &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 28 Th10 2019<br></p>
+                    <p><i class="fa fa-user" id="icon-user"></i>&nbsp; &nbsp;1 người lớn &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Economy<br></p>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <div>
         <div class="container">
