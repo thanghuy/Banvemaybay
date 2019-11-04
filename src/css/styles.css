@@ -69,10 +69,35 @@
     height: 50px;
 }
 
-.nav-link a {
+.nav-link {
     color: #fff;
+    display: inline-block;
+    position: relative;
+    font-weight: 700;
 }
 
+
+a.nav-link:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      display: inline-block;
+      height: 1em;
+      width: 100%;
+      border-bottom: 3px solid #f96d01;
+      margin-top: 10px;
+      opacity: 0;
+        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+        transition: opacity 0.35s, transform 0.35s;
+        -webkit-transform: scale(0,1);
+        transform: scale(0,1);
+}
+
+a.nav-link:hover:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
 #frames-menu li a {
     color: white;
     font-weight: 500;
