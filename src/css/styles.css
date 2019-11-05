@@ -81,24 +81,25 @@
     position: relative;
     font-weight: 700;
 }
-.nav-item a:hover{
+
+.nav-item a:hover {
     color: red;
 }
 
 a.nav-link:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      display: inline-block;
-      height: 1em;
-      width: 100%;
-      border-bottom: 3px solid #f96d01;
-      margin-top: 10px;
-      opacity: 0;
-        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-        transition: opacity 0.35s, transform 0.35s;
-        -webkit-transform: scale(0,1);
-        transform: scale(0,1);
+    content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 1em;
+    width: 100%;
+    border-bottom: 3px solid #f96d01;
+    margin-top: 10px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
 }
 
 a.nav-link:hover:after {
@@ -106,6 +107,7 @@ a.nav-link:hover:after {
     -webkit-transform: scale(1);
     transform: scale(1);
 }
+
 #frames-menu li a {
     color: white;
     font-weight: 500;
@@ -207,6 +209,10 @@ a.nav-link:hover:after {
 
 .jumbotron {
     background-color: rgb(255, 255, 255);
+    margin-top: 15px;
+    padding-top: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
 }
 
 
@@ -241,14 +247,6 @@ a.nav-link:hover:after {
 
 /*end*/
 
-#route {
-    margin-top: 15px;
-    padding-top: 9px;
-    padding-bottom: 10px;
-    /*border-radius: 10px;*/
-    margin-bottom: 15px;
-}
-
 #icon-plane {
     color: #0770cd;
     font-size: 25px;
@@ -271,9 +269,6 @@ a.nav-link:hover:after {
     text-align: right;
 }
 
-.form-row>.col,
-.form-row>[class*=col-] {}
-
 .col.button {
     margin-bottom: 15px;
     text-align: right;
@@ -282,21 +277,24 @@ a.nav-link:hover:after {
 .select-fight {
     background: none !important;
 }
+
+
 /*reponsive*/
+
 @media screen and (max-width: 500px) {
-  .form_search{
-    width: 90%;
-    margin-left: 5%;
-  }
-  #row-one{
-    margin-top: 2%;
-    margin-bottom: 2%;
-  }
-  .tag-mid{
-    text-align: center;
-  }
-  #search{
-    min-width: 97%;
-    float: left;
-  }
+    .form_search {
+        width: 90%;
+        margin-left: 5%;
+    }
+    #row-one {
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    .tag-mid {
+        text-align: center;
+    }
+    #search {
+        min-width: 97%;
+        float: left;
+    }
 }
