@@ -12,6 +12,11 @@
     left: 0;
     overflow-x: hidden; 
 }
+.clear{
+    height: 88px;
+    width:100%;
+    background: none
+}
 
 #logo {
     color: rgb(72, 63, 63);
@@ -299,4 +304,20 @@ a.nav-link:hover:after {
         min-width: 97%;
         float: left;
     }
+    #menu {
+    background-color: #05779c;
+    width: 100%;
+    position: relative; 
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden; 
+    }
+    .clear{
+    height: 0px;
+    width:100%;
+    background: none
+    }
+
+
 }
