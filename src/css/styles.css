@@ -285,8 +285,18 @@ a.nav-link:hover:after {
 /*reponsive*/
 @media screen and (max-width: 500px) {
   .form_search{
-    width: 80%;
-    margin-left: 10%;
+    width: 90%;
+    margin-left: 5%;
+  }
+  #row-one{
     margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .tag-mid{
+    text-align: center;
+  }
+  #search{
+    min-width: 97%;
+    float: left;
   }
 }
