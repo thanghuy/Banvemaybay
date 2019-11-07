@@ -1,0 +1,173 @@
+.img-banner-product img {
+  width: 100%;
+}
+
+#about-product {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#about-people {
+  margin-top: -17px;
+}
+
+#about-search p {
+  font-size: 14px;
+}
+
+#btn-search {
+  border: none;
+  border-radius: 7px;
+  float: right;
+  background-color: #f96d01;
+}
+
+.content-product .row {
+  margin-top: 12px;
+}
+
+#search-advanced select {
+  width: 100%;
+  float: right;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+#search-advanced span {
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+#about-search {
+  border-bottom: 1px solid #ddd;
+}
+
+#product-item {
+  border-top: 1px solid #ddd;
+}
+
+#btn-search {
+  margin-bottom: 10px;
+}
+
+#product-item h6 {
+  margin-top: 10px;
+}
+
+.item-product {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.icon-to-fight {
+  width: 100%;
+}
+
+.icon-to-fight i {
+  margin-left: 40%;
+}
+
+.select-fight {
+  width: 100%;
+  height: 40px;
+  border: 0px;
+  border-radius: 5px !important;
+  background: #f96d01;
+}
+
+.price {
+  color: #f96d01;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.guest {
+  font-size: 13px;
+}
+
+.img-item {
+  width: 20%;
+  height: auto;
+}
+
+.item-product:hover {
+  border: 1px solid #1ba0e2;
+  cursor: pointer;
+}
+
+.show-detail {
+  width: 100%;
+  height: auto;
+  margin-top: 44px;
+  margin-bottom: 15px;
+  color: #1ba0e2;
+}
+
+.show-detail.ve {
+  margin-top: 20px;
+}
+
+.row.detail-product {
+  border-top: 1px solid #ddd;
+}
+
+.time-fight {
+  margin-left: 16%;
+}
+
+.detail-item div {
+  margin-top: 2px;
+}
+
+.time-end {
+  margin-bottom: 30px;
+}
+
+.time-go {
+  margin-top: 10px !important;
+}
+
+#main {
+  /*display: none;*/
+}
+
+#ticker {
+  border-top: 1px solid #ddd;
+}
+
+.thue {
+  color: gray;
+}
+
+.total-money {
+  font-weight: 700;
+}
+
+.form-to {
+  font-weight: 700;
+}
+
+.highlight {
+  color: red;
+}
+.detail-product{
+  display: none;
+  
+}
+.detail-ticker{
+  display: none;
+}
+.show-1{
+  display: none;
+}
+.show-2{
+  display: none;
+}
+.active{
+  display: block;
+  background: #05779c;
+}
+#datve .form-control{
+  border: 1px solid blue ;
+}
