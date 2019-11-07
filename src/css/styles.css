@@ -6,16 +6,15 @@
 #menu {
     background-color: #05779c;
     width: 100%;
-    position: fixed;
+    position: fixed; 
     z-index: 1;
     top: 0;
     left: 0;
-    overflow-x: hidden;
+    overflow-x: hidden; 
 }
-
-.clear {
+.clear{
     height: 88px;
-    width: 100%;
+    width:100%;
     background: none
 }
 
@@ -153,11 +152,9 @@ a.nav-link:hover:after {
 .navbar-text {
     width: 230px !important;
 }
-
-#select1 {
+#select1{
     height: 300px !important;
 }
-
 
 /*end*/
 
@@ -308,21 +305,19 @@ a.nav-link:hover:after {
         float: left;
     }
     #menu {
-        background-color: #05779c;
-        width: 100%;
-        position: relative;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        overflow-x: hidden;
+    background-color: #05779c;
+    width: 100%;
+    position: relative; 
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden; 
     }
-    .clear {
-        height: 0px;
-        width: 100%;
-        background: none
+    .clear{
+    height: 0px;
+    width:100%;
+    background: none
     }
-}
 
-.alert {
-    margin-bottom: 0px;
+
 }
