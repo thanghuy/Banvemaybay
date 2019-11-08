@@ -6,7 +6,7 @@
                         <h1 class="tag-mid">&nbsp;&nbsp;<i class="fa fa-plane"></i>&nbsp; Tìm chuyến bay</h1>
                         <div class="form-row">
                             <div class="col">
-                                <div class="main-select">
+                                <div class="demo-select">
                                     <fieldset>
                                         <div class="custom-control custom-radio custom-control-inline">
                                             <input type="radio" id="customRadioInline1" class="custom-control-input" name="customRadioInline" checked="">
