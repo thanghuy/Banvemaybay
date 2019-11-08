@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>indexs</title>
-    <base href="http://localhost:8888/demomvc/">
+    <base href="http://localhost:8888/Banvemaybay/src-vs1/">
     <link rel="stylesheet" type="text/css" href="public/bootstrap/css/bootstrap.min.css" >
     <link rel="stylesheet" type="text/css" href="public/fonts/font-awesome.min.css" >
     <link rel="stylesheet" type="text/css" href="public/fonts/ionicons.min.css" >
