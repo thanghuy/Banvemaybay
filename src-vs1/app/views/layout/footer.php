@@ -91,7 +91,7 @@
             <!-- kết thúc modal-->
 
             <!--Modal đăng kí-->
-            <form action="">
+            <form name="sign_up" action="" onsubmit="return check_sign_up()">
                 <div style="color: #000000;" class="modal fade" id="dangki" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div id='lg' class="modal-dialog modal-dialog-centered modal-md" role="document">
                         <div class="modal-content">
@@ -102,77 +102,68 @@
                                           </button>
                             </div>
                             <div class="modal-body">
+                                
                                 <div class="row">
-                                    <div class="col">
-                                        <p>Username</p>
+                                    <div class="col-md-4">
+                                        <p>Tên tài khoản</p>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input name="username" style="border: 1px solid;" type="text" class="form-control" id="username">
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col">
-                                        <input style="border: 1px solid;" type="text" class="form-control" id="username">
-                                    </div>
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-8"><p id="alert_0" class="alert"></p></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col">
-                                        <br>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
+                                    <div class="col-md-4">
                                         <p>Mật khẩu</p>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
+                                    <div class="col-md-8">
                                         <input name="password" style="border: 1px solid;" type="text" class="form-control" id="password">
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col">
-                                        <br>
-                                    </div>
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-8"><p id="alert_1" class="alert"></p></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col-md-4">
                                         <p>Nhập lại mật khẩu</p>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
+                                    <div class="col-md-8">
                                         <input name="repassword" style="border: 1px solid;" type="text" class="form-control" id="repassword">
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col">
-                                        <br>
-                                    </div>
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-8"><p id="alert_2" class="alert"></p></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col">
+                                <div class="col-md-4">
                                         <p>Email</p>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
+                                    <div class="col-md-8">
                                         <input name="email" style="border: 1px solid;" type="text" class="form-control" id="email">
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col">
-                                        <br>
-                                    </div>
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-8"><p id="alert_3" class="alert"></p></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col">
+                                <div class="col-md-4">
                                         <p>Địa chỉ</p>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
+                                    <div class="col-md-8">
                                         <input name="address" style="border: 1px solid;" type="text" class="form-control" id="address">
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-8"><p id="alert_4" class="alert"></p></div>
+                                </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-danger">Đăng kí</button>
                             </div>
