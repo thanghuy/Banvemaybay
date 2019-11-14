@@ -25,36 +25,85 @@ function getValue(v) {
     return document.forms['sign_up'][v].value;
 }
 
-function alert_dk(x) {
+function set_alert(x) {
     var id = "";
-    var id = "alert_" + x;
-    switch (x) {
-        case 0:
-            $("#" + id).text("Tên tài khoản không được để trống!!");
-            $("#" + id).css(text - align, center);
-            break;
-        case 1:
-            $("#" + id).text("Mật khẩu không được để trống!!");
-            $("#" + id).css(text - align, center);
-            break;
-        case 2:
-            $("#" + id).text("Mật khẩu không được để trống!!");
-            $("#" + id).css(text - align, center);
-            break;
-        case 3:
-            $("#" + id).text("Email được để trống!!");
-            $("#" + id).css(text - align, center);
-            break;
-        case 4:
-            $("#" + id).text("Địa chỉ không được để trống!!");
-            $("#" + id).css(text - align, center);
-            break;
+    var id = "#alert_" + x;
+    if (x == 0) {
+        $(id).text("Tên tài khoản không hợp lệ");
+    }
+    if (x == 1) {
+        $(id).text("Mật khẩu không hợp lệ");
+    }
+    if (x == 2) {
+        $(id).text("Mật khẩu không hợp lệ");
+    }
+    if (x == 3) {
+        $(id).text("Email không hợp lệ");
+    }
+    if (x == 4) {
+        $(id).text("Địa chỉ không hợp lệ");
     }
 }
 
-function check_sign_up() {
-    var dk = new Array(getValue('username'), getValue('password'), getValue('repassword'), getValue('email'), getValue('address'));
-    for (var i = 0; i < dk.length; i++) {
-        if (dk[i] == "") alert_dk(i);
+function set_alert_default(x) {
+    var id = "";
+    var id = "#alert_" + x;
+    if (x == 0) {
+        $(id).text("");
     }
+    if (x == 1) {
+        $(id).text("");
+    }
+    if (x == 2) {
+        $(id).text("");
+    }
+    if (x == 3) {
+        $(id).text("");
+    }
+    if (x == 4) {
+        $(id).text("");
+    }
+}
+
+function check_pass(x, y) {
+    if (x != y) {
+        $("#alert_2").text("Mật khẩu không khớp");
+    }
+
+}
+
+function check_sign_up() {
+    var p1 = /^[\w]+$/gi;
+    var p2 = /^[\w]+$/gi;
+    var p3 = /^[\w]+$/gi;
+    var p4 = /^[\w]+$/gi;
+    var p5 = /^[\w]+$/gi;
+    var p6 = /\W/gi;
+    if (p1.test(getValue('username')) == false) set_alert(0);
+    else set_alert_default(0);
+
+    if (p2.test(getValue('password')) == false) set_alert(1);
+    else set_alert_default(1);
+
+    if (p3.test(getValue('repassword')) == false) set_alert(2);
+    else set_alert_default(2);
+
+    if (p4.test(getValue('email')) == false) set_alert(3);
+    else set_alert_default(3);
+
+    if (getValue('address') == "") set_alert(4);
+    else set_alert_default(4);
+
+    if (getValue('password') != getValue('repassword')) {
+        $('#alert_1').text("Mật khẩu không khớp!");
+        $('#alert_2').text("Mật khẩu không khớp!");
+    }
+
+    var pe = /^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$/gi;
+    if (pe.test(getValue('email') == false)) {
+        set_alert_default(3);
+    }
+
+    return false;
+
 }
