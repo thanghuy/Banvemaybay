@@ -37,10 +37,10 @@ function set_alert(x) {
         $(id).text("Mật khẩu không hợp lệ");
     }
     if (x == 3) {
-        $(id).text("Email không được để trống");
+        $(id).text("Email không hợp lệ");
     }
     if (x == 4) {
-        $(id).text("Địa chỉ không được để trống");
+        $(id).text("Địa chỉ không hợp lệ");
     }
 }
 
@@ -72,7 +72,37 @@ function check_pass(x, y) {
 }
 
 function check_sign_up() {
+    var p1 = /^[\w]+$/gi;
+    var p2 = /^[\w]+$/gi;
+    var p3 = /^[\w]+$/gi;
+    var p4 = /^[\w]+$/gi;
+    var p5 = /^[\w]+$/gi;
+    var p6 = /\W/gi;
+    if (p1.test(getValue('username')) == false) set_alert(0);
+    else set_alert_default(0);
 
-    if (x == 0) return false;
+    if (p2.test(getValue('password')) == false) set_alert(1);
+    else set_alert_default(1);
+
+    if (p3.test(getValue('repassword')) == false) set_alert(2);
+    else set_alert_default(2);
+
+    if (p4.test(getValue('email')) == false) set_alert(3);
+    else set_alert_default(3);
+
+    if (getValue('address') == "") set_alert(4);
+    else set_alert_default(4);
+
+    if (getValue('password') != getValue('repassword')) {
+        $('#alert_1').text("Mật khẩu không khớp!");
+        $('#alert_2').text("Mật khẩu không khớp!");
+    }
+
+    var pe = /^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$/gi;
+    if (pe.test(getValue('email') == false)) {
+        set_alert_default(3);
+    }
+
+    return false;
 
 }
