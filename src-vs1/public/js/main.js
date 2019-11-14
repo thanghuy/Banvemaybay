@@ -24,36 +24,55 @@ function getValue(v) {
     return document.forms['sign_up'][v].value;
 }
 
-function alert_dk(x) {
+function set_alert(x) {
     var id = "";
-    var id = "alert_" + x;
-    switch (x) {
-        case 0:
-            $("#" + id).text("Tên tài khoản không được để trống!!");
-            $("#" + id).css(text - align, center);
-            break;
-        case 1:
-            $("#" + id).text("Mật khẩu không được để trống!!");
-            $("#" + id).css(text - align, center);
-            break;
-        case 2:
-            $("#" + id).text("Mật khẩu không được để trống!!");
-            $("#" + id).css(text - align, center);
-            break;
-        case 3:
-            $("#" + id).text("Email được để trống!!");
-            $("#" + id).css(text - align, center);
-            break;
-        case 4:
-            $("#" + id).text("Địa chỉ không được để trống!!");
-            $("#" + id).css(text - align, center);
-            break;
+    var id = "#alert_" + x;
+    if (x == 0) {
+        $(id).text("Tên tài khoản không hợp lệ");
+    }
+    if (x == 1) {
+        $(id).text("Mật khẩu không hợp lệ");
+    }
+    if (x == 2) {
+        $(id).text("Mật khẩu không hợp lệ");
+    }
+    if (x == 3) {
+        $(id).text("Email không được để trống");
+    }
+    if (x == 4) {
+        $(id).text("Địa chỉ không được để trống");
     }
 }
 
-function check_sign_up() {
-    var dk = new Array(getValue('username'), getValue('password'), getValue('repassword'), getValue('email'), getValue('address'));
-    for (var i = 0; i < dk.length; i++) {
-        if (dk[i] == "") alert_dk(i);
+function set_alert_default(x) {
+    var id = "";
+    var id = "#alert_" + x;
+    if (x == 0) {
+        $(id).text("");
     }
+    if (x == 1) {
+        $(id).text("");
+    }
+    if (x == 2) {
+        $(id).text("");
+    }
+    if (x == 3) {
+        $(id).text("");
+    }
+    if (x == 4) {
+        $(id).text("");
+    }
+}
+
+function check_pass(x, y) {
+    if (x != y) {
+        $("#alert_2").text("Mật khẩu không khớp");
+    }
+
+}
+
+function check_sign_up() {
+
+    if (x == 0) return false;
+
 }

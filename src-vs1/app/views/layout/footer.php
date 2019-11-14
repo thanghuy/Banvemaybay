@@ -120,7 +120,7 @@
                                         <p>Mật khẩu</p>
                                     </div>
                                     <div class="col-md-8">
-                                        <input name="password" style="border: 1px solid;" type="text" class="form-control" id="password">
+                                    <input name="password" style="border: 1px solid;" type="text" class="form-control" id="password">
                                     </div>
                                 </div>
                                 <div class="row">
