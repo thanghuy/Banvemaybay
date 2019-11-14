@@ -1,3 +1,4 @@
+
 var sanpham = document.getElementById('detail-fight');
 var ve = document.getElementById("ticker");
 $('.bay').click(function() {

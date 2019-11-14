@@ -2,7 +2,6 @@
 
 
 /*menu*/
-
 #menu {
     background-color: #05779c;
     width: 100%;
@@ -137,16 +136,18 @@ a.nav-link:hover:after {
 }
 
 #login {
-    background-color: rgb(245, 247, 249);
-    color: rgb(0, 0, 0);
+    border: none;
+    background: #05779c !important;
+    color: white;
+    color: white !important;
 }
 
 #login .fa {
     font-size: 20px;
-    color: rgb(69, 168, 224);
+    color: white !important;
 }
 
-#signup {
+#signup {   
     background-color: rgb(23, 129, 227);
 }
 
@@ -157,8 +158,43 @@ a.nav-link:hover:after {
 #select1 {
     height: 300px !important;
 }
-
-
+.icon-img{
+    width: 80px;
+    float: left;
+}
+.icon-img img{
+    margin-top: 7px;
+    margin-right: 5px;
+    float: left;
+    width: 10px;
+}
+.icon-img b,p{
+    font-size: 12px;
+    line-height: 0px;
+    margin-top: 5px;
+}
+.chung{
+    width: 110px;
+    float: right;
+}
+.chung button{
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 0.3em;
+    background: none;
+    font-size: 20px;
+    color: green;
+    line-height: 20px;
+}
+.chung button:hover{
+    background-color:Silver;
+}
+.chung input{
+    height: 40px;
+    text-align: center;
+    border: 1px solid grey;
+    font-size: 20px;
+}
 /*end*/
 
 

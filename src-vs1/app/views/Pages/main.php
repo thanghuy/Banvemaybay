@@ -1,6 +1,6 @@
 <div class="d-xl-flex justify-content-xl-center align-items-xl-center" id="img-form">
             
-            <form class="form_search" action="chuyenbay/ChuyenBay">
+            <form class="form_search" method="GET" action="chuyenbay/ChuyenBay">
                 <div class="form-row" id="row-one">
                     <div class="col-12 offset-xl-0 text-capitalize" data-aos="zoom-in-down" id="waper-search">
                         <h1 class="tag-mid">&nbsp;&nbsp;<i class="fa fa-plane"></i>&nbsp; Tìm chuyến bay</h1>
@@ -40,7 +40,7 @@
                             </div>
                             <div class="col">
                                 <div class="form-group"><label>Ngày đi</label>
-                                    <input class="form-control" type="date" name="form-date">
+                                    <input class="form-control" type="text" id="datepicker" name="form-date">
                                 </div>
                             </div>
                             <div class="col">
@@ -51,20 +51,88 @@
                         </div>
                         <div class="form-row">
                             <div class="col-6 col-sm-12 col-md-6 col-xl-3">
-                                <div class="form-group"><label>Người lớn</label><input class="form-control" type="text" name="adult" value="1"></div>
+                                <div class="form-group">
+                                    <label>Người lớn</label>
+                                    <div class="form-control">
+                                        <div class="icon-img">
+                                            <img src="./public/img/nguoilon.png" alt="">
+                                            <label>
+                                                <b>Người lớn</b>
+                                                <p>>=12</p>
+                                            </label>
+                                        </div>
+                                        <div class="input-group chung mb-3">
+                                            <div class="input-group-prepend">
+                                            <button class="btn btn-outline-light text-dark" type="button">-</button>
+                                            </div>
+                                            <input type="text" class="form-control"  aria-label="" value="1">
+                                            <div class="input-group-append">
+                                            <button class="btn btn-outline-light text-dark" type="button">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-6 col-sm-12 col-md-6 col-xl-3">
-                                <div class="form-group"><label>Trẻ em&nbsp;</label><input class="form-control" type="text" name="children"></div>
+                                <div class="form-group">
+                                    <label>Trẻ em&nbsp;</label>
+                                    <div class="form-control">
+                                        <div class="icon-img">
+                                            <img src="./public/img/treem.png" alt="">
+                                            <label>
+                                                <b>Trẻ em</b>
+                                                <p>< 12 tuổi</p>
+                                            </label>
+                                        </div>
+                                        <div class="input-group chung mb-3">
+                                            <div class="input-group-prepend">
+                                            <button class="btn btn-outline-light text-dark" type="button">-</button>
+                                            </div>
+                                            <input type="text" class="form-control"  aria-label="" value="1">
+                                            <div class="input-group-append">
+                                            <button class="btn btn-outline-light text-dark" type="button">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col">
-                                <div class="form-group"><label>Em bé</label><input class="form-control" type="text" name="baby"></div>
+                                <div class="form-group">
+                                    <label>Em bé</label>
+                                    <div class="form-control">
+                                        <div class="icon-img">
+                                            <img src="./public/img/embe.png" alt="">
+                                            <label>
+                                                <b>Em bé</b>
+                                                <p>< 24 tháng</p>
+                                            </label>
+                                        </div>
+                                        <div class="input-group chung mb-3">
+                                            <div class="input-group-prepend">
+                                            <button class="btn btn-outline-light text-dark" type="button">-</button>
+                                            </div>
+                                            <input type="text" class="form-control"  aria-label="" value="1">
+                                            <div class="input-group-append">
+                                            <button class="btn btn-outline-light text-dark" type="button">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col">
-                                <div class="form-group"><label>Hạng ghế</label><input class="form-control" type="text" name="seat-class"></div>
+                                <div class="form-group">
+                                    <label>Hạng ghế</label>
+                                    <div class="input-group mb-3 form-control">
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                            <option value="1">Phổ thông</option>
+                                            <option value="2">Thương gia</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" id="search" type="submit"><i class="fa fa-search"></i>&nbsp;Tìm chuyến bay</button></div>
+                            <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" id="search" name="timkiem" type="submit"><i class="fa fa-search"></i>&nbsp;Tìm chuyến bay</button></div>
                         </div>
                     </div>
                 </div>
