@@ -1,12 +1,12 @@
 <div class="d-xl-flex justify-content-xl-center align-items-xl-center" id="img-form">
             
-            <form class="form_search" method="GET" action="chuyenbay/ChuyenBay">
+            <form class="form_search" action="chuyenbay/ChuyenBay">
                 <div class="form-row" id="row-one">
                     <div class="col-12 offset-xl-0 text-capitalize" data-aos="zoom-in-down" id="waper-search">
                         <h1 class="tag-mid">&nbsp;&nbsp;<i class="fa fa-plane"></i>&nbsp; Tìm chuyến bay</h1>
                         <div class="form-row">
                             <div class="col">
-                                <div class="demo-select">
+                                <div class="main-select">
                                     <fieldset>
                                         <div class="custom-control custom-radio custom-control-inline">
                                             <input type="radio" id="customRadioInline1" class="custom-control-input" name="customRadioInline" checked="">
@@ -40,7 +40,7 @@
                             </div>
                             <div class="col">
                                 <div class="form-group"><label>Ngày đi</label>
-                                    <input class="form-control" type="text" id="datepicker" name="form-date">
+                                    <input class="form-control" type="date" name="form-date">
                                 </div>
                             </div>
                             <div class="col">
@@ -51,6 +51,7 @@
                         </div>
                         <div class="form-row">
                             <div class="col-6 col-sm-12 col-md-6 col-xl-3">
+<<<<<<< HEAD
                                 <div class="form-group">
                                     <label>Người lớn</label>
                                     <div class="form-control">
@@ -118,21 +119,22 @@
                                         </div>
                                     </div>
                                 </div>
+=======
+                                <div class="form-group"><label>Người lớn</label><input class="form-control" type="text" name="adult" value="1"></div>
+                            </div>
+                            <div class="col-6 col-sm-12 col-md-6 col-xl-3">
+                                <div class="form-group"><label>Trẻ em&nbsp;</label><input class="form-control" type="text" name="children"></div>
                             </div>
                             <div class="col">
-                                <div class="form-group">
-                                    <label>Hạng ghế</label>
-                                    <div class="input-group mb-3 form-control">
-                                        <select class="custom-select" id="inputGroupSelect01">
-                                            <option value="1">Phổ thông</option>
-                                            <option value="2">Thương gia</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                <div class="form-group"><label>Em bé</label><input class="form-control" type="text" name="baby"></div>
+>>>>>>> a47d311ee4b04b410f1d8fae0c71fb53c9652614
+                            </div>
+                            <div class="col">
+                                <div class="form-group"><label>Hạng ghế</label><input class="form-control" type="text" name="seat-class"></div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" id="search" name="timkiem" type="submit"><i class="fa fa-search"></i>&nbsp;Tìm chuyến bay</button></div>
+                            <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" id="search" type="submit"><i class="fa fa-search"></i>&nbsp;Tìm chuyến bay</button></div>
                         </div>
                     </div>
                 </div>

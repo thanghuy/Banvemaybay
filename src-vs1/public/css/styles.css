@@ -2,6 +2,7 @@
 
 
 /*menu*/
+
 #menu {
     background-color: #05779c;
     width: 100%;
@@ -50,8 +51,8 @@
     height: 50px;
 }
 
-.demo-select div {
-    margin-left: 20px;
+.main-select div {
+    margin-left: 30px;
 }
 
 #search {
@@ -137,18 +138,16 @@ a.nav-link:hover:after {
 }
 
 #login {
-    border: none;
-    background: #05779c !important;
-    color: white;
-    color: white !important;
+    background-color: rgb(245, 247, 249);
+    color: rgb(0, 0, 0);
 }
 
 #login .fa {
     font-size: 20px;
-    color: white !important;
+    color: rgb(69, 168, 224);
 }
 
-#signup {   
+#signup {
     background-color: rgb(23, 129, 227);
 }
 
@@ -159,16 +158,19 @@ a.nav-link:hover:after {
 #select1 {
     height: 300px !important;
 }
-.icon-img{
+
+.icon-img {
     width: 80px;
     float: left;
 }
-.icon-img img{
+
+.icon-img img {
     margin-top: 7px;
     margin-right: 5px;
     float: left;
     width: 10px;
 }
+<<<<<<< HEAD
 #khach b{
     font-size: 12px;
     line-height: 0px;
@@ -183,10 +185,15 @@ a.nav-link:hover:after {
     color: black;
 }
 .chung{
+=======
+
+.chung {
+>>>>>>> a47d311ee4b04b410f1d8fae0c71fb53c9652614
     width: 110px;
     float: right;
 }
-.chung button{
+
+.chung button {
     height: 40px;
     border: 1px solid grey;
     border-radius: 0.3em;
@@ -195,16 +202,20 @@ a.nav-link:hover:after {
     color: green;
     line-height: 20px;
 }
-.chung button:hover{
-    background-color:Silver;
+
+.chung button:hover {
+    background-color: Silver;
 }
-.chung input{
+
+.chung input {
     height: 40px;
     text-align: center;
     border: 1px solid grey;
     font-size: 17px;
     color:green;
 }
+
+=======>>>>>>>parent of f3bf8fd... giaodien=======>>>>>>>parent of f3bf8fd... giaodien
 /*end*/
 
 
@@ -225,7 +236,7 @@ a.nav-link:hover:after {
     color: rgb(248, 243, 243);
 }
 
-.select-flight {
+.main-select {
     color: rgb(239, 240, 242);
     font-size: 17px;
 }
@@ -363,8 +374,4 @@ a.nav-link:hover:after {
         width: 100%;
         background: none
     }
-}
-
-.alert {
-    margin-bottom: 0;
 }

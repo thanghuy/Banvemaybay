@@ -13,7 +13,6 @@
     //hahahah
     // }
     session_start();
-    define('CSS_PATH', 'http://localhost:8888/demovc/public/');
+    define('CSS_PATH', 'http://localhost/demovc/public/');
     require_once './app/app.php';
-    //
 ?>
