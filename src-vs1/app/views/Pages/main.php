@@ -51,7 +51,6 @@
                         </div>
                         <div class="form-row">
                             <div class="col-6 col-sm-12 col-md-6 col-xl-3">
-<<<<<<< HEAD
                                 <div class="form-group">
                                     <label>Người lớn</label>
                                     <div class="form-control">
@@ -119,18 +118,17 @@
                                         </div>
                                     </div>
                                 </div>
-=======
-                                <div class="form-group"><label>Người lớn</label><input class="form-control" type="text" name="adult" value="1"></div>
-                            </div>
-                            <div class="col-6 col-sm-12 col-md-6 col-xl-3">
-                                <div class="form-group"><label>Trẻ em&nbsp;</label><input class="form-control" type="text" name="children"></div>
                             </div>
                             <div class="col">
-                                <div class="form-group"><label>Em bé</label><input class="form-control" type="text" name="baby"></div>
->>>>>>> a47d311ee4b04b410f1d8fae0c71fb53c9652614
-                            </div>
-                            <div class="col">
-                                <div class="form-group"><label>Hạng ghế</label><input class="form-control" type="text" name="seat-class"></div>
+                                <div class="form-group">
+                                    <label>Hạng ghế</label>
+                                    <div class="input-group mb-3 form-control">
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                            <option value="1">Phổ thông</option>
+                                            <option value="2">Thương gia</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-row">
