@@ -138,14 +138,17 @@ a.nav-link:hover:after {
 }
 
 #login {
-    background-color: rgb(245, 247, 249);
-    color: rgb(0, 0, 0);
+    border: none;
+    background: #05779c !important;
+    color: white;
+    color: white !important;
 }
 
 #login .fa {
     font-size: 20px;
-    color: rgb(69, 168, 224);
+    color: white !important;
 }
+
 
 #signup {
     background-color: rgb(23, 129, 227);
