@@ -1,4 +1,4 @@
-<div id="header" style="position: absolute">
+<div id="header">
             <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" id="menu">
                 <div class="container">
                     <a class="navbar-brand" id="logo" data-bs-hover-animate="rubberBand" href="#">
@@ -24,10 +24,7 @@
                             </li>
                         </ul>
                         <span class="ml-auto navbar-text actions" style="width: 230px;">
-                         <button class="btn btn-primary float-left" id="login" type="button" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: rgb(245,247,249);color: rgb(0,0,0);" ><i class="fa fa-user" style="font-size: 20px;color: rgb(69,168,224);"></i>&nbsp;Đăng nhập&nbsp;
-                         </button>
-                            <a class="btn btn-light float-right action-button" role="button" href="#" style="background-color: rgb(23,129,227);" data-toggle="modal" data-target="#dangki">Đăng ký</a>
-                            </span>
+                         <button class="btn btn-primary float-left" id="login" type="button" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: rgb(245,247,249);color: rgb(0,0,0);" ><i class="fa fa-user" style="font-size: 20px;color: rgb(69,168,224);"></i>&nbsp;Đăng nhập&nbsp;<i class="fa fa-angle-down"></i></button><a class="btn btn-light float-right action-button" role="button" href="#" style="background-color: rgb(23,129,227);" data-toggle="modal" data-target="#dangki">Đăng ký</a></span>
                     </div>
                 </div>
             </nav>

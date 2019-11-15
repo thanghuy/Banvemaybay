@@ -2,6 +2,7 @@
 
 
 /*menu*/
+
 #menu {
     background-color: #05779c;
     width: 100%;
@@ -134,18 +135,16 @@ a.nav-link:hover:after {
 }
 
 #login {
-    border: none;
-    background: #05779c !important;
-    color: white;
-    color: white !important;
+    background-color: rgb(245, 247, 249);
+    color: rgb(0, 0, 0);
 }
 
 #login .fa {
     font-size: 20px;
-    color: white !important;
+    color: rgb(69, 168, 224);
 }
 
-#signup {   
+#signup {
     background-color: rgb(23, 129, 227);
 }
 
@@ -155,6 +154,7 @@ a.nav-link:hover:after {
 #select1{
     height: 300px !important;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 .icon-img{
     width: 80px;
@@ -202,6 +202,10 @@ a.nav-link:hover:after {
 >>>>>>> parent of 163bd76... Merge branch 'master' of https://github.com/thanghuy/Banvemaybay
 =======
 >>>>>>> parent of 6c13a43... ok
+=======
+
+
+>>>>>>> parent of f3bf8fd... giaodien
 /*end*/
 
 
