@@ -123,11 +123,14 @@
                                     </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <div class="col-md-8">
                                     <input name="password" style="border: 1px solid;" type="text" class="form-control" id="password">
 =======
 =======
 >>>>>>> parent of 163bd76... Merge branch 'master' of https://github.com/thanghuy/Banvemaybay
+=======
+>>>>>>> parent of 6c13a43... ok
                                 </div>
                                 <div class="row">
                                     <div class="col">

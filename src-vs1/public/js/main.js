@@ -12,6 +12,7 @@ $('.bay').click(function(){
 })
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 $('.ve-1').click(function() {
     ve.style.display = 'flex';
     sanpham.style.display = 'none';
@@ -112,6 +113,8 @@ function check_sign_up() {
 =======
 =======
 >>>>>>> parent of 163bd76... Merge branch 'master' of https://github.com/thanghuy/Banvemaybay
+=======
+>>>>>>> parent of 6c13a43... ok
 $('.ve-1').click(function(){
 	ve.style.display = 'flex';
 	sanpham.style.display = 'none';
@@ -120,8 +123,12 @@ $('.ve-1').click(function(){
 	$(".show-2").addClass("active");
 	$(".show-1").removeClass("active");
 <<<<<<< HEAD
+<<<<<<< HEAD
 })
 >>>>>>> parent of 163bd76... Merge branch 'master' of https://github.com/thanghuy/Banvemaybay
 =======
 })
 >>>>>>> parent of 163bd76... Merge branch 'master' of https://github.com/thanghuy/Banvemaybay
+=======
+})
+>>>>>>> parent of 6c13a43... ok
