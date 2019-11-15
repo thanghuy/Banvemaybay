@@ -15,4 +15,5 @@
     session_start();
     define('CSS_PATH', 'http://localhost:8888/demovc/public/');
     require_once './app/app.php';
+    //
 ?>
