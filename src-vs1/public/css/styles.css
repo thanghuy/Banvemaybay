@@ -6,15 +6,16 @@
 #menu {
     background-color: #05779c;
     width: 100%;
-    position: fixed; 
+    position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
-.clear{
+
+.clear {
     height: 88px;
-    width:100%;
+    width: 100%;
     background: none
 }
 
@@ -40,6 +41,7 @@
     min-height: 565px;
     border-bottom: 3px solid #1ba0e2;
 }
+
 #waper-search {
     border: 1px;
     border-radius: 10px;
@@ -151,32 +153,29 @@ a.nav-link:hover:after {
 .navbar-text {
     width: 230px !important;
 }
-#select1{
+
+#select1 {
     height: 300px !important;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-.icon-img{
+
+.icon-img {
     width: 80px;
     float: left;
 }
-.icon-img img{
+
+.icon-img img {
     margin-top: 7px;
     margin-right: 5px;
     float: left;
     width: 10px;
 }
-.icon-img b,p{
-    font-size: 12px;
-    line-height: 0px;
-    margin-top: 5px;
-}
-.chung{
+
+.chung {
     width: 110px;
     float: right;
 }
-.chung button{
+
+.chung button {
     height: 40px;
     border: 1px solid grey;
     border-radius: 0.3em;
@@ -185,35 +184,19 @@ a.nav-link:hover:after {
     color: green;
     line-height: 20px;
 }
-.chung button:hover{
-    background-color:Silver;
+
+.chung button:hover {
+    background-color: Silver;
 }
-.chung input{
+
+.chung input {
     height: 40px;
     text-align: center;
     border: 1px solid grey;
     font-size: 20px;
 }
-=======
-
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 163bd76... Merge branch 'master' of https://github.com/thanghuy/Banvemaybay
-=======
->>>>>>> parent of 163bd76... Merge branch 'master' of https://github.com/thanghuy/Banvemaybay
-=======
->>>>>>> parent of 6c13a43... ok
-=======
 
 
-<<<<<<< HEAD
->>>>>>> parent of f3bf8fd... giaodien
-=======
-
-
->>>>>>> parent of f3bf8fd... giaodien
-=======
->>>>>>> parent of 163bd76... Merge branch 'master' of https://github.com/thanghuy/Banvemaybay
 /*end*/
 
 
@@ -338,6 +321,8 @@ a.nav-link:hover:after {
     margin-bottom: 15px;
     text-align: right;
 }
+
+
 /*reponsive*/
 
 @media screen and (max-width: 500px) {
@@ -357,19 +342,17 @@ a.nav-link:hover:after {
         float: left;
     }
     #menu {
-    background-color: #05779c;
-    width: 100%;
-    position: relative; 
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow-x: hidden; 
+        background-color: #05779c;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
     }
-    .clear{
-    height: 0px;
-    width:100%;
-    background: none
+    .clear {
+        height: 0px;
+        width: 100%;
+        background: none
     }
-
-
 }
