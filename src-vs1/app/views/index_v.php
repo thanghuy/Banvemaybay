@@ -7,7 +7,7 @@
     <base href="http://localhost/Banvemaybay/src-vs1/">
     <link rel="stylesheet" type="text/css" href="public/bootstrap/css/bootstrap.min.css" >
     <link rel="stylesheet" type="text/css" href="public/fonts/font-awesome.min.css" >
-    <link rel="stylesheet" type="text/css" href="public/fonts/ionicons.min.css" >
+    <link rel="stylesheet" type="text/css" href="public/fonts/ionicons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arapey">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee+Inline">
@@ -40,7 +40,7 @@
 </body>
     <script src="public/js/jquery.min.js" ></script>
     <script src="public/bootstrap/js/bootstrap.min.js"></script>
-    <!-- <script src="./public/bootstrap/js/bootstrap.bundle.min.js.map"></script> -->
+    <!-- <script src="public/bootstrap/js/bootstrap.bundle.min.js.map"></script> -->
     <script src="public/js/bs-animation.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>

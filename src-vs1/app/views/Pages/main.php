@@ -55,7 +55,7 @@
                                     <label>Người lớn</label>
                                     <div class="form-control">
                                         <div class="icon-img" id="khach">
-                                            <img src="./public/img/nguoilon.png" alt="">
+                                            <img src="public/img/nguoilon.png" alt="">
                                             <label>
                                                 <b>Người lớn</b>
                                                 <p>>=12</p>
@@ -78,7 +78,7 @@
                                     <label>Trẻ em&nbsp;</label>
                                     <div class="form-control">
                                         <div class="icon-img" id="khach">
-                                            <img src="./public/img/treem.png" alt="">
+                                            <img src="public/img/treem.png" alt="">
                                             <label>
                                                 <b>Trẻ em</b>
                                                 <p>< 12 tuổi</p>
@@ -101,7 +101,7 @@
                                     <label>Em bé</label>
                                     <div class="form-control">
                                         <div class="icon-img" id="khach">
-                                            <img src="./public/img/embe.png" alt="">
+                                            <img src="public/img/embe.png" alt="">
                                             <label>
                                                 <b>Em bé</b>
                                                 <p>< 24 tháng</p>

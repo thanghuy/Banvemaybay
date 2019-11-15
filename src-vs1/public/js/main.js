@@ -102,3 +102,12 @@ function check_sign_up() {
     return false;
 
 }
+$('.ve-1').click(function() {
+    ve.style.display = 'flex';
+    sanpham.style.display = 'none';
+    $(".ve-1").addClass("hide-2");
+    $(".bay").removeClass("hide-1");
+    $(".show-2").addClass("active");
+    $(".show-1").removeClass("active");
+
+})
