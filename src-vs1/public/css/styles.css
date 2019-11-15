@@ -48,8 +48,8 @@
     height: 50px;
 }
 
-.demo-select div {
-    margin-left: 20px;
+.main-select div {
+    margin-left: 30px;
 }
 
 #search {
@@ -219,7 +219,7 @@ a.nav-link:hover:after {
     color: rgb(248, 243, 243);
 }
 
-.select-flight {
+.main-select {
     color: rgb(239, 240, 242);
     font-size: 17px;
 }
