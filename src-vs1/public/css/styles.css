@@ -5,16 +5,15 @@
 #menu {
     background-color: #05779c;
     width: 100%;
-    position: fixed;
+    position: fixed; 
     z-index: 1;
     top: 0;
     left: 0;
-    overflow-x: hidden;
+    overflow-x: hidden; 
 }
-
-.clear {
+.clear{
     height: 88px;
-    width: 100%;
+    width:100%;
     background: none
 }
 
@@ -40,7 +39,6 @@
     min-height: 565px;
     border-bottom: 3px solid #1ba0e2;
 }
-
 #waper-search {
     border: 1px;
     border-radius: 10px;
@@ -154,10 +152,10 @@ a.nav-link:hover:after {
 .navbar-text {
     width: 230px !important;
 }
-
-#select1 {
+#select1{
     height: 300px !important;
 }
+<<<<<<< HEAD
 .icon-img{
     width: 80px;
     float: left;
@@ -195,6 +193,9 @@ a.nav-link:hover:after {
     border: 1px solid grey;
     font-size: 20px;
 }
+=======
+
+>>>>>>> parent of 163bd76... Merge branch 'master' of https://github.com/thanghuy/Banvemaybay
 /*end*/
 
 
@@ -319,8 +320,6 @@ a.nav-link:hover:after {
     margin-bottom: 15px;
     text-align: right;
 }
-
-
 /*reponsive*/
 
 @media screen and (max-width: 500px) {
@@ -340,21 +339,19 @@ a.nav-link:hover:after {
         float: left;
     }
     #menu {
-        background-color: #05779c;
-        width: 100%;
-        position: relative;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        overflow-x: hidden;
+    background-color: #05779c;
+    width: 100%;
+    position: relative; 
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden; 
     }
-    .clear {
-        height: 0px;
-        width: 100%;
-        background: none
+    .clear{
+    height: 0px;
+    width:100%;
+    background: none
     }
-}
 
-.alert {
-    margin-bottom: 0;
+
 }
