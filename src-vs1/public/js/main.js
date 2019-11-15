@@ -18,8 +18,33 @@ $('.ve-1').click(function() {
     $(".show-2").addClass("active");
     $(".show-1").removeClass("active");
 })
+function minusform(id){
+    var x = $('#'+id+'').val();
+    x = parseInt(x);
+    if(x > 1){
+        x = x - 1;
+        $('#'+id+'').val(x);
+    }
+    else{
+        $('#'+id+'').val(1);
+    }
+}
+function plusform(id){
+    var x = $('#'+id+'').val();
+    x = parseInt(x);
+    x = x + 1;
+    $('#'+id+'').val(x);
+}
+function testkey(id){
+    var x = $("#"+id+"").val();
+    if(isNaN(x)){
+      $("#"+id+"").val(1);
+    }
+    else{
+      $("#"+id+"").val(x);
+    }
 
-
+}
 
 function getValue(v) {
     return document.forms['sign_up'][v].value;

@@ -45,7 +45,7 @@
                             </div>
                             <div class="col">
                                 <div class="form-group"><label>Ngày về</label>
-                                    <input class="form-control" type="date" name="to-date">
+                                    <input class="form-control" type="text" id="datepicker" name="to-date">
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                                 <div class="form-group">
                                     <label>Người lớn</label>
                                     <div class="form-control">
-                                        <div class="icon-img">
+                                        <div class="icon-img" id="khach">
                                             <img src="./public/img/nguoilon.png" alt="">
                                             <label>
                                                 <b>Người lớn</b>
@@ -63,11 +63,11 @@
                                         </div>
                                         <div class="input-group chung mb-3">
                                             <div class="input-group-prepend">
-                                            <button class="btn btn-outline-light text-dark" type="button">-</button>
+                                            <button onclick="minusform('nguoilon')" class="btn btn-outline-light text-dark" type="button">-</button>
                                             </div>
-                                            <input type="text" class="form-control"  aria-label="" value="1">
+                                            <input type="text" class="form-control" onkeyup="testkey('nguoilon')" id="nguoilon"  aria-label="" value="1">
                                             <div class="input-group-append">
-                                            <button class="btn btn-outline-light text-dark" type="button">+</button>
+                                            <button class="btn btn-outline-light text-dark" type="button" onclick="plusform('nguoilon')">+</button>
                                             </div>
                                         </div>
                                     </div>
@@ -77,7 +77,7 @@
                                 <div class="form-group">
                                     <label>Trẻ em&nbsp;</label>
                                     <div class="form-control">
-                                        <div class="icon-img">
+                                        <div class="icon-img" id="khach">
                                             <img src="./public/img/treem.png" alt="">
                                             <label>
                                                 <b>Trẻ em</b>
@@ -86,11 +86,11 @@
                                         </div>
                                         <div class="input-group chung mb-3">
                                             <div class="input-group-prepend">
-                                            <button class="btn btn-outline-light text-dark" type="button">-</button>
+                                            <button onclick="minusform('treem')" class="btn btn-outline-light text-dark" type="button">-</button>
                                             </div>
-                                            <input type="text" class="form-control"  aria-label="" value="1">
+                                            <input type="text" class="form-control" onkeyup="testkey('treem')" id="treem"  aria-label="" value="1">
                                             <div class="input-group-append">
-                                            <button class="btn btn-outline-light text-dark" type="button">+</button>
+                                            <button onclick="plusform('treem')" class="btn btn-outline-light text-dark" type="button">+</button>
                                             </div>
                                         </div>
                                     </div>
@@ -100,7 +100,7 @@
                                 <div class="form-group">
                                     <label>Em bé</label>
                                     <div class="form-control">
-                                        <div class="icon-img">
+                                        <div class="icon-img" id="khach">
                                             <img src="./public/img/embe.png" alt="">
                                             <label>
                                                 <b>Em bé</b>
@@ -109,11 +109,11 @@
                                         </div>
                                         <div class="input-group chung mb-3">
                                             <div class="input-group-prepend">
-                                            <button class="btn btn-outline-light text-dark" type="button">-</button>
+                                            <button onclick="minusform('embe')" class="btn btn-outline-light text-dark" type="button">-</button>
                                             </div>
-                                            <input type="text" class="form-control"  aria-label="" value="1">
+                                            <input type="text" class="form-control" onkeyup="testkey('embe')" id="embe"  aria-label="" value="1">
                                             <div class="input-group-append">
-                                            <button class="btn btn-outline-light text-dark" type="button">+</button>
+                                            <button onclick="plusform('embe')" class="btn btn-outline-light text-dark" type="button">+</button>
                                             </div>
                                         </div>
                                     </div>
