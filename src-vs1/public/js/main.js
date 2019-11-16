@@ -17,6 +17,46 @@ $('.ve-1').click(function() {
     $(".show-2").addClass("active");
     $(".show-1").removeClass("active");
 })
+var x = document.getElementById("datepicker-to");
+x.disabled = true;
+x.style.background = '#CFCFCF';
+$('#customRadioInline1').click(function() {
+    x.disabled = true;
+    x.style.background = '#CFCFCF';
+    $('#datepicker-to').val("");
+})
+$('#customRadioInline2').click(function() {
+    x.disabled = false;
+    x.style.background = 'white';
+})
+
+function minusform(id) {
+    var x = $('#' + id + '').val();
+    x = parseInt(x);
+    if (x > 1) {
+        x = x - 1;
+        $('#' + id + '').val(x);
+    } else {
+        $('#' + id + '').val(1);
+    }
+}
+
+function plusform(id) {
+    var x = $('#' + id + '').val();
+    x = parseInt(x);
+    x = x + 1;
+    $('#' + id + '').val(x);
+}
+
+function testkey(id) {
+    var x = $("#" + id + "").val();
+    if (isNaN(x)) {
+        $("#" + id + "").val(1);
+    } else {
+        $("#" + id + "").val(x);
+    }
+
+}
 
 function getValue(v) {
     return document.forms['sign_up'][v].value;
@@ -120,3 +160,27 @@ function check_sign_in() {
     }
     if (flag == 0) return false;
 }
+$('.ve-1').click(function() {
+    ve.style.display = 'flex';
+    sanpham.style.display = 'none';
+    $(".ve-1").addClass("hide-2");
+    $(".bay").removeClass("hide-1");
+    $(".show-2").addClass("active");
+    $(".show-1").removeClass("active");
+
+})
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+today = mm + '/' + dd + '/' + yyyy;
+$(function() {
+    $("#datepicker").datepicker({
+        'format': 'dd-mm-yyyy'
+    });
+    $("#datepicker").val(today);
+
+    $("#datepicker-to").datepicker({
+        'format': 'dd-mm-yyyy'
+    });
+});

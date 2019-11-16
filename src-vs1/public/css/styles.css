@@ -212,7 +212,22 @@ a.nav-link:hover:after {
     font-size: 17px;
     color:green;
 }
-
+#datepicker{
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    font-weight: 500;
+}
+#datepicker-to{
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    font-weight: 500;
+}
+.fa-calendar{
+    font-size:24px;
+    color:rgb(58, 57, 57);
+}
 /*end*/
 
 
