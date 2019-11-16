@@ -47,7 +47,8 @@
                                     <option value="DIEN BIEN PHU">Điện Biên Phủ</option>
                                 </select>
                             </div>
-                            <div class="col">
+                     </div>
+                    <div class="col">
                                 <div class="form-group"><label>Ngày đi</label>
                                     <div class="input-group mb-3">
                                         <input class="form-control" type="text" id="datepicker" name="form-date" >
@@ -68,7 +69,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <div class="form-row">
                         <div class="col-6 col-sm-12 col-md-6 col-xl-3">
                             <div class="form-group">
