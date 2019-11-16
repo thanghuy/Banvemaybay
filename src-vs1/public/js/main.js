@@ -186,3 +186,4 @@ function minusform(id) {
             'format': 'dd-mm-yyyy'
         });
     });
+}

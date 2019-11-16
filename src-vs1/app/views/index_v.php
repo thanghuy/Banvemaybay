@@ -27,8 +27,8 @@
     <link rel="stylesheet" type="text/css" href="public/css/styles.css">
     <link rel="stylesheet" type="text/css" href="public/css/product.css" >
     <link rel="stylesheet" type="text/css" href="public/css/select2.css" >
-    
-    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
 </head>
 
 <body>
@@ -44,6 +44,8 @@
     <script src="public/js/bs-animation.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="public/js/main.js" ></script>
     <script src="public/js/Profile-Edit-Form.js" ></script>
     <script src="public/js/select2-1.js" ></script>
