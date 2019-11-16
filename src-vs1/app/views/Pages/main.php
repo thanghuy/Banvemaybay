@@ -50,15 +50,25 @@
                      </div>
                     <div class="col">
                                 <div class="form-group"><label>Ngày đi</label>
-                                    <input class="form-control" type="date" name="form-date">
+                                    <div class="input-group mb-3">
+                                        <input class="form-control" type="text" id="datepicker" name="form-date" >
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="form-group"><label>Ngày về</label>
-                                    <input class="form-control" type="text" id="datepicker" name="to-date">
+                    <div class="col">
+                        <div class="form-group"><label>Ngày về</label>
+                        <div class="input-group mb-3">
+                                <input class="form-control" type="text" id="datepicker-to" name="form-date" >
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
                     <div class="form-row">
                         <div class="col-6 col-sm-12 col-md-6 col-xl-3">
                             <div class="form-group">

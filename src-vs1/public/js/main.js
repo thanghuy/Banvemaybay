@@ -16,8 +16,16 @@ $('.ve-1').click(function() {
         $(".bay").removeClass("hide-1");
         $(".show-2").addClass("active");
         $(".show-1").removeClass("active");
-    }) <<
-    << << < HEAD
+    })
+    // $('.ve-1').click(function() {
+    //     ve.style.display = 'flex';
+    //     sanpham.style.display = 'none';
+    //     $(".ve-1").addClass("hide-2");
+    //     $(".bay").removeClass("hide-1");
+    //     $(".show-2").addClass("active");
+    //     $(".show-1").removeClass("active");
+
+    // })
 var x = document.getElementById("datepicker-to");
 x.disabled = true;
 x.style.background = '#CFCFCF';
@@ -32,11 +40,9 @@ $('#customRadioInline2').click(function() {
 })
 
 function minusform(id) {
-    var x = $('#' + id + '').val(); ===
-    === =
+    var x = $('#' + id + '').val();
     function minusform(id) {
-        var x = $('#' + id + '').val(); >>>
-        >>> > parent of e45bb7b...giaodien
+        var x = $('#' + id + '').val();
         x = parseInt(x);
         if (x > 1) {
             x = x - 1;
@@ -165,15 +171,6 @@ function minusform(id) {
         }
         if (flag == 0) return false;
     }
-    $('.ve-1').click(function() {
-        ve.style.display = 'flex';
-        sanpham.style.display = 'none';
-        $(".ve-1").addClass("hide-2");
-        $(".bay").removeClass("hide-1");
-        $(".show-2").addClass("active");
-        $(".show-1").removeClass("active");
-
-    })
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
