@@ -169,11 +169,7 @@
 				} else {
 					$s = "<a href=\"chuyenbay/chontrang/".$data['diemdi'];
 					$s .= "/".$data['diemden'];
-					if (strlen($data['ngaydi']) != 0) {
-						$s .= "/" . $data['ngaydi'];
-					} else {
-						$s .= "/" . date("yyyy-MM-dd");
-					}
+					$s .= "/" . $data['ngaydi'];
 					$s .= "/".(string)$data['songuoi'];
 					$s .= "/".(string)($i+1);
 					$s .= "\">".(string)($i+1)."</a>";

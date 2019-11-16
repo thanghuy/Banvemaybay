@@ -13,9 +13,14 @@
 			// $datefrom = new MyDate($_POST["form-date"]);
 			
 			// Find result
-			$numpeople = (int)$_POST["adult"] + (int)$_POST["children"] + (int)$_POST["baby"];
+			$numpeople = (int)$_POST["nguoilon"] + (int)$_POST["treem"] + (int)$_POST["embe"];
+
+			$ngaydi = $_POST["from-date"];
+			if (strlen($ngaydi) == 0) {
+				$ngaydi = date("Y-m-d");
+			}
 			
-			$this->chontrang($_POST["from-fight"], $_POST["to-fight"], $_POST["form-date"], $numpeople, 1);
+			$this->chontrang($_POST["from-fight"], $_POST["to-fight"], $ngaydi, $numpeople, 1);
 		}
 		
 		function chontrang($diemdi, $diemden, $ngaydi, $songuoi, $page)
