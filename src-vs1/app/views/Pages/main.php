@@ -1,42 +1,51 @@
 <div class="d-xl-flex justify-content-xl-center align-items-xl-center" id="img-form">
-            
-            <form class="form_search" action="chuyenbay/ChuyenBay">
-                <div class="form-row" id="row-one">
-                    <div class="col-12 offset-xl-0 text-capitalize" data-aos="zoom-in-down" id="waper-search">
-                        <h1 class="tag-mid">&nbsp;&nbsp;<i class="fa fa-plane"></i>&nbsp; Tìm chuyến bay</h1>
-                        <div class="form-row">
-                            <div class="col">
-                                <div class="main-select">
-                                    <fieldset>
-                                        <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" id="customRadioInline1" class="custom-control-input" name="customRadioInline" checked="">
-                                            <label class="custom-control-label" for="customRadioInline1">Một chiều</label>
-                                        </div>
-                                        <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" id="customRadioInline2" class="custom-control-input" name="customRadioInline">
-                                            <label class="custom-control-label" for="customRadioInline2">Khứ hồi</label>
-                                        </div>
-                                    </fieldset>
-                                </div>
+
+        <form class="form_search" action="chuyenbay/tiemkiem" method="POST">
+            <div class="form-row" id="row-one">
+                <div class="col-12 offset-xl-0 text-capitalize" data-aos="zoom-in-down" id="waper-search">
+                    <h1 class="tag-mid">&nbsp;&nbsp;<i class="fa fa-plane"></i>&nbsp; Tìm chuyến bay</h1>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="main-select">
+                                <fieldset>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="customRadioInline1" class="custom-control-input" name="customRadioInline" checked="">
+                                        <label class="custom-control-label" for="customRadioInline1">Một chiều</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="customRadioInline2" class="custom-control-input" name="customRadioInline">
+                                        <label class="custom-control-label" for="customRadioInline2">Khứ hồi</label>
+                                    </div>
+                                </fieldset>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="col-11 col-sm-12 col-md-6 col-xl-3 offset-xl-0">
-                                <div class="form-group">
-                                    <label>Điểm Khởi hành</label>
-                                    <select class="js-example-placeholder-single form-control">
-                                      <option value="AL">Tp.H</option>
-                                      <option value="WY">Hà nội</option>
-                                    </select>
-                                </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-11 col-sm-12 col-md-6 col-xl-3 offset-xl-0">
+                            <div class="form-group">
+                                <label>Điểm Khởi hành</label>
+                                <select class="js-example-placeholder-single form-control" name="from-fight">
+                                    <option value="TPHCM">Hồ Chí Minh</option>
+                                    <option value="HA NOI">Hà Nội</option>
+                                    <option value="DA NANG">Đà Nẵng</option>
+                                    <option value="PHU QUOC">Phú Quốc</option>
+                                    <option value="NHA TRANG">Nha Trang</option>
+                                </select>
                             </div>
-                            <div class="col-11 col-sm-12 col-md-6 col-xl-3">
-                                <div class="form-group"><label>Điểm đến</label>
-                                    <select class="js-example-placeholder-single form-control">
-                                      <option value="AL">Tp.H</option>
-                                      <option value="WY">Hà nội</option>
-                                    </select>
-                                </div>
+                        </div>
+                        <div class="col-11 col-sm-12 col-md-6 col-xl-3">
+                            <div class="form-group"><label>Điểm đến</label>
+                                <select class="js-example-placeholder-single form-control" name="to-fight">
+                                    <option value="HA NOI">Hà Nội</option>
+                                    <option value="TPHCM">Hồ Chí Minh</option>
+                                    <option value="DA NANG">Đà Nẵng</option>
+                                    <option value="NHA TRANG">Nha Trang</option>
+                                    <option value="HAI PHONG">Hải Phòng</option>
+                                    <option value="PHU QUOC">Phú Quốc</option>
+                                    <option value="CA MAU">Cà Mau</option>
+                                    <option value="DA LAT">Đà Lạt</option>
+                                    <option value="DIEN BIEN PHU">Điện Biên Phủ</option>
+                                </select>
                             </div>
                             <div class="col">
                                 <div class="form-group"><label>Ngày đi</label>
@@ -59,94 +68,95 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="col-6 col-sm-12 col-md-6 col-xl-3">
-                                <div class="form-group">
-                                    <label>Người lớn</label>
-                                    <div class="form-control">
-                                        <div class="icon-img" id="khach">
-                                            <img src="public/img/nguoilon.png" alt="">
-                                            <label>
-                                                <b>Người lớn</b>
-                                                <p>>=12</p>
-                                            </label>
-                                        </div>
-                                        <div class="input-group chung mb-3">
-                                            <div class="input-group-prepend">
-                                            <button onclick="minusform('nguoilon')" class="btn btn-outline-light text-dark" type="button">-</button>
-                                            </div>
-                                            <input type="text" class="form-control" onkeyup="testkey('nguoilon')" id="nguoilon"  aria-label="" value="1">
-                                            <div class="input-group-append">
-                                            <button class="btn btn-outline-light text-dark" type="button" onclick="plusform('nguoilon')">+</button>
-                                            </div>
-                                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-6 col-sm-12 col-md-6 col-xl-3">
+                            <div class="form-group">
+                                <label>Người lớn</label>
+                                <div class="form-control">
+                                    <div class="icon-img" id="khach">
+                                        <img src="public/img/nguoilon.png" alt="">
+                                        <label>
+                                            <b>Người lớn</b>
+                                            <p>>=12</p>
+                                        </label>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-12 col-md-6 col-xl-3">
-                                <div class="form-group">
-                                    <label>Trẻ em&nbsp;</label>
-                                    <div class="form-control">
-                                        <div class="icon-img" id="khach">
-                                            <img src="public/img/treem.png" alt="">
-                                            <label>
-                                                <b>Trẻ em</b>
-                                                <p>< 12 tuổi</p>
-                                            </label>
+                                    <div class="input-group chung mb-3">
+                                        <div class="input-group-prepend">
+                                        <button onclick="minusform('nguoilon')" class="btn btn-outline-light text-dark" type="button">-</button>
                                         </div>
-                                        <div class="input-group chung mb-3">
-                                            <div class="input-group-prepend">
-                                            <button onclick="minusform('treem')" class="btn btn-outline-light text-dark" type="button">-</button>
-                                            </div>
-                                            <input type="text" class="form-control" onkeyup="testkey('treem')" id="treem"  aria-label="" value="1">
-                                            <div class="input-group-append">
-                                            <button onclick="plusform('treem')" class="btn btn-outline-light text-dark" type="button">+</button>
-                                            </div>
+                                        <input type="text" class="form-control" onkeyup="testkey('nguoilon')" id="nguoilon"  aria-label="" value="1" name="nguoilon">
+                                        <div class="input-group-append">
+                                        <button class="btn btn-outline-light text-dark" type="button" onclick="plusform('nguoilon')">+</button>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label>Em bé</label>
-                                    <div class="form-control">
-                                        <div class="icon-img" id="khach">
-                                            <img src="public/img/embe.png" alt="">
-                                            <label>
-                                                <b>Em bé</b>
-                                                <p>< 24 tháng</p>
-                                            </label>
-                                        </div>
-                                        <div class="input-group chung mb-3">
-                                            <div class="input-group-prepend">
-                                            <button onclick="minusform('embe')" class="btn btn-outline-light text-dark" type="button">-</button>
-                                            </div>
-                                            <input type="text" class="form-control" onkeyup="testkey('embe')" id="embe"  aria-label="" value="1">
-                                            <div class="input-group-append">
-                                            <button onclick="plusform('embe')" class="btn btn-outline-light text-dark" type="button">+</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label>Hạng ghế</label>
-                                    <div class="input-group mb-3 form-control">
-                                        <select class="custom-select" id="inputGroupSelect01">
-                                            <option value="1">Phổ thông</option>
-                                            <option value="2">Thương gia</option>
-                                        </select>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" id="search" type="submit"><i class="fa fa-search"></i>&nbsp;Tìm chuyến bay</button></div>
+                        <div class="col-6 col-sm-12 col-md-6 col-xl-3">
+                            <div class="form-group">
+                                <label>Trẻ em&nbsp;</label>
+                                <div class="form-control">
+                                    <div class="icon-img" id="khach">
+                                        <img src="public/img/treem.png" alt="">
+                                        <label>
+                                            <b>Trẻ em</b>
+                                            <p>< 12 tuổi</p>
+                                        </label>
+                                    </div>
+                                    <div class="input-group chung mb-3">
+                                        <div class="input-group-prepend">
+                                        <button onclick="minusform('treem')" class="btn btn-outline-light text-dark" type="button">-</button>
+                                        </div>
+                                        <input type="text" class="form-control" onkeyup="testkey('treem')" id="treem"  aria-label="" value="1" name="treem">
+                                        <div class="input-group-append">
+                                        <button onclick="plusform('treem')" class="btn btn-outline-light text-dark" type="button">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Em bé</label>
+                                <div class="form-control">
+                                    <div class="icon-img" id="khach">
+                                        <img src="public/img/embe.png" alt="">
+                                        <label>
+                                            <b>Em bé</b>
+                                            <p>< 24 tháng</p>
+                                        </label>
+                                    </div>
+                                    <div class="input-group chung mb-3">
+                                        <div class="input-group-prepend">
+                                        <button onclick="minusform('embe')" class="btn btn-outline-light text-dark" type="button">-</button>
+                                        </div>
+                                        <input type="text" class="form-control" onkeyup="testkey('embe')" id="embe"  aria-label="" value="1" name="embe">
+                                        <div class="input-group-append">
+                                        <button onclick="plusform('embe')" class="btn btn-outline-light text-dark" type="button">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Hạng ghế</label>
+                                <div class="input-group mb-3 form-control">
+                                    <select class="custom-select" id="inputGroupSelect01">
+                                        <option value="1">Phổ thông</option>
+                                        <option value="2">Thương gia</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div class="form-row">
+                        <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" id="search" type="submit"><i class="fa fa-search"></i>&nbsp;Tìm chuyến bay</button></div>
+                    </div>
                 </div>
-            </form>
+            </div>
+        </form>
         </div>
         <div id="about-1">
             <div class="container">

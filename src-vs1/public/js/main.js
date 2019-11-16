@@ -1,13 +1,13 @@
 var sanpham = document.getElementById('detail-fight');
 var ve = document.getElementById("ticker");
-$('.bay').click(function(){
-	sanpham.style.display = 'flex';
-	ve.style.display = 'none';
-	$(".bay").addClass("hide-1");
-	$(".ve-1").removeClass("hide-2");
-	$(".show-1").addClass("active");
-	$(".show-1").addClass("active");
-	 $(".show-2").removeClass("active");
+$('.bay').click(function() {
+    sanpham.style.display = 'flex';
+    ve.style.display = 'none';
+    $(".bay").addClass("hide-1");
+    $(".ve-1").removeClass("hide-2");
+    $(".show-1").addClass("active");
+    $(".show-1").addClass("active");
+    $(".show-2").removeClass("active");
 })
 $('.ve-1').click(function() {
     ve.style.display = 'flex';
@@ -116,6 +116,7 @@ function check_sign_up() {
     var p4 = /^[\w]+$/gi;
     var p5 = /^[\w]+$/gi;
     var p6 = /\W/gi;
+    var pe = /^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$/gi;
     if (p1.test(getValue('username')) == false) set_alert(0);
     else set_alert_default(0);
 
@@ -125,7 +126,7 @@ function check_sign_up() {
     if (p3.test(getValue('repassword')) == false) set_alert(2);
     else set_alert_default(2);
 
-    if (p4.test(getValue('email')) == false) set_alert(3);
+    if (pe.test(getValue('email')) == false) set_alert(3);
     else set_alert_default(3);
 
     if (getValue('address') == "") set_alert(4);
@@ -134,11 +135,6 @@ function check_sign_up() {
     if (getValue('password') != getValue('repassword')) {
         $('#alert_1').text("Mật khẩu không khớp!");
         $('#alert_2').text("Mật khẩu không khớp!");
-    }
-
-    var pe = /^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$/gi;
-    if (pe.test(getValue('email') == false)) {
-        set_alert_default(3);
     }
 
     return false;
@@ -168,4 +164,3 @@ $( function() {
         'format' : 'dd-mm-yyyy'
     });
 });
-
