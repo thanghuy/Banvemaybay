@@ -6,7 +6,7 @@
         }
         public function getAcc(){
             $sql= "SELECT TenTK,MatKhau FROM NhanVien";
-            return mysqli_query($this->conn)
+            return mysqli_query($this->conn,$sql);
         }
     }
 ?>
