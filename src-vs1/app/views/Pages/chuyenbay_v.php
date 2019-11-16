@@ -1,3 +1,8 @@
+<?php
+    while($row=mysqli_fetch_array($data['Ho'])){
+        echo $row['TenNV'];
+    }
+?>
 <div class="img-banner-product"><img src="./public/img/bannesprodurt.png"></div>
     <div class="d-xl-flex" id="about-product">
         <div class="container content-product">

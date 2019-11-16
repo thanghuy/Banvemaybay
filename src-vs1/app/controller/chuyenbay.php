@@ -1,7 +1,11 @@
 <?php
     class chuyenbay extends Controller{
         function ChuyenBay(){
-            $this->views("index_v",'chuyenbay_v');
+            $a = $this->model('MaybayModel');
+            $this->views("index_v",'chuyenbay_v',[
+                'Ho' => $a->getMaybay()
+            ]);
+            
         }
     }
 ?>

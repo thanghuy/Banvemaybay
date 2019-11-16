@@ -41,7 +41,7 @@
             </footer>
 
             <!--Modal đăng nhập-->
-            <form action="">
+            <form action="dangnhap/dn" name="sign_in" method="POST" onsubmit="return check_sign_in()">
                 <div style="color: #000000;" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div id='lg' class="modal-dialog modal-dialog-centered modal-sm" role="document">
                         <div class="modal-content">
@@ -82,7 +82,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                                <button type="submit" name="login" class="btn btn-primary">Đăng nhập</button>
                             </div>
                         </div>
                     </div>

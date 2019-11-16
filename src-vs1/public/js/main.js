@@ -29,10 +29,10 @@ function set_alert(x) {
         $(id).text("Tên tài khoản không hợp lệ");
     }
     if (x == 1) {
-        $(id).text("Mật khẩu không hợp lệ");
+        $(id).text("Mật khẩu phải từ 6 kí tự trở lên");
     }
     if (x == 2) {
-        $(id).text("Mật khẩu không hợp lệ");
+        $(id).text("Mật khẩu phải từ 6 kí tự trở lên");
     }
     if (x == 3) {
         $(id).text("Email không hợp lệ");
@@ -71,8 +71,8 @@ function check_pass(x, y) {
 
 function check_sign_up() {
     var p1 = /^[\w]+$/gi;
-    var p2 = /^[\w]+$/gi;
-    var p3 = /^[\w]+$/gi;
+    var p2 = /^[0-9a-zA-z]{6,}$/gi;
+    var p3 = /^[0-9a-zA-z]{6,}$/gi;
     var p4 = /^[\w]+$/gi;
     var p5 = /^[\w]+$/gi;
     var p6 = /\W/gi;
@@ -99,4 +99,24 @@ function check_sign_up() {
 
     return false;
 
+}
+
+function getValueDN(v) {
+    return document.forms['sign_in'][v].value;
+}
+
+
+function check_sign_in() {
+    var flag = 1;
+    var p1 = /^[\w]+$/gi;
+    var p2 = /^[0-9a-zA-z]{6,}$/gi;
+    if (p1.test(getValueDN('username')) == false) {
+        alert("Tài khoản không hợp lệ!!");
+        flag = 0;
+    }
+    if (p2.test(getValueDN('password')) == false) {
+        alert("Mật khẩu là chữ cái latinh có từ 6 kí tự trở lên");
+        flag = 0;
+    }
+    if (flag == 0) return false;
 }

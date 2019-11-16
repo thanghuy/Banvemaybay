@@ -11,7 +11,7 @@
         public function product($a,$b)
         {
             echo $a."-----".$b;
-            $this->views("product",null);
+            //$this->views("product",null);
         }
     }
 ?>
