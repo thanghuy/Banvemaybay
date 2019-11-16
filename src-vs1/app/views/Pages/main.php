@@ -49,22 +49,12 @@
                             </div>
                             <div class="col">
                                 <div class="form-group"><label>Ngày đi</label>
-                                    <div class="input-group mb-3">
-                                        <input class="form-control" type="text" id="datepicker" name="form-date" >
-                                        <div class="input-group-append">
-                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                                        </div>
-                                    </div>
+                                    <input class="form-control" type="date" name="form-date">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group"><label>Ngày về</label>
-                                <div class="input-group mb-3">
-                                        <input class="form-control" type="text" id="datepicker-to" name="form-date" >
-                                        <div class="input-group-append">
-                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                                        </div>
-                                    </div>
+                                    <input class="form-control" type="text" id="datepicker" name="to-date">
                                 </div>
                             </div>
                         </div>
