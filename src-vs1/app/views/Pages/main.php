@@ -24,17 +24,27 @@
                             <div class="col-11 col-sm-12 col-md-6 col-xl-3 offset-xl-0">
                                 <div class="form-group">
                                     <label>Điểm Khởi hành</label>
-                                    <select class="js-example-placeholder-single form-control">
-                                      <option value="AL">Tp.H</option>
-                                      <option value="WY">Hà nội</option>
+                                    <select class="js-example-placeholder-single form-control" name="from-fight">
+                                      <option value="TPHCM">Hồ Chí Minh</option>
+                                      <option value="HA NOI">Hà Nội</option>
+                                      <option value="DA NANG">Đà Nẵng</option>
+                                      <option value="PHU QUOC">Phú Quốc</option>
+                                      <option value="NHA TRANG">Nha Trang</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-11 col-sm-12 col-md-6 col-xl-3">
                                 <div class="form-group"><label>Điểm đến</label>
-                                    <select class="js-example-placeholder-single form-control">
-                                      <option value="AL">Tp.H</option>
-                                      <option value="WY">Hà nội</option>
+                                    <select class="js-example-placeholder-single form-control" name="to-fight">
+                                      <option value="HA NOI">Hà Nội</option>
+                                      <option value="TPHCM">Hồ Chí Minh</option>
+                                      <option value="DA NANG">Đà Nẵng</option>
+                                      <option value="NHA TRANG">Nha Trang</option>
+                                      <option value="HAI PHONG">Hải Phòng</option>
+                                      <option value="PHU QUOC">Phú Quốc</option>
+                                      <option value="CA MAU">Cà Mau</option>
+                                      <option value="DA LAT">Đà Lạt</option>
+                                      <option value="DIEN BIEN PHU">Điện Biên Phủ</option>
                                     </select>
                                 </div>
                             </div>

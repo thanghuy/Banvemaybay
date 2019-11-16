@@ -58,6 +58,16 @@
                 </div>
             </div>
             <div class="row">
+			<?php
+			$dsChuyenBay = $data['dsChuyenBay'];
+			$numchuyenbay = count($dsChuyenBay);
+			
+			if ($numchuyenbay == 0)
+			{
+				echo "Khong tim thay ket qua!";
+			} else {
+				for ($i=0; $i<$numchuyenbay; $i++) {
+			?>
                 <div class="col-xl-10 offset-xl-1 item-product">
                     <div class="row">
                         <div class="col"><img class="img-item" src="./public/img/logo%20fight/vietjet.png"><label>&nbsp;VietJet Air</label>
@@ -66,15 +76,15 @@
                                 <hr class="show-1">
                             </div>
                         </div>
-                        <div class="col"><label class="icon-to-fight">14 : 20<i class="fa fa-plane"></i></label>
-                            <p>Hà Nội (HAN)</p><span></span>
+                        <div class="col"><label class="icon-to-fight"><?php echo $dsChuyenBay[$i]['ThoiGianDi'] ?><i class="fa fa-plane"></i></label>
+                            <p><?php echo changbay::getFullName($data['diemdi']) ?></p><span></span>
                             <div class="show-detail ve">
                                 <span id="iddetail" class="ve-1">Chi tiết vé</span>
                                 <hr class="show-2">
                             </div>
                         </div>
-                        <div class="col"><label>16 : 40</label>
-                            <p>TP.HCM (SGN)</p>
+                        <div class="col"><label><?php echo $dsChuyenBay[$i]['ThoiGianDen'] ?></label>
+                            <p><?php echo changbay::getFullName($data['diemden']) ?></p>
                         </div>
                         <div class="col-xl-2"><label>2h 10m</label>
                             <p>Bay thẳng</p>
@@ -149,6 +159,28 @@
                         </div>
                     </div>
                 </div>
+			<?php
+			}} // end for, end else
+			
+			for ($i = 0; $i < $data['tongtrang']; $i++)
+			{
+				if ($i == $data['trang']) {
+					echo $i + 1;
+				} else {
+					$s = "<a href=\"chuyenbay/chontrang/".$data['diemdi'];
+					$s .= "/".$data['diemden'];
+					if (strlen($data['ngaydi']) != 0) {
+						$s .= "/" . $data['ngaydi'];
+					} else {
+						$s .= "/" . date("yyyy-MM-dd");
+					}
+					$s .= "/".(string)$data['songuoi'];
+					$s .= "/".(string)($i+1);
+					$s .= "\">".(string)($i+1)."</a>";
+					echo $s;
+				}
+			}
+			?>
             </div>
         </div>
     </div>
