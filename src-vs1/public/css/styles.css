@@ -139,6 +139,7 @@ a.nav-link:hover:after {
 
 #login {
     border: none;
+    padding-right: 0;
     background: #05779c !important;
     color: white;
     color: white !important;
@@ -148,7 +149,6 @@ a.nav-link:hover:after {
     font-size: 20px;
     color: white !important;
 }
-
 
 #signup {
     background-color: rgb(23, 129, 227);
@@ -173,20 +173,24 @@ a.nav-link:hover:after {
     float: left;
     width: 10px;
 }
-#khach b{
+
+#khach b {
     font-size: 12px;
     line-height: 0px;
     margin-top: 5px;
 }
-#khach p{
+
+#khach p {
     font-size: 12px;
     line-height: 0px;
     margin-top: 5px;
 }
-.icon-img label{
+
+.icon-img label {
     color: black;
 }
-.chung{
+
+.chung {
     width: 110px;
     float: right;
 }
@@ -210,8 +214,9 @@ a.nav-link:hover:after {
     text-align: center;
     border: 1px solid grey;
     font-size: 17px;
-    color:green;
+    color: green;
 }
+
 
 /*end*/
 

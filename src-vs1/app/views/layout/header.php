@@ -28,13 +28,28 @@
                         if(isset($_SESSION['account'])){
 
                             echo $_SESSION['account']['TenKH'];
+                            echo "<script>
+                            $(`#login`).attr(`data-target`,``);
+                            </script>";
                         }
                         else {
                             echo "Đăng nhập";
                         }
                          ?>&nbsp;
                          </button>
-                            <a class="btn btn-light float-right action-button" role="button" href="#" style="background-color: rgb(23,129,227);" data-toggle="modal" data-target="#dangki">Đăng ký</a>
+                            <a class="btn btn-light float-right action-button" id="logout" role="button" href="#" style="background-color: rgb(23,129,227);" data-toggle="modal" data-target="#dangki"><?php
+                            if(isset($_SESSION['account'])){
+
+                                echo "Đăng xuất";
+                                echo "<script>
+                            $(`#logout`).attr(`data-target`,``);
+                            $(`#logout`).attr(`onclick`,`logout()`);
+                            </script>";
+                            }
+                            else {
+                                echo "Đăng ký";
+                            }
+                            ?></a>
                             </span>
                     </div>
                 </div>

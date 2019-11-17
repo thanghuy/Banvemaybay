@@ -176,3 +176,7 @@ function check_sign_in() {
     }
     if (flag == 0) return false;
 }
+
+function logout() {
+    alert("ádas");
+}
