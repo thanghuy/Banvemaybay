@@ -24,7 +24,15 @@
                             </li>
                         </ul>
                         <span class="ml-auto navbar-text actions" style="width: 230px;">
-                         <button class="btn btn-primary float-left" id="login" type="button" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: rgb(245,247,249);color: rgb(0,0,0);" ><i class="fa fa-user" style="font-size: 20px;color: rgb(69,168,224);"></i>&nbsp;Đăng nhập&nbsp;
+                         <button class="btn btn-primary float-left" id="login" type="button" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: rgb(245,247,249);color: rgb(0,0,0);" ><i class="fa fa-user" style="font-size: 20px;color: rgb(69,168,224);"></i>&nbsp;<?php
+                        if(isset($_SESSION['account'])){
+
+                            echo $_SESSION['account']['TenKH'];
+                        }
+                        else {
+                            echo "Đăng nhập";
+                        }
+                         ?>&nbsp;
                          </button>
                             <a class="btn btn-light float-right action-button" role="button" href="#" style="background-color: rgb(23,129,227);" data-toggle="modal" data-target="#dangki">Đăng ký</a>
                             </span>

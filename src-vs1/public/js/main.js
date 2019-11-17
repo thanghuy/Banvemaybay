@@ -10,13 +10,13 @@ $('.bay').click(function() {
     $(".show-2").removeClass("active");
 })
 $('.ve-1').click(function() {
-        ve.style.display = 'flex';
-        sanpham.style.display = 'none';
-        $(".ve-1").addClass("hide-2");
-        $(".bay").removeClass("hide-1");
-        $(".show-2").addClass("active");
-        $(".show-1").removeClass("active");
-    })
+    ve.style.display = 'flex';
+    sanpham.style.display = 'none';
+    $(".ve-1").addClass("hide-2");
+    $(".bay").removeClass("hide-1");
+    $(".show-2").addClass("active");
+    $(".show-1").removeClass("active");
+})
 var x = document.getElementById("datepicker-to");
 x.disabled = true;
 x.style.background = '#CFCFCF';
@@ -171,7 +171,7 @@ function check_sign_in() {
         flag = 0;
     }
     if (p2.test(getValueDN('password')) == false) {
-        alert("Mật khẩu là chữ cái latinh có từ 6 kí tự trở lên");
+        alert("Mật khẩu phải có từ 6 kí tự trở lên");
         flag = 0;
     }
     if (flag == 0) return false;
