@@ -5,7 +5,6 @@
             $this->views("index_v",'chuyenbay_v',[
                 'Ho' => $a->getMaybay()
             ]);
-            
         }
     }
 ?>
