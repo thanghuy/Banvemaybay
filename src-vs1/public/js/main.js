@@ -29,20 +29,20 @@ $('#customRadioInline2').click(function() {
     x.disabled = false;
     x.style.background = 'white';
 })
-
 var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
-today = mm + '/' + dd + '/' + yyyy;
+today = yyyy + '-' + mm + '-' + dd;
+
 $(function() {
     $("#datepicker").datepicker({
-        'format': 'dd-mm-yyyy'
+        'format': 'yyyy-mm-dd'
     });
     $("#datepicker").val(today);
 
     $("#datepicker-to").datepicker({
-        'format': 'dd-mm-yyyy'
+        'format': 'yyyy-mm-dd'
     });
 });
 
@@ -179,4 +179,10 @@ function check_sign_in() {
 
 function logout() {
     alert("ádas");
+}
+
+function myFunction() {
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function() { x.className = x.className.replace("show", ""); }, 2000);
 }

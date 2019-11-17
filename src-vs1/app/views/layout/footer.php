@@ -172,5 +172,5 @@
                 </div>
             </form>
             <!-- kết thúc modal đăng kí-->
-
+            <div id="snackbar">Ngày tháng không hợp lệ</div>
         </div>
