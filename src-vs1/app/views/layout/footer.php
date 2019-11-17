@@ -91,7 +91,7 @@
             <!-- kết thúc modal-->
 
             <!--Modal đăng kí-->
-            <form name="sign_up" action="" onsubmit="return check_sign_up()">
+            <form name="sign_up" action="./dangky/DK" method="POST" onsubmit="return check_sign_up()">
                 <div style="color: #000000;" class="modal fade" id="dangki" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div id='lg' class="modal-dialog modal-dialog-centered modal-md" role="document">
                         <div class="modal-content">
@@ -165,7 +165,7 @@
                                     <div class="col-md-8"><p id="alert_4" class="alert"></p></div>
                                 </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-danger">Đăng kí</button>
+                                <button name=login type="submit" class="btn btn-danger">Đăng kí</button>
                             </div>
                         </div>
                     </div>

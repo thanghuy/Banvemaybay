@@ -28,7 +28,7 @@
             }
         }
         function DangXuat(){
-            unset($SESSION['account']);
+            unset($_SESSION['account']);
         }
     }
 
