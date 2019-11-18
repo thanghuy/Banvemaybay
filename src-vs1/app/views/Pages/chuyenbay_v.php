@@ -72,15 +72,15 @@
                     <div class="row">
                         <div class="col"><img class="img-item" src="./public/img/logo%20fight/vietjet.png"><label>&nbsp;VietJet Air</label>
                             <div class="show-detail">
-                                <span id="idfight" class="bay">Chi tiết chuyến bay</span>
-                                <hr class="show-1">
+                                <span id="idfight<?php echo $dsChuyenBay[$i]['ID_ChuyenBay'] ?>" class="bay" onclick="chitietcb(<?php echo $dsChuyenBay[$i]['ID_ChuyenBay']?>)">Chi tiết chuyến bay</span>
+                                <hr class="show-1 <?php echo $dsChuyenBay[$i]['ID_ChuyenBay'] ?>">
                             </div>
                         </div>
                         <div class="col"><label class="icon-to-fight"><?php echo $dsChuyenBay[$i]['ThoiGianDi'] ?><i class="fa fa-plane"></i></label>
                             <p><?php echo changbay::getFullName($data['diemdi']) ?></p><span></span>
                             <div class="show-detail ve">
-                                <span id="iddetail" class="ve-1">Chi tiết vé</span>
-                                <hr class="show-2">
+                                <span id="iddetail<?php echo $dsChuyenBay[$i]['ID_ChuyenBay'] ?>" class="ve-1" onclick="chitietve(<?php echo $dsChuyenBay[$i]['ID_ChuyenBay']?>)">Chi tiết vé</span>
+                                <hr class="show-2 <?php echo $dsChuyenBay[$i]['ID_ChuyenBay'] ?>">
                             </div>
                         </div>
                         <div class="col"><label><?php echo $dsChuyenBay[$i]['ThoiGianDen'] ?></label>
@@ -95,19 +95,19 @@
                             </form>
                         </div>
                     </div>
-                    <div class="row detail-product" id="detail-fight">
+                    <div class="row detail-product" id="detail-fight<?php echo $dsChuyenBay[$i]['ID_ChuyenBay'] ?>">
                         <div class="col-xl-3">
                             <div><img class="img-item" src="./public/img/logo%20fight/vietjet.png"></div>
                             <div><span>VietJet BL-709</span><span>&nbsp; Phổ thông</span></div>
                         </div>
                         <div class="col-xl-3 detail-item">
                             <div class="time-go"><span class="form-to">Khởi hành&nbsp;</span></div>
-                            <div><span>Thời gian : &nbsp;</span><span class="highlight">14 : 20</span></div>
-                            <div><span class="highlight">Ngày 27 th 10 2019&nbsp;</span></div>
+                            <div><span>Thời gian : &nbsp;</span><span class="highlight"><?php echo $dsChuyenBay[$i]['ThoiGianDi'] ?></span></div>
+                            <div><span class="highlight">Ngày <?php echo $dsChuyenBay[$i]['NgayDi'] ?>&nbsp;</span></div>
                             <div><span class="time-fight"><i class="fa fa-clock-o"></i>&nbsp;2h10m(Thời gian bay)</span></div>
                             <div><span class="form-to">Điểm đến</span></div>
-                            <div><span>&nbsp;Thời gian :&nbsp;</span><span class="highlight">16 : 20</span></div>
-                            <div class="time-end"><span class="highlight">Ngày 27 th 10 2019</span></div>
+                            <div><span>&nbsp;Thời gian :&nbsp;</span><span class="highlight"><?php echo $dsChuyenBay[$i]['ThoiGianDen'] ?></span></div>
+                            <div class="time-end"><span class="highlight">Ngày <?php echo $dsChuyenBay[$i]['NgayDi'] ?></span></div>
                         </div>
                         <div class="col detail-item">
                             <div class="time-go"><span class="form-to">Từ TP Hà Nội</span></div>
@@ -131,7 +131,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row detail-ticker" id="ticker">
+                    <div class="row detail-ticker" id="ticker<?php echo $dsChuyenBay[$i]['ID_ChuyenBay'] ?>">
                         <div class="col-xl-4">
                             <div><img class="img-item" src="./public/img/logo%20fight/vietjet.png"><span>&nbsp;VietJet Air</span></div>
                             <div><span class="form-to">&nbsp;Hà Nội (HAN) - TP HCM (SGN)</span></div>
@@ -177,6 +177,13 @@
 				}
 			}
 			?>
+            </div>
+            <div class="row">
+                <div class="col-xl-10 offset-xl-5">
+                    <button class="buttonload" onclick="phantrang()" id="pages">
+                      Tải thêm
+                    </button>
+                </div>
             </div>
         </div>
     </div>

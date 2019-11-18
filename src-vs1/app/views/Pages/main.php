@@ -108,7 +108,7 @@
                                         <div class="input-group-prepend">
                                         <button onclick="minusform('treem')" class="btn btn-outline-light text-dark" type="button">-</button>
                                         </div>
-                                        <input type="text" class="form-control" onkeyup="testkey('treem')" id="treem"  aria-label="" value="1" name="treem">
+                                        <input type="text" class="form-control" onkeyup="testkey('treem')" id="treem"  aria-label="" value="0" name="treem">
                                         <div class="input-group-append">
                                         <button onclick="plusform('treem')" class="btn btn-outline-light text-dark" type="button">+</button>
                                         </div>
@@ -131,7 +131,7 @@
                                         <div class="input-group-prepend">
                                         <button onclick="minusform('embe')" class="btn btn-outline-light text-dark" type="button">-</button>
                                         </div>
-                                        <input type="text" class="form-control" onkeyup="testkey('embe')" id="embe"  aria-label="" value="1" name="embe">
+                                        <input type="text" class="form-control" onkeyup="testkey('embe')" id="embe"  aria-label="" value="0" name="embe">
                                         <div class="input-group-append">
                                         <button onclick="plusform('embe')" class="btn btn-outline-light text-dark" type="button">+</button>
                                         </div>
