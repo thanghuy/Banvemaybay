@@ -27,6 +27,9 @@
                    header('Location: ../');
             }
         }
+        function DangXuat(){
+            unset($_SESSION['account']);
+        }
     }
 
 ?>

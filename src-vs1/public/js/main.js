@@ -153,27 +153,41 @@ function check_sign_up() {
     var p5 = /^[\w]+$/gi;
     var p6 = /\W/gi;
     var pe = /^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$/gi;
-    if (p1.test(getValue('username')) == false) set_alert(0);
-    else set_alert_default(0);
 
-    if (p2.test(getValue('password')) == false) set_alert(1);
-    else set_alert_default(1);
+    var flag = 1;
 
-    if (p3.test(getValue('repassword')) == false) set_alert(2);
-    else set_alert_default(2);
+    if (p1.test(getValue('username')) == false) {
+        set_alert(0);
+        flag = 0;
+    } else set_alert_default(0);
 
-    if (pe.test(getValue('email')) == false) set_alert(3);
-    else set_alert_default(3);
+    if (p2.test(getValue('password')) == false) {
+        set_alert(1);
+        flag = 0;
+    } else set_alert_default(1);
 
-    if (getValue('address') == "") set_alert(4);
-    else set_alert_default(4);
+    if (p3.test(getValue('repassword')) == false) {
+        set_alert(2);
+        flag = 0;
+    } else set_alert_default(2);
+
+    if (pe.test(getValue('email')) == false) {
+        set_alert(3);
+        flag = 0;
+    } else set_alert_default(3);
+
+    if (getValue('address') == "") {
+        set_alert(4);
+        flag = 0;
+    } else set_alert_default(4);
 
     if (getValue('password') != getValue('repassword')) {
         $('#alert_1').text("Mật khẩu không khớp!");
         $('#alert_2').text("Mật khẩu không khớp!");
+        flag = 0;
     }
 
-    return false;
+    if (flag == 0) return false;
 
 }
 
@@ -196,11 +210,25 @@ function check_sign_in() {
     }
     if (flag == 0) return false;
 }
+
+function logout() {
+    $.ajax({
+        type: "GET",
+        url: "./DangNhap/DangXuat"
+    }).done(function(data) {
+        location.href = "./";
+    });
+}
+
 function myFunction() {
     var x = document.getElementById("snackbar");
     x.className = "show";
+
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
   }
 function phantrang(){
     document.getElementById('pages').innerHTML = '<i class="fa fa-spinner fa-spin"></i>Đang tải';
+
+    
+
 }

@@ -139,6 +139,7 @@ a.nav-link:hover:after {
 
 #login {
     border: none;
+    padding-right: 0;
     background: #05779c !important;
     color: white;
     color: white !important;
@@ -150,7 +151,6 @@ a.nav-link:hover:after {
     font-size: 20px;
     color: white !important;
 }
-
 
 #signup {
     background-color: rgb(23, 129, 227);
@@ -175,20 +175,24 @@ a.nav-link:hover:after {
     float: left;
     width: 10px;
 }
-#khach b{
+
+#khach b {
     font-size: 12px;
     line-height: 0px;
     margin-top: 5px;
 }
-#khach p{
+
+#khach p {
     font-size: 12px;
     line-height: 0px;
     margin-top: 5px;
 }
-.icon-img label{
+
+.icon-img label {
     color: black;
 }
-.chung{
+
+.chung {
     width: 110px;
     float: right;
 }
@@ -212,8 +216,9 @@ a.nav-link:hover:after {
     text-align: center;
     border: 1px solid grey;
     font-size: 17px;
-    color:green;
+    color: green;
 }
+
 #snackbar {
     visibility: hidden;
     min-width: 250px;
@@ -228,33 +233,59 @@ a.nav-link:hover:after {
     left: 50%;
     top: 30px;
     font-size: 17px;
-  }
-  
-  #snackbar.show {
+}
+
+#snackbar.show {
     visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  }
-  
-  @-webkit-keyframes fadein {
-    from {top: 0; opacity: 0;} 
-    to {top: 30px; opacity: 1;}
-  }
-  
-  @keyframes fadein {
-    from {top: 0; opacity: 0;}
-    to {top: 30px; opacity: 1;}
-  }
-  
-  @-webkit-keyframes fadeout {
-    from {top: 30px; opacity: 1;} 
-    to {top: 0; opacity: 0;}
-  }
-  
-  @keyframes fadeout {
-    from {top: 30px; opacity: 1;}
-    to {top: 0; opacity: 0;}
-  }
+}
+
+@-webkit-keyframes fadein {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+    to {
+        top: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+    to {
+        top: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        top: 30px;
+        opacity: 1;
+    }
+    to {
+        top: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        top: 30px;
+        opacity: 1;
+    }
+    to {
+        top: 0;
+        opacity: 0;
+    }
+}
+
+
 /*end*/
 
 
