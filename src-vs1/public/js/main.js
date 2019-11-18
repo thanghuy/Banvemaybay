@@ -114,7 +114,7 @@ function set_alert(x) {
         $(id).text("Email không hợp lệ");
     }
     if (x == 4) {
-        $(id).text("Địa chỉ không hợp lệ");
+        $(id).text("Số điện thoại không hợp lệ");
     }
 }
 
@@ -149,9 +149,7 @@ function check_sign_up() {
     var p1 = /^[\w]+$/gi;
     var p2 = /^[0-9a-zA-z]{6,}$/gi;
     var p3 = /^[0-9a-zA-z]{6,}$/gi;
-    var p4 = /^[\w]+$/gi;
-    var p5 = /^[\w]+$/gi;
-    var p6 = /\W/gi;
+    var pdt = /^0[1-9]\d{8}$/gi;
     var pe = /^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$/gi;
 
     var flag = 1;
@@ -176,7 +174,7 @@ function check_sign_up() {
         flag = 0;
     } else set_alert_default(3);
 
-    if (getValue('address') == "") {
+    if (pdt.test(getValue('address')) == "") {
         set_alert(4);
         flag = 0;
     } else set_alert_default(4);
@@ -216,7 +214,11 @@ function logout() {
         type: "GET",
         url: "./DangNhap/DangXuat"
     }).done(function(data) {
-        location.href = "./";
+        $('#logout').text('Đăng ký');
+        $(`#logout`).attr(`data-target`, `#dangki`);
+        $('#login').text('Đăng nhập');
+        $('#login').html('<i class="fa fa-user" style="font-size: 20px;color: rgb(69,168,224);"></i>&nbsp Đăng nhập');
+        $(`#login`).attr(`data-target`, `#exampleModalCenter`);
     });
 }
 
