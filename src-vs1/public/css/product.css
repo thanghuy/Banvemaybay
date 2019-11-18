@@ -58,6 +58,7 @@
 .item-product {
   border: 1px solid #ddd;
   border-radius: 3px;
+  margin-bottom: 20px;
 }
 
 .icon-to-fight {
@@ -170,4 +171,23 @@
 }
 #datve .form-control{
   border: 1px solid blue ;
+}
+.buttonload {
+  background-color: #f96d01; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 24px; /* Some padding */
+  height: 38px;
+  line-height: 10px;
+  font-size: 17px; /* Set a font-size */
+  border-radius: 10px;
+}
+.buttonload:focus{
+  outline: none;
+}
+
+/* Add a right margin to each icon */
+.fa {
+  margin-left: -12px;
+  margin-right: 8px;
 }

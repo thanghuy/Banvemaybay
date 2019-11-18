@@ -33,7 +33,7 @@ class ChuyenBayModel extends Database
 		}
 		$sql .=  "' AND SoGheConTrong>=".(string)$songuoi;
 		$sql .=  " LIMIT 10 OFFSET ".(string)(($page-1)*10).";";
-		echo $sql;
+		// echo $sql;
 		return mysqli_query($this->conn, $sql);
 	}
 	
