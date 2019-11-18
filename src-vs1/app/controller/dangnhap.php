@@ -2,27 +2,24 @@
     class dangnhap extends Controller{
         private $username;
         private $password;
+
+        function check_valid_Acc($username,$password,$row){
+            if($row['TenDangNhap']==$username && $row['MatKhau']==$password) return true;//Kiểm tra account hợp lệ
+            else return false;
+        }
+
+
+
         function KT_DangNhap(){
             if(isset($_POST['login'])){
                     $this->username=$_POST['username'];
                     $this->password=$_POST['password'];
-                    $ModelKH=$this->model('KhachHangModel');//Gọi model KH
-                    $result=$ModelKH->get_Info_Acc();
+                    ;//Gọi model KH
+                    $result=$this->getModel_KH()->get_Info_Acc();
                     while($row=mysqli_fetch_array($result)){//fetch DB
-                        if($row['TenDangNhap']==$this->username && $row['MatKhau']==$this->password){
+                        if($this->check_valid_Acc($this->username,$this->password,$row)==true){//Gọi hàm kiểm tra
                             echo $row['TenDangNhap'];
-                            $_SESSION['account']= array(
-                                    'ID_KH'=>$row['ID_KH'],
-                                    'MaKH'=>$row['MaKH'],
-                                    'TenKH'=>$row['TenKH'],
-                                    'NgaySinh'=>$row['NgaySinh'],
-                                    'CMND'=>$row['CMND'],
-                                    'SDT'=>$row['SDT'],
-                                    'GioiTinh'=>$row['GioiTinh'],
-                                    'TenDangNhap'=>$row['TenDangNhap'],
-                                    'MatKhau'=>$row['MatKhau'],
-                                    'Email'=>$row['Email']
-                            );
+                            $this->create_Session_Acc($row);//Tạo session
                         }
                    }
                    header('Location: ../');
