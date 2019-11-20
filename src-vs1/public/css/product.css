@@ -187,7 +187,16 @@
 }
 
 /* Add a right margin to each icon */
-.fa {
+.load {
   margin-left: -12px;
   margin-right: 8px;
+}
+#change-search{
+  height: 0;
+  visibility:hidden;
+  z-index: 1;
+  /* display: none; */
+  transition: height 0.5s  ease-in-out;
+  -moz-transition: height 0.5s ease-in-out;
+   -webkit-transition: height 0.5s  ease-in-out;
 }

@@ -50,6 +50,10 @@ class ChuyenBayModel extends Database
 
 		return (string)(floor($row['count'] / 10) + 1);
 	}
+	public function getFightNow($machang){
+		$sql = "SELECT * FROM chuyenbay cb,chang c WHERE cb.MaChang = c.MaChang and ID_ChuyenBay=".$machang."";
+		return mysqli_query($this->conn, $sql);
+	}
 }
 
 ?>
