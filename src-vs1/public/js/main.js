@@ -227,8 +227,19 @@ function myFunction() {
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
   }
 function phantrang(){
-    document.getElementById('pages').innerHTML = '<i class="fa fa-spinner fa-spin"></i>Đang tải';
-
-    
+    document.getElementById('pages').innerHTML = '<i class="fa fa-spinner fa-spin load"></i>Đang tải';
 
 }
+
+$("#btn-search").click(function(){
+    var timkiem = document.getElementById("change-search");
+    if(timkiem.style.visibility == 'visible'){ 
+        timkiem.style.visibility = 'hidden';
+        timkiem.style.height = "0";
+        
+    }
+    else{
+        timkiem.style.height = "307px";   
+        timkiem.style.visibility = 'visible';
+    }
+})
