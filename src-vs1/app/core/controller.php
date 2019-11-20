@@ -13,6 +13,10 @@
             return $this->model('KhachHangModel');
         }
 
+        function setInfo($var){
+            $this->$var=$_GET[''.$var.''];
+        }
+
         public function create_Session_Acc($row){
             $_SESSION['account']= array(
                 'ID_KH'=>$row['ID_KH'],

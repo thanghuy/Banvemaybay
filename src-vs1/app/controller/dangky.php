@@ -1,13 +1,9 @@
 <?php
     class dangky extends Controller{
-        private $username;
-        private $password;
-        private $email;
-        private $address;
-
-        function setInfo($var){
-            $this->$var=$_POST[''.$var.''];
-        }
+        public $username;
+        public $password;
+        public $email;
+        public $address;
 
         function check_Acc($username){
              if($this->getModel_KH()->Check_exist_Acc($username)==true) return false;
