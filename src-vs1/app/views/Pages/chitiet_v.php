@@ -1,5 +1,5 @@
 <div>
-        <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" id="menu" style="/*border-top: 0px;*//*border-bottom: 1px solid blue !improtant;*/background-color: #05779c;">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" id="menu" style="/*border-top: 0px;*//*border-bottom: 1px solid blue !improtant;*/background-color: #05779c;">
             <div class="container"><a class="navbar-brand" data-bs-hover-animate="rubberBand" href="#" style="color: rgb(72,63,63);"><img src="assets/img/logo-white.png"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div
                     class="collapse navbar-collapse menu-nav" id="navcol-1" style="color: rgb(36,133,149);font-family: Alegreya, serif;">
@@ -19,7 +19,7 @@
     </div>
     <div>
         <div class="container">
-            <form>
+            <form method="GET" action="chitiet/KT">
                 <div class="form-row">
                     <div class="col-md-12">
                         <div class="form-row">
@@ -48,9 +48,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
-                                                    <div class="col-md-3"><input class="form-control" type="text"></div>
-                                                    <div class="col-md-3 offset-md-1"><input class="form-control" type="email"></div>
-                                                    <div class="col-md-3 offset-md-1"><input class="form-control" type="tel"></div>
+                                                    <div class="col-md-3"><input value="<?php echo $_SESSION['account']['TenKH']?>" name="tenKH" class="form-control" type="text"></div>
+                                                    <div class="col-md-3 offset-md-1"><input value="<?php echo $_SESSION['account']['Email']?>" name="email" class="form-control" type="email"></div>
+                                                    <div class="col-md-3 offset-md-1"><input value="<?php echo $_SESSION['account']['SDT']?>" name="sdt" class="form-control" type="tel"></div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="col-md-3">
@@ -86,9 +86,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
-                                                    <div class="col-md-3"><input class="form-control" type="date"></div>
-                                                    <div class="col-md-3 offset-md-1"><input class="form-control" type="number"></div>
-                                                    <div class="col-md-3 offset-md-1"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+                                                    <div class="col-md-3"><input value="<?php echo $_SESSION['account']['NgaySinh']?>" name="ngaysinh" class="form-control" type="date"></div>
+                                                    <div class="col-md-3 offset-md-1"><input value="<?php echo $_SESSION['account']['CMND']?>" name="CMND" class="form-control" type="number"></div>
+                                                    <div class="col-md-3 offset-md-1"><select name=gt class="form-control"><option value="1" <?php if($_SESSION['account']['GioiTinh']==1) echo "selected" ?> >Nam</option><option <?php if($_SESSION['account']['GioiTinh']==0) echo "selected" ?> value="0">Nữ</option></select></div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="col-md-3">
@@ -106,7 +106,7 @@
                                                         <p></p>
                                                     </div>
                                                     <div class="col-md-3 offset-md-1">
-                                                        <p></p><button class="btn btn-primary" type="button">Lưu thay đổi</button></div>
+                                                        <p></p><button class="btn btn-primary"name="thongtinKH" type="submit">Lưu thay đổi</button></div>
                                                     <div class="col-md-3 offset-md-1">
                                                         <p></p>
                                                     </div>
