@@ -17,6 +17,17 @@
             $row=mysqli_fetch_array(mysqli_query($this->conn,$sql));
             if(isset($row)) return true;
             else return false;
+        
+        }
+        public function Update_Info($MaKH,$tenKH,$email,$sdt,$ngaysinh,$CMND,$gt){
+            $sql='UPDATE `khachhang` SET `TenKH`='.'"'.$tenKH.'"'.',
+                                        `Email=`'.'"'.$email.'"'.',
+                                        `SDT`='.'"'.$sdt.'"'.',
+                                        `NgaySinh`='.'"'.$ngaysinh.'"'.',
+                                        `CMND`='.'"'.$CMND.'"'.',
+                                        `GioiTinh`='.'"'.$gt.'" WHERE `MaKH`==';
+            echo $sql;
+                                        //mysqli_query($this->conn,$sql);
         }
     }
 ?>

@@ -16,13 +16,15 @@
                     $this->password=$_POST['password'];
                     ;//Gọi model KH
                     $result=$this->getModel_KH()->get_Info_Acc();
-                    while($row=mysqli_fetch_array($result)){//fetch DB
-                        if($this->check_valid_Acc($this->username,$this->password,$row)==true){//Gọi hàm kiểm tra
-                            echo $row['TenDangNhap'];
-                            $this->create_Session_Acc($row);//Tạo session
-                        }
-                   }
-                   header('Location: ../');
+                    $row=mysqli_fetch_array($result);
+                    if($this->check_valid_Acc($this->username,$this->password,$row)==true){//Gọi hàm kiểm tra
+                        echo $row['TenDangNhap'];
+                        $this->create_Session_Acc($row);//Tạo session
+                        header('Location: ../');
+                    }
+                    else echo "<script>{alert('Tài khoản hoặc mật khẩu không đúng');
+                        window.location.assign('../');
+                    }</script>";
             }
         }
         function DangXuat(){
