@@ -144,7 +144,7 @@ a.nav-link:hover:after {
     color: white;
     color: white !important;
 }
-#login:focus{
+#login:focus {
     outline: none;
 }
 #login .fa {
@@ -409,6 +409,47 @@ a.nav-link:hover:after {
 .col.button {
     margin-bottom: 15px;
     text-align: right;
+}
+
+.table_hd {
+    height: 100px;
+    line-height: 100px;
+}
+
+#timkiem_hd {
+    z-index: 0;
+}
+
+thead {
+    background: #05779c;
+    color: white;
+    height: 40px;
+    line-height: 40px;
+}
+
+tbody>tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+#search_input {
+    border: 1px solid gray;
+}
+
+#btnS {
+    background-color: #05779c;
+}
+
+#thongtinKH {
+    border: 1px solid rgba(0, 0, 0, .125);
+    margin-top: 25px;
+}
+
+#thongtinKH .form-control {
+    border: 1px solid gray;
+}
+
+#luuthaydoi {
+    width: 100%;
 }
 
 

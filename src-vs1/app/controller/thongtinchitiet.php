@@ -1,6 +1,9 @@
 <?php
     class thongtinchitiet extends Controller{
+<<<<<<< Updated upstream:src-vs1/app/controller/thongtinchitiet.php
         public $MaKH;
+=======
+>>>>>>> Stashed changes:src-vs1/app/controller/thongtinchitiet.php
         public $tenKH;
         public $email;
         public $sdt;
@@ -14,8 +17,19 @@
             else header('Location: ../');
         }
 
+<<<<<<< Updated upstream:src-vs1/app/controller/thongtinchitiet.php
         function thongtindonhang(){
             $this->views('index_v','thongtinDH_v');
+=======
+        function DH()
+		{
+            if(isset($_SESSION['account'])) $this->views('index_v','xemdonhang_v');
+            else header('Location: ../');
+        }
+
+        function chitietDH(){
+            $this->views('index_v','chitietdonhang_v');
+>>>>>>> Stashed changes:src-vs1/app/controller/thongtinchitiet.php
         }
 
         function KT(){
