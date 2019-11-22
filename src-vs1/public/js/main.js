@@ -50,20 +50,20 @@ $('#customRadioInline2').click(function() {
     x.style.background = 'white';
 })
 var today = new Date();
-var dd = String(today.getDate()).padStart(2, '0');
-var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = today.getFullYear();
-today = yyyy + '-' + mm + '-' + dd;
+var DD = String(today.getDate()).padStart(2, '0');
+var MD = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var YYYY = today.getFullYear();
+today = YYYY + '-' + MD + '-' + DD;
 
 $(function() {
     $("#datepicker").datepicker({
-        'format': 'yyyy-mm-dd'
-    });
-    $("#datepicker").val(today);
+        dateFormat : 'yy-mm-dd'
+    }).val();
+   $("#datepicker").val(today);
 
     $("#datepicker-to").datepicker({
-        'format': 'yyyy-mm-dd'
-    });
+        dateFormat: 'yy-mm-dd'
+    }).val();
 });
 
 function minusform(id) {
@@ -226,10 +226,10 @@ function myFunction() {
 
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
   }
-function phantrang(){
-    document.getElementById('pages').innerHTML = '<i class="fa fa-spinner fa-spin load"></i>Đang tải';
+// function phantrang(){
+//     document.getElementById('pages').innerHTML = '<i class="fa fa-spinner fa-spin load"></i>Đang tải';
 
-}
+// }
 
 $("#btn-search").click(function(){
     var timkiem = document.getElementById("change-search");
@@ -243,3 +243,16 @@ $("#btn-search").click(function(){
         timkiem.style.visibility = 'visible';
     }
 })
+
+// function phantrangAjax(diemden,diemdi,ngaydi,songuoi,trang){
+//     var s="chuyenbay/chontrang/"+diemdi+"/"+diemden+"/"+ngaydi+"/"+songuoi+"/"+parseInt(trang-1);
+//     $.ajax({
+//         url: s,
+//         type: 'GET',
+//         dataType: 'html',
+//         data: null
+//     }).done(function(ketqua) {
+//         $('#demo').html(ketqua);
+//     });
+//     //alert(s);
+// }

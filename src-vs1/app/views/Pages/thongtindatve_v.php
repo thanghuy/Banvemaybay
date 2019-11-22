@@ -9,7 +9,7 @@
                     <p style="margin: 0;"><i class="fa fa-plane" id="icon-plane">
                     </i>&nbsp;&nbsp;<?php echo changbay::getTP($row['DiemDi']) ?> → <?php echo changbay::getTP($row['DiemDen']) ?> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <?php echo $row['NgayDi'] ?><br></p>
                     <p>
-                    <i class="fa fa-user" id="icon-user"></i>&nbsp; &nbsp;1 người lớn &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Economy<br></p>
+                    <i class="fa fa-user" id="icon-user"></i>&nbsp; &nbsp; <?php echo $_SESSION['timkiem']['songuoi'] ?> Người &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Economy<br></p>
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
                                 <hr>
                                 <p><strong>T2, <?php echo $row['NgayDi'] ?></strong><br></p>
                                 <p><img src="public/img/1568609997285-658c304aa2757dc5ecc27248c9f66bb4.png" style="width: 40px;"><strong>&nbsp; &nbsp;Jetstar BL-755</strong><br></p>
-                                <p>Phổ thông</p>
+                                <p><?php echo changbay :: gethangghe($_SESSION['timkiem']['HangGhe']) ?></p>
                                 <div class="row">
                                     <div class="col">
                                         <p><?php echo $row['ThoiGianDi'] ?></p>
@@ -94,10 +94,14 @@
                                     <div class="col">
                                         <div class="row">
                                             <div class="col">
-                                                <p>Jetstar (Người lớn x1)</p>
+                                                <p>Người lớn x<?php echo $_SESSION['timkiem']['NguoiLon']?></p>
+                                                <p>Trẻ em x<?php echo $_SESSION['timkiem']['TreEm']?></p>
+                                                <p>Em bé x<?php echo $_SESSION['timkiem']['EmBe']?></p>
                                             </div>
                                             <div class="col" style="text-align: right;">
-                                                <p>VND 1.164.339</p>
+                                                <p class="price">1.164.339 VND</p>
+                                                <p class="price">1.164.339 VND</p>
+                                                <p class="price">1.164.339 VND</p>
                                             </div>
                                         </div>
                                     </div>
@@ -109,7 +113,7 @@
                                                 <p>Hành lý HAN - SGN</p>
                                             </div>
                                             <div class="col">
-                                                <p style="text-align: right;">VND 0</p>
+                                                <p class="price" style="text-align: right;">0 VND</p>
                                             </div>
                                         </div>
                                     </div>
@@ -121,14 +125,14 @@
                                                 <p>Giá bạn trả</p>
                                             </div>
                                             <div class="col">
-                                                <p style="text-align: right;">VND 1.64.339</p>
+                                                <p class="price" style="text-align: right;">1.64.339 VND </p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row" style="text-align: center;padding-left: 0;">
-                                <div class="col" style="align-items: center;"><a href="datve/datve" class="btn btn-primary" role="button" style="text-align: center;width: 100%;margin-bottom: 100px;">Tiếp tục</a></div>
+                                <div class="col" style="align-items: center;"><a href="datve/ve/<?php echo $row['ID_ChuyenBay']?>" class="btn btn-primary" role="button" style="text-align: center;width: 100%;margin-bottom: 100px;">Tiếp tục</a></div>
                             </div>
                         </div>
                     </div>

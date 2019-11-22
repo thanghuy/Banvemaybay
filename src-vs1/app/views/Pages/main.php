@@ -143,7 +143,7 @@
                             <div class="form-group">
                                 <label>Hạng ghế</label>
                                 <div class="input-group mb-3 form-control">
-                                    <select class="custom-select" id="inputGroupSelect01">
+                                    <select class="custom-select" id="inputGroupSelect01" name="hangghe">
                                         <option value="1">Phổ thông</option>
                                         <option value="2">Thương gia</option>
                                     </select>
@@ -152,7 +152,7 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" id="search" type="submit"><i class="fa fa-search"></i>&nbsp;Tìm chuyến bay</button></div>
+                        <div class="col-md-12 content-right"><button name="timkiemmain" class="btn btn-primary form-btn" id="search" type="submit"><i class="fa fa-search"></i>&nbsp;Tìm chuyến bay</button></div>
                     </div>
                 </div>
             </div>

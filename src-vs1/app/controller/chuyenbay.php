@@ -4,7 +4,10 @@
 		function tiemkiem()
 		{
 			// Get data from FORM
-			// $customRadioInline = (int)$_POST["customRadioInline"]; // 1: 1 chiều			// 2: khứ hồi
+			$customRadioInline = (int)$_POST["customRadioInline"]; // 1: 1 chiều			// 2: khứ hồi
+			if($customRadioInline == 2){
+
+			}
 			// $dateto = new MyDate($_POST["to-date"]);
 			// $numseat = $_POST["seat-class"];
 			// $fightfrom = $_POST["from-fight"];
@@ -20,7 +23,16 @@
 				$ngaydi = date("d-m-Y");
 			}
 			
-			$this->chontrang($_POST["from-fight"], $_POST["to-fight"], $ngaydi, $numpeople, 1);
+			$url = "chuyenbay/chontrang/";
+			$url .= $_POST["from-fight"] . "/";
+			$url .= $_POST["to-fight"] . "/";
+			$url .= $ngaydi . "/";
+			$url .= $numpeople . "/1";
+
+			header('Location: ../'.$url);
+
+			$this->SaveTimkiem($numpeople,$_POST["nguoilon"],$_POST["treem"],$_POST["embe"],$_POST["hangghe"]);
+
 		}
 		
 		function chontrang($diemdi, $diemden, $ngaydi, $songuoi, $page)
@@ -52,6 +64,21 @@
 				'trang' => $page,
 				'tongtrang' => $tongtrang
 			]);
-        }
+		}
+		function SaveTimkiem($tongnguoi,$nguoilon,$treem,$embe,$hangghe){
+			if(isset($_POST['timkiemmain'])){
+				echo "thanhkong";
+				$_SESSION['timkiem'] = array(
+					'songuoi' => $tongnguoi,
+					"NguoiLon" => $nguoilon,
+					"TreEm" => $treem,
+					"EmBe" => $embe,
+					"HangGhe" => $hangghe
+				);
+			}
+			else{
+				echo "Không thành công";
+			}
+		}
     }
 ?>

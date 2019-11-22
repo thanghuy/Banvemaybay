@@ -1,12 +1,15 @@
+<?php 
+    while($row = mysqli_fetch_array($data['Chon'])){
+?>
 <div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-xl-10 offset-xl-1">
                     <div class="jumbotron text-left" id="route">
-                        <h2>Flight from Hà Nội to TP.HCM</h2>
+                        <h2>Flight from <?php echo changbay :: getFullName($row['DiemDi']) ?> to <?php echo changbay :: getFullName($row['DiemDen']) ?></h2>
                         <p style="margin: 0;">
-                            <i class="fa fa-plane" id="icon-plane"></i>&nbsp;&nbsp;Hà Nội (HAN) → TP HCM (SGN) &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 28 Th10 2019<br></p>
-                        <p><i class="fa fa-user" id="icon-user"></i>&nbsp; &nbsp;1 người lớn &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Economy<br></p>
+                            <i class="fa fa-plane" id="icon-plane"></i>&nbsp;&nbsp;<?php echo changbay :: getTP($row['DiemDi']) ?> → <?php echo changbay :: getTP($row['DiemDen']) ?> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <?php echo $row['NgayDi'] ?><br></p>
+                        <p><i class="fa fa-user" id="icon-user"></i>&nbsp; &nbsp;<?php echo $_SESSION['timkiem']['songuoi'] ?> Người &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Economy<br></p>
                     </div>
                 </div>
             </div>
@@ -97,10 +100,16 @@
                                         <h5>Thông tin hành khách</h5>
                                         <div class="form-row">
                                             <div class="col">
+                                                <?php 
+                                                    $n = (int)$_SESSION['timkiem']['NguoiLon'];
+                                                    for($i = 1 ; $i <= $n ;$i++)
+                                                    {
+                                                        $loai = "Người lớn";
+                                                ?>
                                                 <div class="jumbotron">
                                                     <div class="form-row">
                                                         <div class="col">
-                                                            <p>Người lớn 1</p>
+                                                            <p><?php echo $loai." ".$i ?></php>
                                                         </div>
                                                         <div class="col right"><a href="#">Điền thông tin</a></div>
                                                     </div>
@@ -154,122 +163,139 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="jumbotron">
-                                                    <div class="form-row">
-                                                        <div class="col">
-                                                            <p>Người lớn 1</p>
+                                                <?php }?>
+                                                <?php 
+                                                    isset($_SESSION['timkiem']['TreEm']);
+                                                    $n = (int)$_SESSION['timkiem']['TreEm'];
+                                                    for($i = 1 ; $i <= $n ;$i++)
+                                                    {
+                                                        $loai = "Trẻ Em";
+                                                        echo '<div class="jumbotron">
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <p>'.$loai." ".$i.'</php>
+                                                            </div>
+                                                            <div class="col right"><a href="#">Điền thông tin</a></div>
                                                         </div>
-                                                        <div class="col right"><a href="#">Điền thông tin</a></div>
-                                                    </div>
-                                                    <hr>
-                                                    <div class="form-row">
-                                                        <div class="col">
-                                                            <p>Họ tên</p>
+                                                        <hr>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <p>Họ tên</p>
+                                                            </div>
+                                                            <div class="col"><input class="form-control" type="text"></div>
                                                         </div>
-                                                        <div class="col"><input class="form-control" type="text"></div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="col">
-                                                            <p>&nbsp;</p>
-                                                        </div>
-                                                        <div class="col">
-                                                            <p class="note">như trên CMND/CCCD</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="col">
-                                                            <p>Ngày sinh</p>
-                                                        </div>
-                                                        <div class="col">
-                                                            <div class="form-row">
-                                                                <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
-                                                                <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
-                                                                <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <p>&nbsp;</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <p class="note">như trên CMND/CCCD</p>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="col">
-                                                            <p>&nbsp;</p>
-                                                        </div>
-                                                        <div class="col">
-                                                            <p class="note">như trên CMND/CCCD</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="col">
-                                                            <p>CMND/CCCD</p>
-                                                        </div>
-                                                        <div class="col"><input class="form-control" type="text"></div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="col">
-                                                            <p>&nbsp;</p>
-                                                        </div>
-                                                        <div class="col">
-                                                            <p class="note">như trên CMND/CCCD</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="jumbotron">
-                                                    <div class="form-row">
-                                                        <div class="col">
-                                                            <p>Người lớn 1</p>
-                                                        </div>
-                                                        <div class="col" style="text-align: right;"><a href="#" style="text-align: right;">Điền thông tin</a></div>
-                                                    </div>
-                                                    <hr>
-                                                    <div class="form-row">
-                                                        <div class="col">
-                                                            <p>Họ tên</p>
-                                                        </div>
-                                                        <div class="col"><input class="form-control" type="text" style="width: 100%;"></div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="col">
-                                                            <p>&nbsp;</p>
-                                                        </div>
-                                                        <div class="col">
-                                                            <p style="/*text-align: center;*/font-size: 10px;">như trên CMND/CCCD</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="col">
-                                                            <p>Ngày sinh</p>
-                                                        </div>
-                                                        <div class="col">
-                                                            <div class="form-row">
-                                                                <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
-                                                                <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
-                                                                <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <p>Ngày sinh</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="form-row">
+                                                                    <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+                                                                    <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+                                                                    <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="col">
-                                                            <p>&nbsp;</p>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <p>&nbsp;</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <p class="note">như trên CMND/CCCD</p>
+                                                            </div>
                                                         </div>
-                                                        <div class="col">
-                                                            <p style="/*text-align: center;*/font-size: 10px;">như trên CMND/CCCD</p>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <p>CMND/CCCD</p>
+                                                            </div>
+                                                            <div class="col"><input class="form-control" type="text"></div>
                                                         </div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="col">
-                                                            <p>CMND/CCCD</p>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <p>&nbsp;</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <p class="note">như trên CMND/CCCD</p>
+                                                            </div>
                                                         </div>
-                                                        <div class="col"><input class="form-control" type="text" style="width: 100%;"></div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="col">
-                                                            <p>&nbsp;</p>
+                                                    </div>';
+                                                    }
+                                                ?>
+                                                <?php 
+                                                    isset($_SESSION['timkiem']['EmBe']);
+                                                    $n = (int)$_SESSION['timkiem']['EmBe'];
+                                                    for($i = 1 ; $i <= $n ;$i++)
+                                                    {
+                                                        $loai = "Em Bé";
+                                                        echo '<div class="jumbotron">
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <p>'.$loai." ".$i.'</php>
+                                                            </div>
+                                                            <div class="col right"><a href="#">Điền thông tin</a></div>
                                                         </div>
-                                                        <div class="col">
-                                                            <p style="/*text-align: center;*/font-size: 10px;">như trên CMND/CCCD</p>
+                                                        <hr>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <p>Họ tên</p>
+                                                            </div>
+                                                            <div class="col"><input class="form-control" type="text"></div>
                                                         </div>
-                                                    </div>
-                                                </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <p>&nbsp;</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <p class="note">như trên CMND/CCCD</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <p>Ngày sinh</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="form-row">
+                                                                    <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+                                                                    <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+                                                                    <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <p>&nbsp;</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <p class="note">như trên CMND/CCCD</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <p>CMND/CCCD</p>
+                                                            </div>
+                                                            <div class="col"><input class="form-control" type="text"></div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <p>&nbsp;</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <p class="note">như trên CMND/CCCD</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>';
+                                                    }
+                                                ?>
                                                 <div class="form-row">
-                                                    <div class="col button"><button class="btn btn-primary" type="button" style="border-radius: 5px;">Button</button></div>
+                                                    <div class="col button"><button class="btn btn-primary" type="button" style="border-radius: 5px;">Đặt chỗ</button></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -285,14 +311,14 @@
                             <div class="jumbotron">
                                 <div class="row">
                                     <div class="col">
-                                        <p><i class="fa fa-plane" id="icon-plane"></i>&nbsp; <strong>Hà Nội (HAN) &nbsp;</strong><i class="fa fa-long-arrow-right"></i><strong>&nbsp; TP.HCM (SGN)</strong></p>
+                                        <p><i class="fa fa-plane" id="icon-plane"></i>&nbsp; <strong><?php echo changbay:: getTP($row['DiemDi']) ?> &nbsp;</strong>
+                                        <i class="fa fa-long-arrow-right"></i><strong>&nbsp; <?php echo changbay:: getTP($row['DiemDen']) ?></strong></p>
                                     </div>
-                                    <div class="col-md-4"><a href="#">Chi tiết</a></div>
                                 </div>
                                 <hr>
                                 <div class="row">
                                     <div class="col">
-                                        <p><strong>Chuyến bay đi &nbsp;</strong><i class="fa fa-star"></i><strong> T2, 28 Th10 2019</strong><br></p>
+                                        <p><strong>Chuyến bay đi &nbsp;</strong><i class="fa fa-star"></i><strong> T2, <?php echo $row['NgayDi'] ?></strong><br></p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -302,23 +328,23 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <p>Phổ thông</p>
+                                        <p> <?php echo changbay :: gethangghe($_SESSION['timkiem']['HangGhe']) ?></p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
                                         <div class="row">
                                             <div class="col-md-5">
-                                                <p style="margin-bottom: 0;">09:10</p>
-                                                <p>Hà Nội (HAN)</p>
+                                                <p style="margin-bottom: 0;"><?php echo $row['ThoiGianDi'] ?></p>
+                                                <p><?php echo changbay :: getFullName($row['DiemDi']) ?></p>
                                             </div>
                                             <div class="col-md-2">
                                                 <p>&nbsp; &nbsp; <i class="fa fa-long-arrow-right"></i>&nbsp;</p>
                                                 <p></p>
                                             </div>
                                             <div class="col-md-5">
-                                                <p style="margin-bottom: 0;">11:25</p>
-                                                <p>TP HCM</p>
+                                                <p style="margin-bottom: 0;"><?php echo $row['ThoiGianDen'] ?></p>
+                                                <p><?php echo changbay :: getFullName($row['DiemDen']) ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -345,3 +371,6 @@
             </div>
         </div>
     </div>
+<?php
+    }
+?>
