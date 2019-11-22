@@ -34,12 +34,15 @@ class ChangBayModel extends Database
 		$changbay = $result->fetch_assoc();
 		return $changbay['MaChang'];
 	}
-	public function getsanbay($diemdi, $diemden)
+
+	public function getSanBay($diemdi, $diemden)
 	{
 		$sql = "SELECT SanBayDi,SanBayDen FROM chang WHERE DiemDi='".$diemdi."' AND DiemDen='".$diemden."'";
 		$result = mysqli_query($this->conn, $sql);
+		echo $sql;
 		$sanbay = $result->fetch_assoc();
 		return $sanbay;
+		//return null;
 	}
 }
 

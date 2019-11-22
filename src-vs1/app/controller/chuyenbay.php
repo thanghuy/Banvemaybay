@@ -20,7 +20,12 @@
 				$ngaydi = date("d-m-Y");
 			}
 			
-			$this->chontrang($_POST["from-fight"], $_POST["to-fight"], $ngaydi, $numpeople, 1);
+			$url = "chontrang/";
+			$url .= $_POST["from-fight"]."/";
+			$url .= $_POST["to-fight"]."/";
+			$url .= $ngaydi."/";
+			$url .= $numpeople."/1";
+			header("Location: ".$url);
 		}
 		
 		function chontrang($diemdi, $diemden, $ngaydi, $songuoi, $page)
@@ -33,9 +38,9 @@
 			$mdlChuyenBay = new ChuyenBayModel();
 			$dsChuyenBay = array();
 			$machang = $mdlChangBay->getMabyDiaDiem($diemdi, $diemden);
-            $tongtrang = $mdlChuyenBay->getListCount($machang, $ngaydi, $songuoi, $page);
+			$tongtrang = $mdlChuyenBay->getListCount($machang, $ngaydi, $songuoi, $page);
 			$result = $mdlChuyenBay->getListby($machang, $ngaydi, $songuoi, $page);
-			$sanbay = $mdlChangBay->getsanbay($diemdi, $diemden); 
+			$sanbay = $mdlChangBay->getSanBay($diemdi, $diemden); 
 			while ($row = $result->fetch_assoc()) {
 				array_push($dsChuyenBay, $row);
 			}
