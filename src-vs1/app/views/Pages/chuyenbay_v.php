@@ -3,12 +3,12 @@
         <div class="container content-product">
             <div class="row">
                 <div class="col-md-12 col-xl-10 offset-xl-1" id="about-search">
-                    <h4 class="text-left">Hà Nội (HAN) - Sân bay nội bài&nbsp;
+                    <h4 class="text-left"><?php echo changbay::getFullName($data['diemdi']) ?> - Sân bay <?php echo $data['sanbaydi'] ?>&nbsp;
                         <i class="fa fa-long-arrow-right">    
-                        </i>&nbsp;TP HCM(SGN) - Sân bay tân sơn nhất
+                        </i>&nbsp;<?php echo changbay::getFullName($data['diemden']) ?> - Sân bay <?php echo $data['sanbayden'] ?>
                     </h4>
-                    <p>Thứ 2 , 27 tháng 10 2019</p>
-                    <p id="about-people">1 người &nbsp;| &nbsp;Phổ thông<button class="btn btn-primary" id="btn-search" type="button">Tìm kiếm khác</button></p>
+                    <p>Thứ 2 , <?php echo $data['ngaydi'] ?></p>
+                    <p id="about-people"><?php echo $data['songuoi'] ?> &nbsp;| &nbsp;Phổ thông<button class="btn btn-primary" id="btn-search" type="button">Tìm kiếm khác</button></p>
                 </div>
             </div>
             <div class="row" id="main-product-search">
@@ -156,7 +156,7 @@
                                     <div class="form-group">
                                         <label>Hạng ghế</label>
                                         <div class="input-group mb-3 form-control">
-                                            <select class="custom-select" id="inputGroupSelect01">
+                                            <select class="custom-select" name="hangghe" id="inputGroupSelect01">
                                                 <option value="1">Phổ thông</option>
                                                 <option value="2">Thương gia</option>
                                             </select>
@@ -165,7 +165,7 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" id="search" type="submit"><i class="fa fa-search"></i>&nbsp;Tìm chuyến bay</button></div>
+                                <div class="col-md-12 content-right"><button name="timkiemmain" class="btn btn-primary form-btn" id="search" type="submit"><i class="fa fa-search"></i>&nbsp;Tìm chuyến bay</button></div>
                             </div>
                         </div>
                     </div>
@@ -219,7 +219,7 @@
                     <h6>Kết quả :&nbsp;</h6>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="demo">
 			<?php
 			$dsChuyenBay = $data['dsChuyenBay'];
 			$numchuyenbay = count($dsChuyenBay);
@@ -341,9 +341,9 @@
                             </div>
                         </div>
                         <div class="col detail-item">
-                            <div class="time-go"><span>Vé người lớn cơ bản (x1)&nbsp;</span></div>
-                            <div><span>Vé trẻ em cơ bản (x1)&nbsp;</span></div>
-                            <div><span>Vé em bé cơ bản (x1)&nbsp;</span></div>
+                            <div class="time-go"><span>Vé người lớn cơ bản (x<?php echo $_SESSION['timkiem']['NguoiLon'] ?>)&nbsp;</span></div>
+                            <div><span>Vé trẻ em cơ bản (x<?php echo $_SESSION['timkiem']['TreEm'] ?>)&nbsp;</span></div>
+                            <div><span>Vé em bé cơ bản (x<?php echo $_SESSION['timkiem']['EmBe'] ?>)&nbsp;</span></div>
                             <div><span class="thue">Thuế&nbsp;</span></div>
                             <div class="time-end"><span class="total-money">Thành tiền &nbsp;</span></div>
                         </div>
@@ -358,28 +358,66 @@
                 </div>
 			<?php
 			}} // end for, end else
-			
-			for ($i = 0; $i < $data['tongtrang']; $i++)
-			{
-				if ($i == $data['trang']) {
-					echo $i + 1;
-				} else {
-					$s = "<a href=\"chuyenbay/chontrang/".$data['diemdi'];
-					$s .= "/".$data['diemden'];
-					$s .= "/" . $data['ngaydi'];
-					$s .= "/".(string)$data['songuoi'];
-					$s .= "/".(string)($i+1);
-					$s .= "\">".(string)($i+1)."</a>";
-					echo $s;
-				}
-			}
 			?>
             </div>
             <div class="row">
                 <div class="col-xl-10 offset-xl-5">
-                    <button class="buttonload" onclick="phantrang()" id="pages">
-                      Tải thêm
-                    </button>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <?php
+                            if(( $data['trang'] > 1) && ($data['tongtrang'] > 1)){
+                                $a = "chuyenbay/chontrang/".$data['diemdi'];
+                                $a .= "/".$data['diemden'];
+                                $a .= "/" . $data['ngaydi'];
+                                $a .= "/".(string)$data['songuoi'];
+                                $a .= "/".(string)($data['trang']-1);
+                                echo '<li class="page-item">
+                                <a class="page-link" href="'.$a.'" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                </li>';
+                                // echo '<li class="page-item">
+                                // <a class="page-link" id="x" aria-label="Previous">
+                                //     <span aria-hidden="true">&laquo;</span>
+                                //     <span class="sr-only">Previous</span>
+                                // </a>
+                                // </li>';
+                                // echo "<script>
+                                // $(`#x`).attr(`onclick`,`phantrangAjax('".$data['diemdi']."','".$data['diemden']."',".$data['ngaydi'].",".$data['songuoi'].",".$data['trang'].")`);
+                                // </script>";
+                            }
+                            for ($i = 0; $i < $data['tongtrang']; $i++)
+                            {
+                                if ($i + 1 == $data['trang']) {
+                                    $page = $i+1;
+                                    echo '<li class="page-item active"><a class="page-link" href="#">'.$page.'</a></li>';
+                                } else {
+                                    $s = "<a class='page-link' href=\"chuyenbay/chontrang/".$data['diemdi'];
+                                    $s .= "/".$data['diemden'];
+                                    $s .= "/" . $data['ngaydi'];
+                                    $s .= "/".(string)$data['songuoi'];
+                                    $s .= "/".(string)($i+1);
+                                    $s .= "\">".(string)($i+1)."</a>";
+                                    echo '<li class="page-item">'.$s.'</li>';
+                                }
+                            }
+                            if(( $data['trang'] < $data['tongtrang']) && ($data['tongtrang'] > 1)){
+                                $a = "chuyenbay/chontrang/".$data['diemdi'];
+                                $a .= "/".$data['diemden'];
+                                $a .= "/" . $data['ngaydi'];
+                                $a .= "/".(string)$data['songuoi'];
+                                $a .= "/".(string)($data['trang']+1);
+                                echo '<li class="page-item">
+                                <a class="page-link" href="'.$a.'" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                                </li>';
+                            }
+                        ?>
+                    </ul>
+                    </nav>
                 </div>
             </div>
         </div>

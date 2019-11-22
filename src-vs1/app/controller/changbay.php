@@ -65,4 +65,12 @@ class changbay
 
 		return "";
 	}
+	public function gethangghe($hangghe){
+		if($hangghe == 1){
+			return "Phổ thông";
+		}
+		else{
+			return "Thương gia";
+		}
+	}
 }
