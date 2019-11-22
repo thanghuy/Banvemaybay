@@ -144,14 +144,9 @@ a.nav-link:hover:after {
     color: white;
     color: white !important;
 }
-
-<<<<<<< Updated upstream
-=======
 #login:focus {
     outline: none;
 }
-
->>>>>>> Stashed changes
 #login .fa {
     font-size: 20px;
     color: white !important;

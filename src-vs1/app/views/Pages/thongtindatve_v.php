@@ -1,10 +1,15 @@
+<?php
+    while($row = mysqli_fetch_array($data['Chon'])){
+?>
 <div class="container">
         <div class="row">
             <div class="col-md-12 col-xl-10 offset-xl-1">
                 <div class="jumbotron text-left" id="route">
-                    <h2>Flight from Hà Nội to TP.HCM</h2>
-                    <p style="margin: 0;"><i class="fa fa-plane" id="icon-plane"></i>&nbsp;&nbsp;Hà Nội (HAN) → TP HCM (SGN) &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 28 Th10 2019<br></p>
-                    <p><i class="fa fa-user" id="icon-user"></i>&nbsp; &nbsp;1 người lớn &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Economy<br></p>
+                    <h2>Flight from <?php echo changbay::getTP($row['DiemDi']) ?> to <?php echo changbay::getTP($row['DiemDen']) ?></h2>
+                    <p style="margin: 0;"><i class="fa fa-plane" id="icon-plane">
+                    </i>&nbsp;&nbsp;<?php echo changbay::getTP($row['DiemDi']) ?> → <?php echo changbay::getTP($row['DiemDen']) ?> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <?php echo $row['NgayDi'] ?><br></p>
+                    <p>
+                    <i class="fa fa-user" id="icon-user"></i>&nbsp; &nbsp;1 người lớn &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Economy<br></p>
                 </div>
             </div>
         </div>
@@ -19,26 +24,26 @@
                             <div class="jumbotron" style="padding-bottom: 10px;padding-top: 15px;margin-bottom: 15px;">
                                 <div class="row">
                                     <div class="col">
-                                        <p style="/*border-bottom: 1px;*/"><i class="fa fa-plane" id="icon-plane"></i>&nbsp; <strong>Hà Nội (HAN) &nbsp;</strong><i class="fa fa-long-arrow-right"></i><strong>&nbsp; TP.HCM (SGN)</strong></p>
+                                        <p style="/*border-bottom: 1px;*/"><i class="fa fa-plane" id="icon-plane"></i>&nbsp; <strong><?php echo changbay::getTP($row['DiemDi']) ?> &nbsp;</strong><i class="fa fa-long-arrow-right"></i><strong>&nbsp; <?php echo changbay::getTP($row['DiemDen']) ?>)</strong></p>
                                     </div>
                                     <div class="col-xl-4"><a href="#">Thông tin chi tiết</a></div>
                                 </div>
                                 <hr>
-                                <p><strong>T2, 28 Th10 2019</strong><br></p>
+                                <p><strong>T2, <?php echo $row['NgayDi'] ?></strong><br></p>
                                 <p><img src="public/img/1568609997285-658c304aa2757dc5ecc27248c9f66bb4.png" style="width: 40px;"><strong>&nbsp; &nbsp;Jetstar BL-755</strong><br></p>
                                 <p>Phổ thông</p>
                                 <div class="row">
                                     <div class="col">
-                                        <p>09:10</p>
-                                        <p>Hà Nội (HAN)</p>
+                                        <p><?php echo $row['ThoiGianDi'] ?></p>
+                                        <p><?php echo changbay::getTP($row['DiemDi']) ?></p>
                                     </div>
                                     <div class="col">
                                         <p>&nbsp; &nbsp;&nbsp;</p>
                                         <p style="text-align: center;"><i class="fa fa-long-arrow-right"></i></p>
                                     </div>
                                     <div class="col">
-                                        <p>11:25</p>
-                                        <p>TP HCM</p>
+                                        <p><?php echo $row['ThoiGianDen'] ?></p>
+                                        <p><?php echo changbay::getTP($row['DiemDen']) ?></p>
                                     </div>
                                     <div class="col">
                                         <p>02h15m</p>
@@ -61,7 +66,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <p>HAN &nbsp;<i class="fa fa-long-arrow-right"></i> SGN</p>
+                                        <p><?php echo changbay::getFullName($row['DiemDi']) ?> &nbsp;<i class="fa fa-long-arrow-right"></i>&nbsp;<?php echo changbay::getFullName($row['DiemDen']) ?></p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -131,3 +136,4 @@
             </div>
         </div>
     </div>
+    <?php }?>

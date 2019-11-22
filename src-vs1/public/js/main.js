@@ -1,22 +1,42 @@
-var sanpham = document.getElementById('detail-fight');
-var ve = document.getElementById("ticker");
-$('.bay').click(function() {
+
+// $('.bay').click(function() {
+//     sanpham.style.display = 'flex';
+//     ve.style.display = 'none';
+//     $(".bay").addClass("hide-1");
+//     $(".ve-1").removeClass("hide-2");
+//     $(".show-1").addClass("active");
+//     $(".show-1").addClass("active");
+//     $(".show-2").removeClass("active");
+// })
+// $('.ve-1').click(function() {
+//     ve.style.display = 'flex';
+//     sanpham.style.display = 'none';
+//     $(".ve-1").addClass("hide-2");
+//     $(".bay").removeClass("hide-1");
+//     $(".show-2").addClass("active");
+//     $(".show-1").removeClass("active");
+// })
+function chitietcb(id){
+    var sanpham = document.getElementById('detail-fight'+id+'');
+    var ve = document.getElementById("ticker"+id+"");
     sanpham.style.display = 'flex';
     ve.style.display = 'none';
-    $(".bay").addClass("hide-1");
-    $(".ve-1").removeClass("hide-2");
+    $("#idfight"+id+"").addClass("hide-1");
+    $("#iddetail"+id+"").removeClass("hide-2");
     $(".show-1").addClass("active");
     $(".show-1").addClass("active");
     $(".show-2").removeClass("active");
-})
-$('.ve-1').click(function() {
+}
+function chitietve(id){
+    var sanpham = document.getElementById('detail-fight'+id+'');
+    var ve = document.getElementById("ticker"+id+"");
     ve.style.display = 'flex';
     sanpham.style.display = 'none';
-    $(".ve-1").addClass("hide-2");
-    $(".bay").removeClass("hide-1");
+    $("#iddetail"+id+"").addClass("hide-2");
+    $("#idfight"+id+"").removeClass("hide-1");
     $(".show-2").addClass("active");
     $(".show-1").removeClass("active");
-})
+}
 var x = document.getElementById("datepicker-to");
 x.disabled = true;
 x.style.background = '#CFCFCF';
@@ -205,5 +225,23 @@ function logout() {
 function myFunction() {
     var x = document.getElementById("snackbar");
     x.className = "show";
-    setTimeout(function() { x.className = x.className.replace("show", ""); }, 2000);
+
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
+  }
+function phantrang(){
+    document.getElementById('pages').innerHTML = '<i class="fa fa-spinner fa-spin load"></i>Đang tải';
+
 }
+
+$("#btn-search").click(function(){
+    var timkiem = document.getElementById("change-search");
+    if(timkiem.style.visibility == 'visible'){ 
+        timkiem.style.visibility = 'hidden';
+        timkiem.style.height = "0";
+        
+    }
+    else{
+        timkiem.style.height = "307px";   
+        timkiem.style.visibility = 'visible';
+    }
+})

@@ -39,4 +39,30 @@ class changbay
 
 		return "";
 	}
+	public static function getTP($code)
+	{
+		if ($code == "") {
+			return "";
+		} else if ($code == "HA NOI") {
+			return "Hà Nội (HAN)";
+		} else if ($code == "TPHCM") {
+			return "TP HCM(SGN)";
+		} else if ($code == "DA NANG") {
+			return "Đà Nẵng (DAD)";
+		} else if ($code == "NHA TRANG") {
+			return "Nha Trang (CXR)";
+		} else if ($code == "HAI PHONG") {
+			return "Hải Phòng (HPH)";
+		} else if ($code == "PHU QUOC") {
+			return "Phú Quốc (PQC)";
+		} else if ($code == "CA MAU") {
+			return "Cà Mau(CAH)";
+		} else if ($code == "DA LAT") {
+			return "Đà Lạt (DLI)";
+		} else if ($code == "DIEN BIEN PHU") {
+			return "Điện Biên Phủ (DIN)";
+		}
+
+		return "";
+	}
 }

@@ -58,6 +58,7 @@
 .item-product {
   border: 1px solid #ddd;
   border-radius: 3px;
+  margin-bottom: 20px;
 }
 
 .icon-to-fight {
@@ -170,4 +171,32 @@
 }
 #datve .form-control{
   border: 1px solid blue ;
+}
+.buttonload {
+  background-color: #f96d01; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 24px; /* Some padding */
+  height: 38px;
+  line-height: 10px;
+  font-size: 17px; /* Set a font-size */
+  border-radius: 10px;
+}
+.buttonload:focus{
+  outline: none;
+}
+
+/* Add a right margin to each icon */
+.load {
+  margin-left: -12px;
+  margin-right: 8px;
+}
+#change-search{
+  height: 0;
+  visibility:hidden;
+  z-index: 1;
+  /* display: none; */
+  transition: height 0.5s  ease-in-out;
+  -moz-transition: height 0.5s ease-in-out;
+   -webkit-transition: height 0.5s  ease-in-out;
 }

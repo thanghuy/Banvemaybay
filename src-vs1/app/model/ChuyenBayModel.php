@@ -33,7 +33,7 @@ class ChuyenBayModel extends Database
 		}
 		$sql .=  "' AND SoGheConTrong>=".(string)$songuoi;
 		$sql .=  " LIMIT 10 OFFSET ".(string)(($page-1)*10).";";
-		echo $sql;
+		// echo $sql;
 		return mysqli_query($this->conn, $sql);
 	}
 	
@@ -49,6 +49,10 @@ class ChuyenBayModel extends Database
 		$row = $result->fetch_assoc();
 
 		return (string)(floor($row['count'] / 10) + 1);
+	}
+	public function getFightNow($machang){
+		$sql = "SELECT * FROM chuyenbay cb,chang c WHERE cb.MaChang = c.MaChang and ID_ChuyenBay=".$machang."";
+		return mysqli_query($this->conn, $sql);
 	}
 }
 

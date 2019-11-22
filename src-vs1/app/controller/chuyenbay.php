@@ -35,6 +35,7 @@
 			$machang = $mdlChangBay->getMabyDiaDiem($diemdi, $diemden);
             $tongtrang = $mdlChuyenBay->getListCount($machang, $ngaydi, $songuoi, $page);
 			$result = $mdlChuyenBay->getListby($machang, $ngaydi, $songuoi, $page);
+			$sanbay = $mdlChangBay->getsanbay($diemdi, $diemden); 
 			while ($row = $result->fetch_assoc()) {
 				array_push($dsChuyenBay, $row);
 			}
@@ -44,6 +45,8 @@
 				'dsChuyenBay' => $dsChuyenBay,
 				'diemdi' => $diemdi,
 				'diemden' => $diemden,
+				'sanbaydi' => $sanbay['SanBayDi'],
+				'sanbayden' => $sanbay['SanBayDen'],
 				'ngaydi' => $ngaydi,
 				'songuoi' => $songuoi,
 				'trang' => $page,
