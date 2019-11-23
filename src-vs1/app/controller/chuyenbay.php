@@ -31,7 +31,7 @@
 
 			header('Location: ../'.$url);
 
-			$this->SaveTimkiem($numpeople,$_POST["nguoilon"],$_POST["treem"],$_POST["embe"],$_POST["hangghe"]);
+			$this->SaveTimkiem($ngaydi,$numpeople,$_POST["nguoilon"],$_POST["treem"],$_POST["embe"],$_POST["hangghe"]);
 
 		}
 		
@@ -47,7 +47,8 @@
 			$machang = $mdlChangBay->getMabyDiaDiem($diemdi, $diemden);
             $tongtrang = $mdlChuyenBay->getListCount($machang, $ngaydi, $songuoi, $page);
 			$result = $mdlChuyenBay->getListby($machang, $ngaydi, $songuoi, $page);
-			$sanbay = $mdlChangBay->getsanbay($diemdi, $diemden); 
+			$sanbay = $mdlChangBay->getsanbay($diemdi, $diemden);
+			$maybay = $mdlChuyenBay->getFightNow($machang);
 			while ($row = $result->fetch_assoc()) {
 				array_push($dsChuyenBay, $row);
 			}
@@ -65,15 +66,17 @@
 				'tongtrang' => $tongtrang
 			]);
 		}
-		function SaveTimkiem($tongnguoi,$nguoilon,$treem,$embe,$hangghe){
+		function SaveTimkiem($ngaydi,$tongnguoi,$nguoilon,$treem,$embe,$hangghe){
 			if(isset($_POST['timkiemmain'])){
-				echo "thanhkong";
+				// session_reset();
+				//echo "thanhkong";
 				$_SESSION['timkiem'] = array(
 					'songuoi' => $tongnguoi,
 					"NguoiLon" => $nguoilon,
 					"TreEm" => $treem,
 					"EmBe" => $embe,
-					"HangGhe" => $hangghe
+					"HangGhe" => $hangghe,
+					"NgayDi" => $ngaydi
 				);
 			}
 			else{

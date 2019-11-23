@@ -323,7 +323,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <p><img src="public/img/1568609997285-658c304aa2757dc5ecc27248c9f66bb4.png" style="width: 40px;"><strong>&nbsp; &nbsp;Jetstar BL-755</strong><br></p>
+                                        <p><img src="<?php echo $row['HinhAnh'] ?>" style="width: 40px;">
+                                        <strong>&nbsp; &nbsp;<?php echo $row['Hang']." ".$row['MaMayBay'] ?></strong><br></p>
                                     </div>
                                 </div>
                                 <div class="row">

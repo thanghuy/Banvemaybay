@@ -8,7 +8,7 @@
                         </i>&nbsp;<?php echo changbay::getFullName($data['diemden']) ?> - Sân bay <?php echo $data['sanbayden'] ?>
                     </h4>
                     <p>Thứ 2 , <?php echo $data['ngaydi'] ?></p>
-                    <p id="about-people"><?php echo $data['songuoi'] ?> &nbsp;| &nbsp;Phổ thông<button class="btn btn-primary" id="btn-search" type="button">Tìm kiếm khác</button></p>
+                    <p id="about-people"><?php echo $data['songuoi'] ?> &nbsp;| &nbsp;<?php echo changbay::gethangghe($_SESSION['timkiem']['HangGhe']) ?><button class="btn btn-primary" id="btn-search" type="button">Tìm kiếm khác</button></p>
                 </div>
             </div>
             <div class="row" id="main-product-search">
@@ -229,12 +229,14 @@
 				echo "Khong tim thay ket qua!";
 			} else {
 				for ($i=0; $i<$numchuyenbay; $i++) {
+                    $cb = new changbay();
+                    $cb->getGia($dsChuyenBay[$i]['Gia'],$dsChuyenBay[$i]['GiaHang'],$_SESSION['timkiem']['NguoiLon'],$_SESSION['timkiem']['TreEm']);
 			?>
                 <div class="col-xl-10 offset-xl-1 item-product">
                     <div class="row">
                         <div class="col">
-                            <img class="img-item" src="./public/img/logo%20fight/vietjet.png">
-                            <label>&nbsp;VietJet Air</label>
+                            <img class="img-item" src="<?php echo $dsChuyenBay[$i]['HinhAnh'] ?>">
+                            <label>&nbsp;<?php echo $dsChuyenBay[$i]['Hang'] ?></label>
                             <div class="show-detail">
                                 <span id="idfight<?php echo $dsChuyenBay[$i]['ID_ChuyenBay'] ?>" class="bay" onclick="chitietcb(<?php echo $dsChuyenBay[$i]['ID_ChuyenBay']?>)">Chi tiết chuyến bay</span>
                                 <hr class="show-1 <?php echo $dsChuyenBay[$i]['ID_ChuyenBay'] ?>">
@@ -258,7 +260,7 @@
                             <p>Bay thẳng</p>
                         </div>
                         <div class="col">
-                            <span class="price">1.194.308 VND&nbsp;</span>
+                            <span class="price"><?php echo $cb->gia1Ve() ?>&nbsp;</span>
                             <label class="guest">/khách</label>
                             <form action="thongtindatve/thongtin/<?php echo $dsChuyenBay[$i]['ID_ChuyenBay'] ?>">
                                 <button class="btn btn-primary select-fight" type="submit">Chọn chuyến bay</button>
@@ -268,10 +270,11 @@
                     <div class="row detail-product" id="detail-fight<?php echo $dsChuyenBay[$i]['ID_ChuyenBay'] ?>">
                         <div class="col-xl-3">
                             <div>
-                                <img class="img-item" src="./public/img/logo%20fight/vietjet.png">
+                                <img class="img-item" src="<?php echo $dsChuyenBay[$i]['HinhAnh'] ?>">
                             </div>
                             <div>
-                                <span>VietJet BL-709</span><span>&nbsp; Phổ thông</span>
+                                <span><?php echo $dsChuyenBay[$i]['Hang']." ".$dsChuyenBay[$i]['MaMayBay'] ?></span>
+                                <span>&nbsp; <?php echo changbay::gethangghe($_SESSION['timkiem']['HangGhe']) ?></span>
                             </div>
                         </div>
                         <div class="col-xl-3 detail-item">
@@ -330,9 +333,12 @@
                     </div>
                     <div class="row detail-ticker" id="ticker<?php echo $dsChuyenBay[$i]['ID_ChuyenBay'] ?>">
                         <div class="col-xl-4">
-                            <div><img class="img-item" src="./public/img/logo%20fight/vietjet.png"><span>&nbsp;VietJet Air</span></div>
+                            <div>
+                                <img class="img-item" src="<?php echo $dsChuyenBay[$i]['HinhAnh'] ?>">
+                                <span>&nbsp;<?php echo $dsChuyenBay[$i]['Hang'] ?></span>
+                            </div>
                             <div><span class="form-to">&nbsp;<?php echo changbay::getTP($data['diemdi']) ?> - <?php echo changbay::getTP($data['diemden']) ?></span></div>
-                            <div><span>&nbsp;Phổ thông</span></div>
+                            <div><span>&nbsp;<?php echo changbay::gethangghe($_SESSION['timkiem']['HangGhe']) ?></span></div>
                         </div>
                         <div class="col detail-item">
                             <div class="time-go"><span><i class="fa fa-ban"></i>&nbsp;Không hoàn tiền</span></div>
@@ -348,11 +354,11 @@
                             <div class="time-end"><span class="total-money">Thành tiền &nbsp;</span></div>
                         </div>
                         <div class="col detail-item">
-                            <div class="time-go"><span class="price">1.194.308 VND</span></div>
-                            <div><span class="price">1.120.308 VND</span></div>
+                            <div class="time-go"><span class="price"><?php echo $cb->giaNguoilon() ?></span></div>
+                            <div><span class="price"><?php echo $cb->giaTreem() ?></span></div>
                             <div><span class="price">0 VND</span></div>
                             <div><span class="thue">Đã bao gồm</span></div>
-                            <div class="time-end"><span class="price">2.400.308 VND</span></div>
+                            <div class="time-end"><span class="price"><?php echo $cb->giatong() ?></span></div>
                         </div>
                     </div>
                 </div>
