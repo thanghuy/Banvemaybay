@@ -1,13 +1,15 @@
 <?php
     while($row = mysqli_fetch_array($data['Chon'])){
+        $cb = new changbay();
+        $cb->getGia($row['Gia'],$row['GiaHang'],$_SESSION['timkiem']['NguoiLon'],$_SESSION['timkiem']['TreEm']);
 ?>
 <div class="container">
         <div class="row">
             <div class="col-md-12 col-xl-10 offset-xl-1">
                 <div class="jumbotron text-left" id="route">
-                    <h2>Flight from <?php echo changbay::getTP($row['DiemDi']) ?> to <?php echo changbay::getTP($row['DiemDen']) ?></h2>
+                    <h2>Flight from <?php echo $cb->getTP($row['DiemDi']) ?> to <?php echo $cb->getTP($row['DiemDen']) ?></h2>
                     <p style="margin: 0;"><i class="fa fa-plane" id="icon-plane">
-                    </i>&nbsp;&nbsp;<?php echo changbay::getTP($row['DiemDi']) ?> → <?php echo changbay::getTP($row['DiemDen']) ?> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <?php echo $row['NgayDi'] ?><br></p>
+                    </i>&nbsp;&nbsp;<?php echo $cb->getTP($row['DiemDi']) ?> → <?php echo $cb->getTP($row['DiemDen']) ?> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <?php echo $row['NgayDi'] ?><br></p>
                     <p>
                     <i class="fa fa-user" id="icon-user"></i>&nbsp; &nbsp; <?php echo $_SESSION['timkiem']['songuoi'] ?> Người &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Economy<br></p>
                 </div>
@@ -24,18 +26,20 @@
                             <div class="jumbotron" style="padding-bottom: 10px;padding-top: 15px;margin-bottom: 15px;">
                                 <div class="row">
                                     <div class="col">
-                                        <p style="/*border-bottom: 1px;*/"><i class="fa fa-plane" id="icon-plane"></i>&nbsp; <strong><?php echo changbay::getTP($row['DiemDi']) ?> &nbsp;</strong><i class="fa fa-long-arrow-right"></i><strong>&nbsp; <?php echo changbay::getTP($row['DiemDen']) ?>)</strong></p>
+                                        <p style="/*border-bottom: 1px;*/">
+                                        <i class="fa fa-plane" id="icon-plane"></i>&nbsp; <strong><?php echo $cb->getTP($row['DiemDi']) ?> &nbsp;</strong><i class="fa fa-long-arrow-right"></i><strong>&nbsp; <?php echo changbay::getTP($row['DiemDen']) ?>)</strong></p>
                                     </div>
                                     <div class="col-xl-4"><a href="#">Thông tin chi tiết</a></div>
                                 </div>
                                 <hr>
                                 <p><strong>T2, <?php echo $row['NgayDi'] ?></strong><br></p>
-                                <p><img src="public/img/1568609997285-658c304aa2757dc5ecc27248c9f66bb4.png" style="width: 40px;"><strong>&nbsp; &nbsp;Jetstar BL-755</strong><br></p>
-                                <p><?php echo changbay :: gethangghe($_SESSION['timkiem']['HangGhe']) ?></p>
+                                <p><img src="<?php echo $row['HinhAnh'] ?>" style="width: 40px;">
+                                <strong>&nbsp; &nbsp;<?php echo $row['Hang']." ".$row['MaMayBay'] ?></strong><br></p>
+                                <p><?php echo $cb->gethangghe($_SESSION['timkiem']['HangGhe']) ?></p>
                                 <div class="row">
                                     <div class="col">
                                         <p><?php echo $row['ThoiGianDi'] ?></p>
-                                        <p><?php echo changbay::getTP($row['DiemDi']) ?></p>
+                                        <p><?php echo $cb->getTP($row['DiemDi']) ?></p>
                                     </div>
                                     <div class="col">
                                         <p>&nbsp; &nbsp;&nbsp;</p>
@@ -43,7 +47,7 @@
                                     </div>
                                     <div class="col">
                                         <p><?php echo $row['ThoiGianDen'] ?></p>
-                                        <p><?php echo changbay::getTP($row['DiemDen']) ?></p>
+                                        <p><?php echo $cb->getTP($row['DiemDen']) ?></p>
                                     </div>
                                     <div class="col">
                                         <p>02h15m</p>
@@ -66,7 +70,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <p><?php echo changbay::getFullName($row['DiemDi']) ?> &nbsp;<i class="fa fa-long-arrow-right"></i>&nbsp;<?php echo changbay::getFullName($row['DiemDen']) ?></p>
+                                        <p><?php echo $cb->getFullName($row['DiemDi']) ?> &nbsp;<i class="fa fa-long-arrow-right"></i>&nbsp;<?php echo changbay::getFullName($row['DiemDen']) ?></p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -99,9 +103,9 @@
                                                 <p>Em bé x<?php echo $_SESSION['timkiem']['EmBe']?></p>
                                             </div>
                                             <div class="col" style="text-align: right;">
-                                                <p class="price">1.164.339 VND</p>
-                                                <p class="price">1.164.339 VND</p>
-                                                <p class="price">1.164.339 VND</p>
+                                                <p class="price"><?php echo  $cb->giaNguoilon() ?></p>
+                                                <p class="price"><?php echo  $cb->giaTreem() ?></p>
+                                                <p class="price">0 VND</p>
                                             </div>
                                         </div>
                                     </div>
@@ -125,7 +129,7 @@
                                                 <p>Giá bạn trả</p>
                                             </div>
                                             <div class="col">
-                                                <p class="price" style="text-align: right;">1.64.339 VND </p>
+                                                <p class="price" style="text-align: right;"><?php echo  $cb->giatong() ?></p>
                                             </div>
                                         </div>
                                     </div>

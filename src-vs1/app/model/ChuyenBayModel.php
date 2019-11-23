@@ -27,7 +27,8 @@ class ChuyenBayModel extends Database
 	
 	public function getListby($machang, $ngaydi, $songuoi, $page)
 	{
-		$sql = "SELECT * FROM chuyenbay WHERE MaChang='".$machang;
+		$sql = "SELECT * FROM chuyenbay cb,chang c, maybay m WHERE cb.MaChang = c.MaChang and cb.MaMayBay = m.MaMayBay and cb.MaChang='".$machang;
+		//$sql = "SELECT * FROM chuyenbay cb,maybay m WHERE cb.MaMayBay = m.MaMayBay and MaChang='".$machang;
 		if (strlen($ngaydi) != 0) {
 			$sql .= "' AND NgayDi='" . $ngaydi;
 		}
@@ -51,7 +52,7 @@ class ChuyenBayModel extends Database
 		return (string)(floor($row['count'] / 10) + 1);
 	}
 	public function getFightNow($machang){
-		$sql = "SELECT * FROM chuyenbay cb,chang c WHERE cb.MaChang = c.MaChang and ID_ChuyenBay=".$machang."";
+		$sql = "SELECT * FROM chuyenbay cb,chang c, maybay m WHERE cb.MaChang = c.MaChang and cb.MaMayBay = m.MaMayBay and ID_ChuyenBay=".$machang."";
 		return mysqli_query($this->conn, $sql);
 	}
 }

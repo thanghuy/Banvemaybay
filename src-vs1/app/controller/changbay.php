@@ -11,8 +11,13 @@
  *
  * @author Massan
  */
-class changbay
+class changbay extends Controller
 {
+	static $giachang=0;
+	static $giahang=0;
+	static $gialoai=0;
+	static $songuoilon=0;
+	static $sotreem=0;
 	public static function getFullName($code)
 	{
 		if ($code == "") {
@@ -72,5 +77,33 @@ class changbay
 		else{
 			return "Thương gia";
 		}
+	}
+	public function getGia($giachang,$giahang,$nguoilon,$treem){
+		$loai = $_SESSION['timkiem']['HangGhe'];
+		$gia = $this->model("Loaive");
+		$gialoai = $gia->getloaive($loai);
+		self::$giachang = $giachang;
+		self::$giahang = $giahang;
+		self::$gialoai = $gialoai['GiaHangVe'];
+		self::$sotreem = $treem;
+		self::$songuoilon = $nguoilon;
+	}
+	public function gia1Ve(){
+		$tongtien = (int)self::$giachang + (int)self::$giahang + (int)self::$gialoai;
+		return number_format($tongtien,0,',','.')." VNĐ";
+	}
+	public function giaNguoilon(){
+		$tongtien = (int)self::$songuoilon * ((int)self::$giachang + (int)self::$giahang + (int)self::$gialoai);
+		return number_format($tongtien,0,',','.')." VNĐ";
+	}
+	public function giaTreem(){
+		$tongtien = (int)self::$sotreem * ((int)self::$giachang + (int)self::$giahang + (int)self::$gialoai -300000);
+		return number_format($tongtien,0,',','.')." VNĐ";
+	}
+	public function giatong(){
+		$NguoiLon = (int)self::$songuoilon * ((int)self::$giachang + (int)self::$giahang + (int)self::$gialoai);
+		$TreEm = (int)self::$sotreem * ((int)self::$giachang + (int)self::$giahang + (int)self::$gialoai -300000);
+		$tongtien = $NguoiLon + $TreEm;
+		return number_format($tongtien,0,',','.')." VNĐ";
 	}
 }
