@@ -1,9 +1,8 @@
 <?php
     class thongtinchitiet extends Controller{
-<<<<<<< Updated upstream:src-vs1/app/controller/thongtinchitiet.php
+        public $ID_KH;
+        public $TenDangNhap;
         public $MaKH;
-=======
->>>>>>> Stashed changes:src-vs1/app/controller/thongtinchitiet.php
         public $tenKH;
         public $email;
         public $sdt;
@@ -17,10 +16,6 @@
             else header('Location: ../');
         }
 
-<<<<<<< Updated upstream:src-vs1/app/controller/thongtinchitiet.php
-        function thongtindonhang(){
-            $this->views('index_v','thongtinDH_v');
-=======
         function DH()
 		{
             if(isset($_SESSION['account'])) $this->views('index_v','xemdonhang_v');
@@ -29,11 +24,11 @@
 
         function chitietDH(){
             $this->views('index_v','chitietdonhang_v');
->>>>>>> Stashed changes:src-vs1/app/controller/thongtinchitiet.php
         }
 
         function KT(){
             if(isset($_GET['thongtinKH'])){
+
                 $this->setInfo('MaKH');
                 $this->setInfo('tenKH');
                 $this->setInfo('email');
@@ -41,7 +36,9 @@
                 $this->setInfo('ngaysinh');
                 $this->setInfo('CMND');
                 $this->setInfo('gt');
-                
+                $this->setInfo('ID_KH');
+                $this->setInfo('TenDangNhap');
+
                 $this->getModel_KH()->Update_Info(
                     $this->MaKH,
                     $this->tenKH,
@@ -51,7 +48,23 @@
                     $this->CMND,
                     $this->gt
                 );
+
+                $row=array(
+                    "MaKH"=>$this->MaKH,
+                    "TenKH"=>$this->tenKH,
+                    "Email"=>$this->email,
+                    "SDT"=>$this->sdt,
+                    "NgaySinh"=>$this->ngaysinh,
+                    "CMND"=>$this->CMND,
+                    "GioiTinh"=>$this->gt,
+                    "ID_KH"=>$this->ID_KH,
+                    "TenDangNhap"=>$this->TenDangNhap
+                );
+
+                unset($_SESSION['account']);
+                $this->create_Session_Acc($row);
             }
+            header('Location: ./thongtinKH');
         }
 	}
 ?>

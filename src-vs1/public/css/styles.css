@@ -144,9 +144,11 @@ a.nav-link:hover:after {
     color: white;
     color: white !important;
 }
+
 #login:focus {
     outline: none;
 }
+
 #login .fa {
     font-size: 20px;
     color: white !important;
@@ -450,6 +452,10 @@ tbody>tr:nth-of-type(odd) {
 
 #luuthaydoi {
     width: 100%;
+}
+
+#ve td {
+    padding: 0;
 }
 
 
