@@ -1,6 +1,6 @@
 
 <div class="container">
-    <form method="GET" action="chitiet/KT">
+    <form method="GET" action="thongtinchitiet/KT">
         <div class="form-row">
                     <div class="col-md-12">
                         <div class="form-row">
@@ -86,6 +86,10 @@
                                                     <div class="col-md-3">
                                                         <p></p>
                                                     </div>
+
+                                                    <input type="hidden" name="MaKH" value="<?php echo $_SESSION['account']['MaKH'] ?>">
+                                                    <input type="hidden" name="ID_KH" value="<?php echo $_SESSION['account']['ID_KH'] ?>">
+                                                    <input type="hidden" name="TenDangNhap" value="<?php echo $_SESSION['account']['TenDangNhap'] ?>">
                                                     <div class="col-md-3 offset-md-1">
                                                         <p></p><button id="luuthaydoi" class="btn btn-primary"name="thongtinKH" type="submit">Lưu thay đổi</button></div>
                                                     <div class="col-md-3 offset-md-1">

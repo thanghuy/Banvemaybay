@@ -27,7 +27,6 @@
                 'SDT'=>$row['SDT'],
                 'GioiTinh'=>$row['GioiTinh'],
                 'TenDangNhap'=>$row['TenDangNhap'],
-                'MatKhau'=>$row['MatKhau'],
                 'Email'=>$row['Email']
         );
         }

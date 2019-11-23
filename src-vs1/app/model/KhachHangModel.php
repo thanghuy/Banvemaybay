@@ -21,13 +21,11 @@
         }
         public function Update_Info($MaKH,$tenKH,$email,$sdt,$ngaysinh,$CMND,$gt){
             $sql='UPDATE `khachhang` SET `TenKH`='.'"'.$tenKH.'"'.',
-                                        `Email=`'.'"'.$email.'"'.',
+                                        `Email`='.'"'.$email.'"'.',
                                         `SDT`='.'"'.$sdt.'"'.',
                                         `NgaySinh`='.'"'.$ngaysinh.'"'.',
                                         `CMND`='.'"'.$CMND.'"'.',
-                                        `GioiTinh`='.'"'.$gt.'" WHERE `MaKH`==';
-            echo $sql;
-                                        //mysqli_query($this->conn,$sql);
+                                        `GioiTinh`='.'"'.$gt.'" WHERE `MaKH`="'.$MaKH.'"';
+            mysqli_query($this->conn,$sql);
         }
     }
-?>
