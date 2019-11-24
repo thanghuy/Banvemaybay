@@ -7,7 +7,7 @@
                         <div class="col-md-3">
                             <div class="jumbotron">
                                 <section id="vertical-menu">
-                                    <div class="list-group"><a class="list-group-item" href="./thongtinchitiet/thongtinKH"> <i class="fa fa-user fa-fw"></i>&nbsp;Thông tin khách hàng</a><a class="list-group-item" href="/thongtinchitiet/DH"> <i class="fa fa-list-alt fa-fw"></i>&nbsp;Xem đơn hàng</a><a class="list-group-item" href="#"> <i class="fa fa-sign-out fa-fw"></i>&nbsp;Đăng xuất</a></div>
+                                    <div class="list-group"><a class="list-group-item" href="./thongtinchitiet/thongtinKH"> <i class="fa fa-user fa-fw"></i>&nbsp;Thông tin khách hàng</a><a class="list-group-item" href="./thongtinchitiet/DH"> <i class="fa fa-list-alt fa-fw"></i>&nbsp;Xem đơn hàng</a><a class="list-group-item" href="#"> <i class="fa fa-sign-out fa-fw"></i>&nbsp;Đăng xuất</a></div>
                                 </section>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                                                             <td>3</td>
                                                             <td>1840000đ</td>
                                                             <td>ATM</td>
-                                                            <td><a href="#">Chi tiết</a></td>
+                                                            <td><a href="./thongtinchitiet/chitietDH">Chi tiết</a></td>
                                                         </tr>
                                                         <tr class="table_hd">
                                                             <td>HD002</td>
@@ -58,7 +58,7 @@
                                                             <td>2</td>
                                                             <td>20000000đ</td>
                                                             <td>VISA</td>
-                                                            <td><a href="#">Chi tiết</a></td>
+                                                            <td><a href="./thongtinchitiet/chitietDH">Chi tiết</a></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>

@@ -7,7 +7,7 @@
                         <div class="col-md-3">
                             <div class="jumbotron">
                                 <section id="vertical-menu">
-                                    <div class="list-group"><a class="list-group-item" href="./thongtinchitiet/thongtinKH"> <i class="fa fa-user fa-fw"></i>&nbsp;Thông tin khách hàng</a><a class="list-group-item" href="/thongtinchitiet/DH"> <i class="fa fa-list-alt fa-fw"></i>&nbsp;Xem đơn hàng</a><a class="list-group-item" href="#"> <i class="fa fa-sign-out fa-fw"></i>&nbsp;Đăng xuất</a></div>
+                                    <div class="list-group"><a class="list-group-item" href="./thongtinchitiet/thongtinKH"> <i class="fa fa-user fa-fw"></i>&nbsp;Thông tin khách hàng</a><a class="list-group-item" href="./thongtinchitiet/DH"> <i class="fa fa-list-alt fa-fw"></i>&nbsp;Xem đơn hàng</a><a class="list-group-item" href="#"> <i class="fa fa-sign-out fa-fw"></i>&nbsp;Đăng xuất</a></div>
                                 </section>
                             </div>
                         </div>

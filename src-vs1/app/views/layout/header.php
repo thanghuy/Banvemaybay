@@ -30,7 +30,7 @@
                             echo $_SESSION['account']['TenDangNhap'];
                             echo "<script>
                             $(`#login`).attr(`data-target`,``);
-                            $(`#login`).attr(`onclick`,`window.location.assign('./chitiet/thongtinKH')`);
+                            $(`#login`).attr(`onclick`,`window.location.assign('./thongtinchitiet/thongtinKH')`);
                             </script>";
                         }
                         else {
