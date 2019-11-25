@@ -39,7 +39,7 @@
                     </div>
                     <div class="row">
                         <div class="col" id="datve">
-                            <form>
+                        <form action="thanhtoan/thanhtoanVISA/<?php echo $row['ID_ChuyenBay'] ?>">
                                 <div class="jumbotron">
                                     <div class="form-row">
                                         <div class="col">
@@ -134,9 +134,27 @@
                                                         </div>
                                                         <div class="col">
                                                             <div class="form-row">
-                                                                <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
-                                                                <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
-                                                                <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+                                                                <div class="col">
+                                                                    <select class="form-control date" name="date">
+                                                                        <option value="1" selected="">1</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="2">3</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <select class="form-control month" name="month">
+                                                                        <option value="1" selected="">Tháng 1</option>\
+                                                                        <option value="1">Tháng 2</option>
+                                                                        <option value="1">Tháng 3</option>
+                                                                        </select>
+                                                                    </div>
+                                                                <div class="col">
+                                                                    <select class="form-control year" name="year">
+                                                                        <option value="12" selected="">2007</option>
+                                                                        <option value="13">1999</option>
+                                                                        <option value="14">1998</option>
+                                                                    </select>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -198,9 +216,26 @@
                                                             </div>
                                                             <div class="col">
                                                                 <div class="form-row">
-                                                                    <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
-                                                                    <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
-                                                                    <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+                                                                    <div class="col">
+                                                                    <select class="form-control">
+                                                                            <option value="12" selected="">This is item 1</option>
+                                                                            <option value="13">This is item 2</option>
+                                                                            <option value="14">This is item 3</option>
+                                                                        </select></div>
+                                                                    <div class="col">
+                                                                        <select class="form-control">
+                                                                            <option value="12" selected="">This is item 1</option>
+                                                                            <option value="13">This is item 2</option>
+                                                                            <option value="14">This is item 3</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <select class="form-control">
+                                                                            <option value="12" selected="">This is item 1</option>
+                                                                            <option value="13">This is item 2</option>
+                                                                            <option value="14">This is item 3</option>
+                                                                        </select>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -263,9 +298,26 @@
                                                             </div>
                                                             <div class="col">
                                                                 <div class="form-row">
-                                                                    <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
-                                                                    <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
-                                                                    <div class="col"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+                                                                    <div class="col">
+                                                                    <select class="form-control">
+                                                                    <option value="12" selected="">This is item 1</option>
+                                                                    <option value="13">This is item 2</option>
+                                                                    <option value="14">This is item 3</option>
+                                                                    </select></div>
+                                                                    <div class="col">
+                                                                        <select class="form-control">
+                                                                            <option value="12" selected="">This is item 1</option>
+                                                                            <option value="13">This is item 2</option>
+                                                                            <option value="14">This is item 3</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <select class="form-control">
+                                                                            <option value="12" selected="">This is item 1</option>
+                                                                            <option value="13">This is item 2</option>
+                                                                            <option value="14">This is item 3</option>
+                                                                            </select>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -295,8 +347,11 @@
                                                     }
                                                 ?>
                                                 <div class="form-row">
-                                                    <div class="col button"><button class="btn btn-primary" type="button" style="border-radius: 5px;">Đặt chỗ</button></div>
+                                                    <div class="col button">
+                                                            <button class="btn btn-primary" type="submit" style="border-radius: 5px;">Đặt chỗ</button>
+                                                    </div>
                                                 </div>
+                                        
                                             </div>
                                         </div>
                                     </div>

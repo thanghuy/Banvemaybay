@@ -380,6 +380,9 @@ a.nav-link:hover:after {
 .icon-f-four {
     background-color: #000000;
 }
+#Thantoan input{
+    border: 1px solid gray;
+}
 
 
 /*end*/
