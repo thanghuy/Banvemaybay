@@ -133,6 +133,7 @@
                                                             <p>Ngày sinh</p>
                                                         </div>
                                                         <div class="col">
+
                                                             <div class="form-row">
                                                                 <div class="col">
                                                                     <select class="form-control date" name="date">
@@ -156,6 +157,7 @@
                                                                     </select>
                                                                 </div>
                                                             </div>
+                                                            <input type="date" name="ngaysinh" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="form-row">

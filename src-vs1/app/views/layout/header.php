@@ -27,9 +27,10 @@
                          <button class="btn btn-primary float-left" id="login" type="button" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: rgb(245,247,249);color: rgb(0,0,0);" ><i class="fa fa-user" style="font-size: 20px;color: rgb(69,168,224);"></i>&nbsp;<?php
                         if(isset($_SESSION['account'])){
 
-                            echo $_SESSION['account']['TenKH'];
+                            echo $_SESSION['account']['TenDangNhap'];
                             echo "<script>
                             $(`#login`).attr(`data-target`,``);
+                            $(`#login`).attr(`onclick`,`window.location.assign('./thongtinchitiet/thongtinKH')`);
                             </script>";
                         }
                         else {

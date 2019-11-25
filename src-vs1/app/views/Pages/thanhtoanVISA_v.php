@@ -13,6 +13,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
+
                                 <div class="jumbotron" id="Thantoan">
                                     <div class="form-row">
                                         <div class="col-md-9">
@@ -73,6 +74,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <p class="price">1.063.900 VND</p>
+
                                                 </div>
                                             </div>
                                             <div class="form-row">
@@ -93,13 +95,18 @@
                                                     <p>Tổng tiền</p>
                                                 </div>
                                                 <div class="col">
+
                                                     <p class="price">1.063.900 VND<br></p>
+
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="col"></div>
+
                                                 <div class="col offset-md-0">
                                                     <button class="btn btn-primary" type="submits">Thanh toán</button></div>
+
+
                                                 <div class="col"></div>
                                             </div>
                                         </div>

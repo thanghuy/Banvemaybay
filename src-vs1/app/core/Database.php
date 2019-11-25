@@ -69,7 +69,9 @@ class Database
 		while($row = $result->fetch_assoc())
 			return $row;
 	}
-
+    public function fetch_array($result){
+        return mysqli_fetch_array($result);
+    }
 	public function close()
 	{
 		$conn->close();

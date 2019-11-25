@@ -153,7 +153,7 @@
                                 </div>
                                 <div class="row">
                                 <div class="col-md-4">
-                                        <p>Địa chỉ</p>
+                                        <p>Số điện thoại</p>
                                     </div>
                                     <div class="col-md-8">
                                         <input name="address" style="border: 1px solid;" type="text" class="form-control" id="address">
