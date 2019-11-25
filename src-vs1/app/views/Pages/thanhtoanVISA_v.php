@@ -2,7 +2,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <form>
+                    <form action="thongtinchitiet/chitietDH">
                         <div class="form-row">
                             <div class="col">
                                 <div class="jumbotron">
@@ -13,7 +13,8 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="jumbotron">
+
+                                <div class="jumbotron" id="Thantoan">
                                     <div class="form-row">
                                         <div class="col-md-9">
                                             <p><strong>Thẻ tín dụng</strong></p>
@@ -72,7 +73,8 @@
                                                     <p>VietJet Air (Người lớn x1)</p>
                                                 </div>
                                                 <div class="col">
-                                                    <p>1.063.900 VND</p>
+                                                    <p class="price">1.063.900 VND</p>
+
                                                 </div>
                                             </div>
                                             <div class="form-row">
@@ -93,12 +95,18 @@
                                                     <p>Tổng tiền</p>
                                                 </div>
                                                 <div class="col">
-                                                    <p>1.063.900 VND<br></p>
+
+                                                    <p class="price">1.063.900 VND<br></p>
+
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="col"></div>
-                                                <div class="col offset-md-0"><button class="btn btn-primary" type="button">Thanh toán</button></div>
+
+                                                <div class="col offset-md-0">
+                                                    <button class="btn btn-primary" type="submits">Thanh toán</button></div>
+
+
                                                 <div class="col"></div>
                                             </div>
                                         </div>
