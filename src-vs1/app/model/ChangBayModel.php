@@ -27,9 +27,11 @@ class ChangBayModel extends Database
 		return $changbay['MaChang'];
 	}
 	
-	public function getMabyDiaDiem($diemdi, $diemden)
+	public function getMabyDiaDiem($diemdi, $diemden, $gia)
 	{
 		$sql = "SELECT MaChang FROM chang WHERE DiemDi='".$diemdi."' AND DiemDen='".$diemden."'";
+		if (strlen($gia) != 0)
+			$sql .= " AND Gia".$gia;
 		$result = mysqli_query($this->conn, $sql);
 		$changbay = $result->fetch_assoc();
 		return $changbay['MaChang'];

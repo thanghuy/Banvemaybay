@@ -3,12 +3,12 @@
         <div class="container content-product">
             <div class="row">
                 <div class="col-md-12 col-xl-10 offset-xl-1" id="about-search">
-                    <h4 class="text-left"><?php echo changbay::getFullName($data['diemdi']) ?> - Sân bay <?php echo $data['sanbaydi'] ?>&nbsp;
+                    <h4 class="text-left"><?php echo changbay::getFullName($_SESSION['timkiem']['diemdi']) ?> - Sân bay <?php echo $data['sanbaydi'] ?>&nbsp;
                         <i class="fa fa-long-arrow-right">    
-                        </i>&nbsp;<?php echo changbay::getFullName($data['diemden']) ?> - Sân bay <?php echo $data['sanbayden'] ?>
+                        </i>&nbsp;<?php echo changbay::getFullName($_SESSION['timkiem']['diemden']) ?> - Sân bay <?php echo $data['sanbayden'] ?>
                     </h4>
-                    <p>Thứ 2 , <?php echo $data['ngaydi'] ?></p>
-                    <p id="about-people"><?php echo $data['songuoi'] ?> &nbsp;| &nbsp;<?php echo changbay::gethangghe($_SESSION['timkiem']['HangGhe']) ?><button class="btn btn-primary" id="btn-search" type="button">Tìm kiếm khác</button></p>
+                    <p>Thứ 2 , <?php echo $_SESSION['timkiem']['ngaydi'] ?></p>
+                    <p id="about-people"><?php echo $_SESSION['timkiem']['songuoi'] ?> &nbsp;| &nbsp;<?php echo changbay::gethangghe($_SESSION['timkiem']['HangGhe']) ?><button class="btn btn-primary" id="btn-search" type="button">Tìm kiếm khác</button></p>
                 </div>
             </div>
             <div class="row" id="main-product-search">
@@ -173,47 +173,68 @@
                 </div>
             </div>
             
-            <div class="row" id="search-advanced">
-                <div class="col-xl-1 offset-xl-1">
-                    <span>Bộ lọc :</span>
+            <form class="form_search" action="chuyenbay/loc" method="POST" id="search-advanced">
+                <div class="row" id="search-advanced">
+                    <div class="col-xl-1 offset-xl-1">
+                        <span>Bộ lọc :</span>
+                    </div>
+                    <div class="col-md-12 col-xl-2 offset-xl-0">
+                        <select name="filter_diemden">
+                            <optgroup label="Chọn điểm đến">
+                                <option value="" hidden>Điểm đến</option>
+                                <option value="HA NOI">Hà Nội</option>
+                                <option value="TPHCM">Hồ Chí Minh</option>
+                                <option value="DA NANG">Đà nẵng</option>
+                                <option value="NHA TRANG">Nha Trang</option>
+                                <option value="HAI PHONG">Hải Phòng</option>
+                                <option value="PHU QUOC">Phú Quốc</option>
+                                <option value="CA MAU">Cà Mau</option>
+                                <option value="DA LAT">Đà Lạt</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="col-xl-2">
+                        <select name="filter_hang">
+                            <optgroup label="Chọn hãng hàng không">
+                                <option value="0" hidden >Hãng</option>
+                                <option value="1">VietJet Air</option>
+                                <option value="2">VietNam Airlines</option>
+                                <option value="3">Jetstar Pacific Airlines</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="col-xl-2">
+                        <select name="filter_thoigian">
+                            <optgroup label="Chọn thời gian bay">
+                                <option value="0" hidden >Thời gian</option>
+                                <option value="1">00.00 - 06.00</option>
+                                <option value="2">06.00 - 12.00</option>
+                                <option value="3">12.00 - 18.00</option>
+                                <option value="4">18.00 - 00.00</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="col-xl-2 offset-xl-0">
+                        <select name="filter_gia">
+                            <optgroup label="Chọn giá">
+                                <option value="0" hidden >Giá</option>
+                                <option value="1">&lt 500.000 VND</option>
+                                <option value="2">&lt 750.000 VND</option>
+                                <option value="3">&lt 1.000.000 VND</option>
+                                <option value="4">&lt 1.250.000 VND</option>
+                                <option value="5">&lt 1.500.000 VND</option>
+                                <option value="6">&lt 1.750.000 VND</option>
+                                <option value="7">&lt 2.000.000 VND</option>
+                                <option value="8">&gt 2.000.000 VND</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="col-xl-2 offset-xl-0">
+                        <button type="submit" form="search-advanced">Lọc</button>
+                    </div>
                 </div>
-                <div class="col-md-12 col-xl-2 offset-xl-0">
-                    <select>
-                        <optgroup label="Chọn điểm đến">
-                            <option value="1" hidden>Điểm đến</option>
-                            <option value="13">This is item 2</option>
-                            <option value="14">This is item 3</option>
-                        </optgroup>
-                    </select>
-                </div>
-                <div class="col-xl-2">
-                    <select>
-                        <optgroup label="Chọn hãng hàng không">
-                            <option value="" hidden >Hãng</option>
-                            <option value="13">This is item 2</option>
-                            <option value="14">This is item 3</option>
-                        </optgroup>
-                    </select>
-                </div>
-                <div class="col-xl-2">
-                    <select>
-                        <optgroup label="Chọn thời gian bay">
-                            <option value="" hidden >Thời gian</option>
-                            <option value="13">This is item 2</option>
-                            <option value="14">This is item 3</option>
-                        </optgroup>
-                    </select>
-                </div>
-                <div class="col-xl-2 offset-xl-0">
-                    <select>
-                        <optgroup label="Chọn giá">
-                            <option value="" hidden >Giá</option>
-                            <option value="13">This is item 2</option>
-                            <option value="14">This is item 3</option>
-                        </optgroup>
-                    </select>
-                </div>
-            </div>
+            </form>
+
             <div class="row">
                 <div class="col-xl-10 offset-xl-1" id="product-item">
                     <h6>Kết quả :&nbsp;</h6>
@@ -246,14 +267,14 @@
                             <label class="icon-to-fight"><?php echo $dsChuyenBay[$i]['ThoiGianDi'] ?>
                                 <i class="fa fa-plane"></i>
                             </label>
-                            <p><?php echo changbay::getFullName($data['diemdi']) ?></p><span></span>
+                            <p><?php echo changbay::getFullName($_SESSION['timkiem']['diemdi']) ?></p><span></span>
                             <div class="show-detail ve">
                                 <span id="iddetail<?php echo $dsChuyenBay[$i]['ID_ChuyenBay'] ?>" class="ve-1" onclick="chitietve(<?php echo $dsChuyenBay[$i]['ID_ChuyenBay']?>)">Chi tiết vé</span>
                                 <hr class="show-2 <?php echo $dsChuyenBay[$i]['ID_ChuyenBay'] ?>">
                             </div>
                         </div>
                         <div class="col"><label><?php echo $dsChuyenBay[$i]['ThoiGianDen'] ?></label>
-                            <p><?php echo changbay::getFullName($data['diemden']) ?></p>
+                            <p><?php echo changbay::getFullName($_SESSION['timkiem']['diemden']) ?></p>
                         </div>
                         <div class="col-xl-2">
                             <label>2h 10m</label>
@@ -262,7 +283,16 @@
                         <div class="col">
                             <span class="price"><?php echo $cb->gia1Ve() ?>&nbsp;</span>
                             <label class="guest">/khách</label>
-                            <form action="thongtindatve/thongtin/<?php echo $dsChuyenBay[$i]['ID_ChuyenBay'] ?>">
+                            <?php
+                                $func = "";
+                                if ($data['khuhoi'])
+                                    $func = "chuyenbay/chontrang2/1";
+                                else
+                                    $func = "thongtindatve/thongtin";
+                                // <input type="hidden" name="machuyenbay" value="<?php echo $dsChuyenBay[$i]['ID_ChuyenBay']
+                            ?>
+                            <form action="<?php echo $func ?>" method="POST">
+                                <input type="hidden" name="machuyenbay" value="16">
                                 <button class="btn btn-primary select-fight" type="submit">Chọn chuyến bay</button>
                             </form>
                         </div>
@@ -302,17 +332,17 @@
                         </div>
                         <div class="col detail-item">
                             <div class="time-go">
-                                <span class="form-to">Từ <?php echo changbay::getFullName($data['diemdi']) ?></span>
+                                <span class="form-to">Từ <?php echo changbay::getFullName($_SESSION['timkiem']['diemdi']) ?></span>
                             </div>
-                            <div><span> <?php echo changbay::getTP($data['diemdi']) ?></span></div>
+                            <div><span> <?php echo changbay::getTP($_SESSION['timkiem']['diemdi']) ?></span></div>
                             <div>
                                 <span>Sân bay :&nbsp;</span><span class="highlight"><?php echo $data['sanbaydi'] ?></span>
                             </div>
                             <div><span class="time-fight"><i class="fa fa-long-arrow-down"></i></span></div>
                             <div>
-                                <span class="form-to">Đến <?php echo changbay::getFullName($data['diemden']) ?></span>
+                                <span class="form-to">Đến <?php echo changbay::getFullName($_SESSION['timkiem']['diemden']) ?></span>
                             </div>
-                            <div><span> <?php echo changbay::getTP($data['diemden']) ?></span></div>
+                            <div><span> <?php echo changbay::getTP($_SESSION['timkiem']['diemden']) ?></span></div>
                             <div class="time-end"><span>Sân bay :&nbsp;</span>
                                 <span class="highlight"><?php echo $data['sanbayden'] ?><br><br>
                                 </span>
@@ -337,7 +367,7 @@
                                 <img class="img-item" src="<?php echo $dsChuyenBay[$i]['HinhAnh'] ?>">
                                 <span>&nbsp;<?php echo $dsChuyenBay[$i]['Hang'] ?></span>
                             </div>
-                            <div><span class="form-to">&nbsp;<?php echo changbay::getTP($data['diemdi']) ?> - <?php echo changbay::getTP($data['diemden']) ?></span></div>
+                            <div><span class="form-to">&nbsp;<?php echo changbay::getTP($_SESSION['timkiem']['diemdi']) ?> - <?php echo changbay::getTP($_SESSION['timkiem']['diemden']) ?></span></div>
                             <div><span>&nbsp;<?php echo changbay::gethangghe($_SESSION['timkiem']['HangGhe']) ?></span></div>
                         </div>
                         <div class="col detail-item">
@@ -372,11 +402,7 @@
                     <ul class="pagination">
                         <?php
                             if(( $data['trang'] > 1) && ($data['tongtrang'] > 1)){
-                                $a = "chuyenbay/chontrang/".$data['diemdi'];
-                                $a .= "/".$data['diemden'];
-                                $a .= "/" . $data['ngaydi'];
-                                $a .= "/".(string)$data['songuoi'];
-                                $a .= "/".(string)($data['trang']-1);
+                                $a = "chuyenbay/chontrang/".(string)($data['trang']-1);
                                 echo '<li class="page-item">
                                 <a class="page-link" href="'.$a.'" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
@@ -399,21 +425,13 @@
                                     $page = $i+1;
                                     echo '<li class="page-item active"><a class="page-link" href="#">'.$page.'</a></li>';
                                 } else {
-                                    $s = "<a class='page-link' href=\"chuyenbay/chontrang/".$data['diemdi'];
-                                    $s .= "/".$data['diemden'];
-                                    $s .= "/" . $data['ngaydi'];
-                                    $s .= "/".(string)$data['songuoi'];
-                                    $s .= "/".(string)($i+1);
+                                    $s = "<a class='page-link' href=\"chuyenbay/chontrang/".(string)($i+1);
                                     $s .= "\">".(string)($i+1)."</a>";
                                     echo '<li class="page-item">'.$s.'</li>';
                                 }
                             }
                             if(( $data['trang'] < $data['tongtrang']) && ($data['tongtrang'] > 1)){
-                                $a = "chuyenbay/chontrang/".$data['diemdi'];
-                                $a .= "/".$data['diemden'];
-                                $a .= "/" . $data['ngaydi'];
-                                $a .= "/".(string)$data['songuoi'];
-                                $a .= "/".(string)($data['trang']+1);
+                                $a = "chuyenbay/chontrang/".(string)($data['trang']+1);
                                 echo '<li class="page-item">
                                 <a class="page-link" href="'.$a.'" aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>

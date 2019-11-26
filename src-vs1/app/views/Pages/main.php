@@ -9,11 +9,11 @@
                             <div class="main-select">
                                 <fieldset>
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline1" class="custom-control-input" name="customRadioInline" checked="">
+                                        <input type="radio" id="customRadioInline1" class="custom-control-input" name="customRadioInline" checked="" value="1">
                                         <label class="custom-control-label" for="customRadioInline1">Một chiều</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline2" class="custom-control-input" name="customRadioInline">
+                                        <input type="radio" id="customRadioInline2" class="custom-control-input" name="customRadioInline" value="2">
                                         <label class="custom-control-label" for="customRadioInline2">Khứ hồi</label>
                                     </div>
                                 </fieldset>
@@ -61,7 +61,7 @@
                     <div class="col">
                         <div class="form-group"><label>Ngày về</label>
                         <div class="input-group mb-3">
-                                <input class="form-control" type="text" id="datepicker-to" name="from-date" >
+                                <input class="form-control" type="text" id="datepicker-to" name="to-date" >
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                                 </div>
