@@ -9,8 +9,12 @@
             echo $var;
             //$this->$var=$_POST['username'];
         }
+<<<<<<< Updated upstream
 
         public static function DK(){
+=======
+        function DK(){
+>>>>>>> Stashed changes
             if(isset($_POST['login'])){
                 //$this->username=$_POST['username'];
                 setInfo(1);

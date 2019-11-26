@@ -39,7 +39,7 @@
                     </div>
                     <div class="row">
                         <div class="col" id="datve">
-                        <form action="thanhtoan/thanhtoanVISA/<?php echo $row['ID_ChuyenBay'] ?>">
+                        <form action="thanhtoan/thanhtoanVISA/<?php echo $row['ID_ChuyenBay'] ?>" method="post">
                                 <div class="jumbotron">
                                     <div class="form-row">
                                         <div class="col">
@@ -52,7 +52,9 @@
                                         <div class="col">
                                             <p>&nbsp;Họ và tên</p>
                                         </div>
-                                        <div class="col"><input class="form-control" type="text"></div>
+                                        <div class="col">
+                                            <input class="form-control" name="tenKH" type="text" value="<?php echo  $_SESSION['account']['TenDangNhap'] ?>">
+                                        </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col">
@@ -66,7 +68,9 @@
                                         <div class="col">
                                             <p>Điện thoại</p>
                                         </div>
-                                        <div class="col"><input class="form-control" type="text"></div>
+                                        <div class="col">
+                                            <input class="form-control" name="dienthoai" type="text" value="<?php echo  $_SESSION['account']['SDT'] ?>">
+                                        </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col">
@@ -84,7 +88,9 @@
                                         <div class="col">
                                             <p>Email</p>
                                         </div>
-                                        <div class="col"><input class="form-control" type="email"></div>
+                                        <div class="col">
+                                            <input class="form-control" name="email" type="email" value="<?php echo  $_SESSION['account']['Email'] ?>">
+                                        </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col">
@@ -118,7 +124,7 @@
                                                         <div class="col">
                                                             <p>Họ tên</p>
                                                         </div>
-                                                        <div class="col"><input class="form-control" type="text"></div>
+                                                        <div class="col"><input name="hotenND" class="form-control" type="text"></div>
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col">
@@ -156,6 +162,10 @@
                                                                     </select>
                                                                 </div>
                                                             </div>
+<<<<<<< Updated upstream
+=======
+                                                            <input type="text" name="ngaysinh" class="form-control">
+>>>>>>> Stashed changes
                                                         </div>
                                                     </div>
                                                     <div class="form-row">
@@ -170,7 +180,7 @@
                                                         <div class="col">
                                                             <p>CMND/CCCD</p>
                                                         </div>
-                                                        <div class="col"><input class="form-control" type="text"></div>
+                                                        <div class="col"><input class="form-control" name="CMND" type="text"></div>
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col">
@@ -348,7 +358,7 @@
                                                 ?>
                                                 <div class="form-row">
                                                     <div class="col button">
-                                                            <button class="btn btn-primary" type="submit" style="border-radius: 5px;">Đặt chỗ</button>
+                                                            <button class="btn btn-primary" type="submit" name="datcho" style="border-radius: 5px;">Đặt chỗ</button>
                                                     </div>
                                                 </div>
                                         

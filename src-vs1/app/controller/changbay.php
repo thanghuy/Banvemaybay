@@ -92,6 +92,10 @@ class changbay extends Controller
 		$tongtien = (int)self::$giachang + (int)self::$giahang + (int)self::$gialoai;
 		return number_format($tongtien,0,',','.')." VNĐ";
 	}
+	public function gia1Vetreem(){
+		$tongtien = (int)self::$giachang + (int)self::$giahang + (int)self::$gialoai -300000;
+		return number_format($tongtien,0,',','.')." VNĐ";
+	}
 	public function giaNguoilon(){
 		$tongtien = (int)self::$songuoilon * ((int)self::$giachang + (int)self::$giahang + (int)self::$gialoai);
 		return number_format($tongtien,0,',','.')." VNĐ";
