@@ -1,87 +1,170 @@
 <?php
-    class chuyenbay extends Controller
+	class chuyenbay extends Controller
 	{
 		function tiemkiem()
 		{
-			// Get data from FORM
-			$customRadioInline = (int)$_POST["customRadioInline"]; // 1: 1 chiều			// 2: khứ hồi
-			if($customRadioInline == 2){
-
-			}
-			// $dateto = new MyDate($_POST["to-date"]);
-			// $numseat = $_POST["seat-class"];
-			// $fightfrom = $_POST["from-fight"];
-			// $fightto = $_POST["to-fight"];
-			// $tenchang = $fightfrom . "->" . $fightto;
-			// $datefrom = new MyDate($_POST["form-date"]);
-			
-			// Find result
-			$numpeople = (int)$_POST["nguoilon"] + (int)$_POST["treem"] + (int)$_POST["embe"];
-
 			$ngaydi = $_POST["from-date"];
 			if (strlen($ngaydi) == 0) {
 				$ngaydi = date("d-m-Y");
 			}
-			
-			$url = "chuyenbay/chontrang/";
-			$url .= $_POST["from-fight"] . "/";
-			$url .= $_POST["to-fight"] . "/";
-			$url .= $ngaydi . "/";
-			$url .= $numpeople . "/1";
 
-			header('Location: ../'.$url);
+			if (isset($_POST["to-date"]))
+				$ngayve = $_POST["to-date"];
+			else
+				$ngayve = date("d-m-Y");
 
-			$this->SaveTimkiem($ngaydi,$numpeople,$_POST["nguoilon"],$_POST["treem"],$_POST["embe"],$_POST["hangghe"]);
+			$nguoilon = (int)$_POST["nguoilon"];
+			$treem = (int)$_POST["treem"];
+			$embe = (int)$_POST["embe"];
 
-		}
-		
-		function chontrang($diemdi, $diemden, $ngaydi, $songuoi, $page)
-		{
-			include $_SERVER['DOCUMENT_ROOT'].'/Banvemaybay/src-vs1/app/model/ChangBayModel.php';
-			include $_SERVER['DOCUMENT_ROOT'].'/Banvemaybay/src-vs1/app/model/ChuyenBayModel.php';
-			include $_SERVER['DOCUMENT_ROOT'].'/Banvemaybay/src-vs1/app/controller/changbay.php';
-			
-			$mdlChangBay = new ChangBayModel();
-			$mdlChuyenBay = new ChuyenBayModel();
-			$dsChuyenBay = array();
-			$machang = $mdlChangBay->getMabyDiaDiem($diemdi, $diemden);
-            $tongtrang = $mdlChuyenBay->getListCount($machang, $ngaydi, $songuoi, $page);
-			$result = $mdlChuyenBay->getListby($machang, $ngaydi, $songuoi, $page);
-			$sanbay = $mdlChangBay->getsanbay($diemdi, $diemden);
-			$maybay = $mdlChuyenBay->getFightNow($machang);
-			while ($row = $result->fetch_assoc()) {
-				array_push($dsChuyenBay, $row);
-			}
-
-			// Display result
-			$this->views("index_v",'chuyenbay_v', [
-				'dsChuyenBay' => $dsChuyenBay,
-				'diemdi' => $diemdi,
-				'diemden' => $diemden,
-				'sanbaydi' => $sanbay['SanBayDi'],
-				'sanbayden' => $sanbay['SanBayDen'],
-				'ngaydi' => $ngaydi,
-				'songuoi' => $songuoi,
-				'trang' => $page,
-				'tongtrang' => $tongtrang
-			]);
-		}
-		function SaveTimkiem($ngaydi,$tongnguoi,$nguoilon,$treem,$embe,$hangghe){
-			if(isset($_POST['timkiemmain'])){
-				// session_reset();
-				//echo "thanhkong";
-				$_SESSION['timkiem'] = array(
-					'songuoi' => $tongnguoi,
+			$_SESSION['timkiem'] = array (
+					"khuhoi" => (int)$_POST["customRadioInline"],
+					"diemdi" => $_POST["from-fight"],
+					"diemden" => $_POST["to-fight"],
+					"ngaydi" => $ngaydi,
+					"ngayve" => $ngayve,
+					"songuoi" => $nguoilon + $treem + $embe,
 					"NguoiLon" => $nguoilon,
 					"TreEm" => $treem,
 					"EmBe" => $embe,
-					"HangGhe" => $hangghe,
-					"NgayDi" => $ngaydi
+					"HangGhe" => (int)$_POST["hangghe"],
+					"codeHang" => "",
+					"codeThoiGian" => 0,
+					"codeGia" => 0,
 				);
-			}
-			else{
-				echo "Không thành công";
-			}
+
+			header('Location: ../chuyenbay/chontrang/1');
 		}
-    }
+		
+		function loc()
+		{
+			if (strlen($_POST["filter_diemden"]) != 0) {
+				$_SESSION['timkiem']['diemden'] = $_POST["filter_diemden"];
+			}
+			$_SESSION['timkiem']['codeHang'] = $_POST["filter_hang"];
+			$_SESSION['timkiem']['codeThoiGian'] = $_POST["filter_thoigian"];
+			$_SESSION['timkiem']['codeGia'] = $_POST["filter_gia"];
+
+			header('Location: ../chuyenbay/chontrang/1');
+		}
+		
+		function chontrang($page)
+		{
+			include $_SERVER['DOCUMENT_ROOT'].'/Banvemaybay/src-vs1/app/controller/changbay.php';
+			
+			$mdlChangBay = $this->model("ChangBayModel");
+			$mdlChuyenBay = $this->model("ChuyenBayModel");
+			$dsChuyenBay = array();
+
+			$hang = "";
+			switch ($_SESSION['timkiem']['codeHang']) {
+				case 1: $hang = "VietJet Air"; break;
+				case 2: $hang = "VietNam Airlines"; break;
+				case 3: $hang = "Jetstar Pacific Airlines"; break;
+			}
+			$gia = "";
+			switch ($_SESSION['timkiem']['codeGia']) {
+				case 1: $gia = "<500000"; break;
+				case 2: $gia = "<750000"; break;
+				case 3: $gia = "<1000000"; break;
+				case 4: $gia = "<1250000"; break;
+				case 5: $gia = "<1500000"; break;
+				case 6: $gia = "<1750000"; break;
+				case 7: $gia = "<2000000"; break;
+				case 8: $gia = ">2000000"; break;
+			}
+
+			$diemdi = $_SESSION['timkiem']['diemdi'];
+			$diemden = $_SESSION['timkiem']['diemden'];
+			$ngaydi = $_SESSION['timkiem']['ngaydi'];
+			$ngayve = $_SESSION['timkiem']['ngayve'];
+			$songuoi = $_SESSION['timkiem']['songuoi'];
+			$codeThoiGian = $_SESSION['timkiem']['codeThoiGian'];
+			$khuhoi = false;
+
+			if ($_SESSION['timkiem']['khuhoi'] == 2)
+			{
+				$machang = $mdlChangBay->getMabyDiaDiem($diemden, $diemdi, $gia);
+				$resultcba = $mdlChuyenBay->getListby($machang, $ngayve, $songuoi, $hang, $codeThoiGian, $page);
+				if ($resultcba->num_rows == 0)
+				{
+					$sanbay = array('SanBayDi' => "", 'SanBayDen' => "");
+					$this->show($dsChuyenBay, $sanbay, $page, $tongtrang);
+					return;
+				}
+				$khuhoi = true;
+			}
+			$machang = $mdlChangBay->getMabyDiaDiem($diemdi, $diemden, $gia);
+			$tongtrang = $mdlChuyenBay->getListCount($machang, $ngaydi, $songuoi, $hang, $codeThoiGian, $page);
+			$resultcba = $mdlChuyenBay->getListby($machang, $ngaydi, $songuoi, $hang, $codeThoiGian, $page);
+			$sanbay = $mdlChangBay->getsanbay($diemdi, $diemden);
+			// $maybay = $mdlChuyenBay->getFightNow($machang); ???
+
+			while ($rowcba = $resultcba->fetch_assoc()) {
+				array_push($dsChuyenBay, $rowcba);
+			}
+			$this->show($dsChuyenBay, $sanbay, $page, $tongtrang, $khuhoi);
+		}
+
+		function chontrang2($page)
+		{
+			$_SESSION['timkiem']['chuyenbaydi'] = (int)$_POST['machuyenbay'];
+
+			include $_SERVER['DOCUMENT_ROOT'].'/Banvemaybay/src-vs1/app/controller/changbay.php';
+			
+			$mdlChangBay = $this->model("ChangBayModel");
+			$mdlChuyenBay = $this->model("ChuyenBayModel");
+			$dsChuyenBay = array();
+
+			$hang = "";
+			switch ($_SESSION['timkiem']['codeHang']) {
+				case 1: $hang = "VietJet Air"; break;
+				case 2: $hang = "VietNam Airlines"; break;
+				case 3: $hang = "Jetstar Pacific Airlines"; break;
+			}
+			$gia = "";
+			switch ($_SESSION['timkiem']['codeGia']) {
+				case 1: $gia = "<500000"; break;
+				case 2: $gia = "<750000"; break;
+				case 3: $gia = "<1000000"; break;
+				case 4: $gia = "<1250000"; break;
+				case 5: $gia = "<1500000"; break;
+				case 6: $gia = "<1750000"; break;
+				case 7: $gia = "<2000000"; break;
+				case 8: $gia = ">2000000"; break;
+			}
+
+			$diemdi = $_SESSION['timkiem']['diemden'];
+			$diemden = $_SESSION['timkiem']['diemdi'];
+			$_SESSION['timkiem']['diemden'] = $diemden;
+			$_SESSION['timkiem']['diemdi'] = $diemdi;
+
+			$ngayve = $_SESSION['timkiem']['ngayve'];
+			$songuoi = $_SESSION['timkiem']['songuoi'];
+			$codeThoiGian = $_SESSION['timkiem']['codeThoiGian'];
+
+			$machang = $mdlChangBay->getMabyDiaDiem($diemdi, $diemden, $gia);
+			$tongtrang = $mdlChuyenBay->getListCount($machang, $ngayve, $songuoi, $hang, $codeThoiGian, $page);
+			$resultcba = $mdlChuyenBay->getListby($machang, $ngayve, $songuoi, $hang, $codeThoiGian, $page);
+			$sanbay = $mdlChangBay->getsanbay($diemdi, $diemden);
+
+			while ($rowcba = $resultcba->fetch_assoc()) {
+				array_push($dsChuyenBay, $rowcba);
+			}
+
+			$this->show($dsChuyenBay, $sanbay, $page, $tongtrang, false);
+		}
+
+		function show($dsChuyenBay, $sanbay, $page, $tongtrang, $khuhoi)
+		{
+			$this->views("index_v",'chuyenbay_v', [
+				'dsChuyenBay' => $dsChuyenBay,
+				'sanbaydi' => $sanbay['SanBayDi'],
+				'sanbayden' => $sanbay['SanBayDen'],
+				'trang' => $page,
+				'tongtrang' => $tongtrang,
+				'khuhoi' => $khuhoi
+			]);
+		}
+	}
 ?>
